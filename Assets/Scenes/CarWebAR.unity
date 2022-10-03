@@ -909,7 +909,7 @@ RectTransform:
   m_GameObject: {fileID: 468988771}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.371575, y: 1, z: 1}
   m_Children:
   - {fileID: 2113133508}
   m_Father: {fileID: 1511763829}
@@ -2954,7 +2954,7 @@ RectTransform:
   m_GameObject: {fileID: 2113133507}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.327052, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 468988772}
   m_RootOrder: 0
@@ -2997,7 +2997,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: WebAR Button
+  m_Text: WebAR
 --- !u!222 &2113133510
 CanvasRenderer:
   m_ObjectHideFlags: 0
