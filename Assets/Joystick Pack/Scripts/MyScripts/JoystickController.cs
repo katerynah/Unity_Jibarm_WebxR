@@ -6,6 +6,7 @@ public class JoystickController : MonoBehaviour
 {
     protected Joystick joystick;
     protected JoystickButton joybutton;
+    float speed = 1f;
 
 
     // Start is called before the first frame update
@@ -19,6 +20,6 @@ public class JoystickController : MonoBehaviour
     void Update()
     {
         var rigidbody = GetComponent<Rigidbody>();
-        rigidbody.velocity = new Vector3(joystick.Horizontal * 100f, rigidbody.velocity.y, joystick.Vertical * 100f);
+        rigidbody.velocity = new Vector3(joystick.Horizontal * speed, rigidbody.velocity.y, joystick.Vertical * speed);
     }
 }
