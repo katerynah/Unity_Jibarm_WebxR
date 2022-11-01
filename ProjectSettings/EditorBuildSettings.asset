@@ -9,5 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/JibarmWebAR.unity
     guid: e3064a8f3e3fd9c458dfaaba96e40403
   m_configObjects:
+    UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 06c0bc228cd52964cb529794c5361c72, type: 2}
     WebXR.Settings: {fileID: 11400000, guid: 2c8ccca0e1e690f46aa23ac0220c4640, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 831cf8a7c58a14f46b73d165b390f611, type: 2}
