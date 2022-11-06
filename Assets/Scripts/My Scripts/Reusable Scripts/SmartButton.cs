@@ -42,8 +42,8 @@ public class SmartButton : MonoBehaviour
 
 	public virtual void useFunction()
 	{
-			if (Input.GetMouseButtonDown(0))
-        {
+		if (Input.GetMouseButtonDown(0))
+		{
 			switch (UseAs)
 			{
 				case Usage.Default:
@@ -56,7 +56,7 @@ public class SmartButton : MonoBehaviour
 					break;
 
 				case Usage.SceneLoader:
-                    Application.LoadLevel(Value);
+					Application.LoadLevel(Value);
 					break;
 
 				case Usage.PanelSwitcher:
