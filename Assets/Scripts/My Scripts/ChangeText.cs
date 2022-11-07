@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class ChangeText : MonoBehaviour
 {
     [SerializeField]
-    private List<string> btnNames = new List<string>() { 
+    private List<string> btnNames = new List<string>() {
         "Loading..."
     };
     public List<GameObject> btnTextObjects = new List<GameObject>();
@@ -28,11 +28,13 @@ public class ChangeText : MonoBehaviour
                 {
                     currTextObj = btnTextObjects[i].GetComponent<TextMeshProUGUI>();
                     currTextObj.SetText(btnNames[i]);
-
+                    // making unclickable
+                    GameObject parentObj = btnTextObjects[i].transform.parent.gameObject;
+                    parentObj.GetComponent<Collider>().enabled = false;
                 }
-                
+
             }
-        } 
+        }
 
     }
 
