@@ -24,66 +24,64 @@ public class SmartButton : MonoBehaviour
 	public List<GameObject> objectsToHide = new List<GameObject>();
 	public List<GameObject> objectsToShow = new List<GameObject>();
 
-	public static System.Action<SmartButton> OnSmartButtonClickEvent;
+	public System.Action<SmartButton> OnSmartButtonClickEvent;
 
 	void Start()
 	{
-		//if (gameObject.GetComponent<Collider2D>() == null)
-		//{
-		//	Debug.LogWarning("Warning! Smart button might not work without a collider or collider2D attached to the GameObject");
-		//}
+        if (gameObject.GetComponent<Collider>() == null && gameObject.GetComponent<Collider2D>() == null)
+        {
+            Debug.LogWarning("Warning! Smart button might not work without a collider or collider2D attached to the GameObject");
+        }
+    }
+
+
+	void OnMouseDown()
+    {
+		onClick();
 	}
 
-	void Update()
+	public void onClick()
 	{
-		//For those NGUI Users ;)
-		useFunction();
-	}
-
-	public virtual void useFunction()
-	{
-		if (Input.GetMouseButtonDown(0))
+		
+		switch (UseAs)
 		{
-			switch (UseAs)
-			{
-				case Usage.Default:
-					if (OnSmartButtonClickEvent != null)
-						OnSmartButtonClickEvent(this);
-					break;
+			case Usage.Default:
+				if (OnSmartButtonClickEvent != null)
+					OnSmartButtonClickEvent(this);
+				break;
 
-				case Usage.URL:
-					Application.OpenURL(Value);
-					break;
+			case Usage.URL:
+				Application.OpenURL(Value);
+				break;
 
-				case Usage.SceneLoader:
-					Application.LoadLevel(Value);
-					break;
+			case Usage.SceneLoader:
+				Application.LoadLevel(Value);
+				break;
 
-				case Usage.PanelSwitcher:
-					if (objectsToHide != null)
+			case Usage.PanelSwitcher:
+				if (objectsToHide != null)
+				{
+					for (int i = 0; i < objectsToHide.Count; i++)
 					{
-						for (int i = 0; i < objectsToHide.Count; i++)
-						{
-							objectsToHide[i].SetActive(false);
-						}
+						objectsToHide[i].SetActive(false);
 					}
-					if (objectsToShow != null)
+				}
+				if (objectsToShow != null)
+				{
+					for (int i = 0; i < objectsToShow.Count; i++)
 					{
-						for (int i = 0; i < objectsToShow.Count; i++)
-						{
-							objectsToShow[i].SetActive(true);
-						}
+						objectsToShow[i].SetActive(true);
 					}
-					break;
+				}
+				break;
 
-				case Usage.Exit:
-					Application.Quit();
-					break;
+			case Usage.Exit:
+				Application.Quit();
+				break;
 
-				case Usage.CoroutineTrigger:
-					ComponentToUse.StartCoroutine(Value);
-					break;
-			}
+			case Usage.CoroutineTrigger:
+				ComponentToUse.StartCoroutine(Value);
+				break;
 		}
 
 	}

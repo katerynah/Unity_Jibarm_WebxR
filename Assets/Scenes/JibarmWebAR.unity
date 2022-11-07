@@ -863,6 +863,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 233130455}
+        m_TargetAssemblyTypeName: SmartButton, Assembly-CSharp
+        m_MethodName: onClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &233130453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1142,6 +1154,8 @@ GameObject:
   - component: {fileID: 451751295}
   - component: {fileID: 451751294}
   - component: {fileID: 451751293}
+  - component: {fileID: 451751296}
+  - component: {fileID: 451751297}
   m_Layer: 5
   m_Name: Exit-btn
   m_TagString: Untagged
@@ -1212,7 +1226,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 451751294}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 451751296}
+        m_TargetAssemblyTypeName: SmartButton, Assembly-CSharp
+        m_MethodName: onCLick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &451751294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1251,6 +1277,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 451751291}
   m_CullTransparentMesh: 1
+--- !u!114 &451751296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451751291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11d0a7d877790524e86049b1f7ccf1a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseAs: 4
+  Value: 
+  ComponentToUse: {fileID: 0}
+  objectsToHide: []
+  objectsToShow: []
+--- !u!61 &451751297
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451751291}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.3449707, y: -0.00000047683716}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 159.65979, y: 30.232224}
+  m_EdgeRadius: 0
 --- !u!1 &464994371
 GameObject:
   m_ObjectHideFlags: 0
@@ -1263,6 +1332,7 @@ GameObject:
   - component: {fileID: 464994375}
   - component: {fileID: 464994374}
   - component: {fileID: 464994373}
+  - component: {fileID: 464994376}
   - component: {fileID: 464994377}
   m_Layer: 5
   m_Name: Start-btn
@@ -1334,7 +1404,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 464994374}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 464994377}
+        m_TargetAssemblyTypeName: SmartButton, Assembly-CSharp
+        m_MethodName: onClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &464994374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1373,6 +1455,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 464994371}
   m_CullTransparentMesh: 1
+--- !u!65 &464994376
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464994371}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 160.21161, y: 30.152609, z: 1}
+  m_Center: {x: 0.1900513, y: -0.26319432, z: 0}
 --- !u!114 &464994377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1475,7 +1570,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 563446048}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 563446050}
+        m_TargetAssemblyTypeName: SmartButton, Assembly-CSharp
+        m_MethodName: onClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &563446048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1521,7 +1628,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 563446045}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11d0a7d877790524e86049b1f7ccf1a9, type: 3}
   m_Name: 
