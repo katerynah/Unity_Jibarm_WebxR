@@ -19,8 +19,6 @@ public class SmartButton : MonoBehaviour
 
 	public string Value;
 	public MonoBehaviour ComponentToUse;
-	//public GameObject GoToPanel;
-	//public GameObject OurParentPanel;
 	public List<GameObject> objectsToHide = new List<GameObject>();
 	public List<GameObject> objectsToShow = new List<GameObject>();
 
@@ -63,14 +61,20 @@ public class SmartButton : MonoBehaviour
 				{
 					for (int i = 0; i < objectsToHide.Count; i++)
 					{
-						objectsToHide[i].SetActive(false);
+						if (objectsToHide[i].activeSelf)
+						{
+							objectsToHide[i].SetActive(false);
+						}
 					}
 				}
 				if (objectsToShow != null)
 				{
 					for (int i = 0; i < objectsToShow.Count; i++)
 					{
-						objectsToShow[i].SetActive(true);
+						if (!objectsToShow[i].activeSelf)
+						{
+							objectsToShow[i].SetActive(true);
+						}
 					}
 				}
 				break;
