@@ -1,16 +1,26 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
  
- public class DragPanel : EventTrigger // event trigger of UI events
+ public class DragPanel : MonoBehaviour // EventTrigger: event trigger of UI events 
 {
     public bool startDragging;
-    private float StartX;
-    private float EndX = 85f;
+    public Canvas canvas;
+    public float StartX;
+    private float EndX;
 
     void Start()
     {
-        StartX = gameObject.transform.position.x;
-        Debug.Log($"Starting position: {StartX}");
+        // Adapting panel width to canvas width
+        Vector2 newWidth;
+        newWidth = new Vector2(canvas.GetComponent<RectTransform>().rect.width, canvas.GetComponent<RectTransform>().rect.height);
+        RectTransform panelRect = gameObject.transform.GetChild(0).GetComponent<RectTransform>();
+        panelRect.sizeDelta = newWidth;
+
+        // Picking the starting position of panel for dragging limit on the right
+        StartX = StartX == 0f ?  gameObject.transform.position.x : StartX;
+
+        // adapt left limit on the screen size
+        EndX = newWidth.x < 140.6f ? 0f : -10f;
 
     }
 
@@ -22,25 +32,27 @@ using UnityEngine.EventSystems;
             transform.position = new Vector2(Input.mousePosition.x, gameObject.transform.position.y);
         }
 
+        // limit dragging on the left
         if (gameObject.transform.position.x <= EndX)
         {
             transform.position = new Vector2(EndX, gameObject.transform.position.y);
         }
+
+        // limit dragging on the right
         else if (gameObject.transform.position.x >= StartX)
         {
             transform.position = new Vector2(StartX, gameObject.transform.position.y);
         }
     }
 
-    public override void OnPointerDown(PointerEventData eventData)
+    public void OnPointerDown()
     {
         // Use this event to fet mouse down on the UI
         startDragging = true;
-        
     }
 
 
-    public override void OnPointerUp(PointerEventData eventData)
+    public void OnPointerUp()
     {
         // Use this to get user has leave the mouse
         startDragging = false;

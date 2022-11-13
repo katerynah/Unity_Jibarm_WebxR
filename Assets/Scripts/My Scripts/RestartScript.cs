@@ -4,37 +4,34 @@ using UnityEngine;
 
 public class RestartScript : MonoBehaviour
 {
-    public List<GameObject> rerunScriptsOn = new List<GameObject>();
-    private SmartButton checkBtn;
+    // eLPanel
+    public List<GameObject> adaptObj = new List<GameObject>();
     private ToggleMenu checkELMenu;
     private bool wasActiveBefore = false;
+    float eLPanel_x;
 
-    void Update()
+    void Start()
     {
-        if (checkBtn != null)
+        eLPanel_x = adaptObj[0].transform.position.x;
+        //checkELMenu = GameObject.Find("eL-btn").GetComponent<ToggleMenu>();
+    }
+
+    public void adaptScripts(GameObject clickedBtn)
+    {
+        switch (clickedBtn.name)
         {
-            switch (checkBtn.name)
-            {
-                case "Start-btn":
-                    //rerunScriptsOn[0].GetComponent<ToggleMenu>().enabled = false;
-                    //rerunScriptsOn[0].GetComponent<ToggleMenu>().enabled = true;
-                    break;
-                case "StartMenu-btn":
-                    if (checkELMenu.toggleObj[0].activeSelf)
-                    {
-                        checkELMenu.toggleObj[0].SetActive(false);
-                        // panel was active before click on menu -> then hidden to show Start menu -> click on Resume active again
-                        wasActiveBefore = true;
-                    }
-                    break;
-                case "Resume-btn":
-                    if (!checkELMenu.toggleObj[0].activeSelf && wasActiveBefore)
-                    {
-                        checkELMenu.toggleObj[0].SetActive(true);
-                        wasActiveBefore = false;
-                    }
-                    break;
-            }
+            case "Start-btn":
+                if (adaptObj[0].name == "eLPanel")
+                {
+                    adaptObj[0].transform.position = new Vector2(eLPanel_x, adaptObj[0].transform.position.y);
+                }
+                break;
+            case "Resume-btn":
+                break;
+            case "StartMenu-btn":
+                break;
+
+
         }
     }
 }
