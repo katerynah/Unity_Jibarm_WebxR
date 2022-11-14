@@ -11,7 +11,6 @@ public class SmartButton : MonoBehaviour
 		URL,
 		SceneLoader,
 		PanelSwitcher,
-		Exit,
 		CoroutineTrigger
 	}
 
@@ -21,26 +20,30 @@ public class SmartButton : MonoBehaviour
 	public MonoBehaviour ComponentToUse;
 	public List<GameObject> objectsToHide = new List<GameObject>();
 	public List<GameObject> objectsToShow = new List<GameObject>();
+	private RestartScript restartScr;
+
 
 	public System.Action<SmartButton> OnSmartButtonClickEvent;
 
 	void Start()
 	{
-        if (gameObject.GetComponent<Collider>() == null && gameObject.GetComponent<Collider2D>() == null)
-        {
-            Debug.LogWarning("Warning! Smart button might not work without a collider or collider2D attached to the GameObject");
-        }
-    }
+		if (gameObject.GetComponent<Collider>() == null && gameObject.GetComponent<Collider2D>() == null)
+		{
+			Debug.LogWarning("Warning! Smart button might not work without a collider or collider2D attached to the GameObject");
+		}
+
+		restartScr = GameObject.Find("Methods").GetComponent<RestartScript>();
+	}
 
 
 	void OnMouseDown()
-    {
+	{
 		onClick();
 	}
 
 	public void onClick()
 	{
-		
+
 		switch (UseAs)
 		{
 			case Usage.Default:
@@ -79,14 +82,11 @@ public class SmartButton : MonoBehaviour
 				}
 				break;
 
-			case Usage.Exit:
-				Application.Quit();
-				break;
-
 			case Usage.CoroutineTrigger:
 				ComponentToUse.StartCoroutine(Value);
 				break;
 		}
 
+		restartScr.adaptScripts(clickedBtn: gameObject);
 	}
 }
