@@ -27,6 +27,7 @@ public class SceneOnStart : MonoBehaviour
             newWidth = new Vector2(canvas.GetComponent<RectTransform>().rect.width, canvas.GetComponent<RectTransform>().rect.height);
             RectTransform panelRect = objectsToDisable[4].transform.GetChild(0).GetComponent<RectTransform>();
             panelRect.sizeDelta = newWidth;
+            Debug.Log($"Panel width: {newWidth}");
         }
         else
         {

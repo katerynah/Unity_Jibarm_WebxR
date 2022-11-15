@@ -5,7 +5,7 @@ public class DragPanel : MonoBehaviour // EventTrigger: event trigger of UI even
 {
     public bool startDragging;
     public float StartX;
-    private float EndX; // mob 105f, hd 61.8f (old 65f)
+    public float EndX; // mob 105f, hd 61.8f (old 65f)
 
 
     void Start()
@@ -13,10 +13,7 @@ public class DragPanel : MonoBehaviour // EventTrigger: event trigger of UI even
         // Picking the starting position of panel for dragging limit on the right
         StartX = StartX == 0f ? gameObject.transform.position.x : StartX;
 
-        // adapt left limit on the screen size
-        //newWidth = gameObject.transform.GetChild(0).GetComponent<RectTransform>().rect.width;
-
-        EndX = (Screen.width - StartX) - 2.5f;
+        EndX = Screen.width - StartX;
     }
 
     void Update()
