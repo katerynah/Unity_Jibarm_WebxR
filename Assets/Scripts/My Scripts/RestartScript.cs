@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class RestartScript : MonoBehaviour
 {
-    // eLPanel
+    // dragPanel, Jib, 
     public List<GameObject> adaptObj = new List<GameObject>();
+    
     float eLPanel;
-    DragPanel script;
+    [SerializeField]
+    public DragPanel dragScript;
+    [SerializeField]
+    public JibarmControl jibStartScript;
     bool doFirst = true;
     RectTransform eLRect;
 
     void Start()
     {
         eLRect = adaptObj[0].transform.GetChild(0).GetComponent<RectTransform>();
-        eLPanel = eLRect.anchoredPosition.x;
-        script = adaptObj[0].GetComponent<DragPanel>();
+        //eLPanel = eLRect.anchoredPosition.x;
+        eLPanel = -17.7f;
     }
 
     public void adaptScripts(GameObject clickedBtn)
@@ -32,8 +36,7 @@ public class RestartScript : MonoBehaviour
                     }
                     else if(!doFirst)
                     {
-                        adaptObj[0].transform.position = new Vector2(script.StartX, adaptObj[0].transform.position.y);
-                        Debug.Log($"Curr pos of Drag panel {script.StartX}");
+                        adaptObj[0].transform.position = new Vector2(dragScript.StartX, adaptObj[0].transform.position.y);
                     }
                 }
                 else
@@ -42,7 +45,7 @@ public class RestartScript : MonoBehaviour
                 }
                 break;
             case "Resume-btn":
-                adaptObj[0].SetActive(true);
+                jibStartScript.setJibPos();
                 break;
             case "Menu-btn":
                 break;

@@ -19,12 +19,10 @@ public class ToggleMenu : MonoBehaviour
             if (!toggleObj[i].activeSelf)
             {
                 toggleObj[i].SetActive(true);
-                Debug.Log($"Panel showing");
             }
             else if (toggleObj[i].activeSelf)
             {
                 toggleObj[i].SetActive(false);
-                Debug.Log($"Panel hiding");
 
             }
         }

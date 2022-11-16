@@ -4,6 +4,8 @@ using UnityEngine.EventSystems;
 public class DragPanel : MonoBehaviour // EventTrigger: event trigger of UI events 
 {
     public bool startDragging;
+    [SerializeField]
+    public float adaptWidth;
     public float StartX;
     public float EndX; // mob 105f, hd 61.8f (old 65f)
 
@@ -13,7 +15,7 @@ public class DragPanel : MonoBehaviour // EventTrigger: event trigger of UI even
         // Picking the starting position of panel for dragging limit on the right
         StartX = StartX == 0f ? gameObject.transform.position.x : StartX;
 
-        EndX = Screen.width - StartX;
+        EndX = (Screen.width - StartX) - adaptWidth;
     }
 
     void Update()
