@@ -6,8 +6,10 @@ public class FullScreenPanel : MonoBehaviour
 {
     private float fullXPos;
     private float currPosX;
-    private bool fullMode = true;
+    [HideInInspector]
+    public bool fullMode = true;
     private DragPanel script;
+    public LockPanel lockScript;
     public GameObject dragPanel;
 
     // Start is called before the first frame update
@@ -15,14 +17,10 @@ public class FullScreenPanel : MonoBehaviour
     {
         script = dragPanel.GetComponent<DragPanel>();
         fullXPos = script.EndX;
+        currPosX = dragPanel.transform.position.x;
     }
 
-    private void OnMouseDown()
-    {
-        setFull();
-    }
-
-    public void setFull()
+    public void OnPointerClick()
     {
         if (fullMode)
         {

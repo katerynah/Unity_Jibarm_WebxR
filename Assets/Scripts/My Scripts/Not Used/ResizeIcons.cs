@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ResizeIcons : MonoBehaviour
 {
-    public List<GameObject> objToResize = new List<GameObject>();
+    //public List<GameObject> objToResize = new List<GameObject>();
     private RectTransform objRect;
     [SerializeField]
     private float factor = 1.5f;

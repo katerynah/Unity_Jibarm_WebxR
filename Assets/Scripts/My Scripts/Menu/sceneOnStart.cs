@@ -7,6 +7,9 @@ public class SceneOnStart : MonoBehaviour
     public List<GameObject> objectsToEnable = new List<GameObject>();
     public List<GameObject> objectsToDisable = new List<GameObject>();
     public float DragPanel_startX;
+    public Canvas canvas;
+    private Vector2 newWidth;
+
 
     // Start is called before the first frame update
     void Start()
@@ -19,9 +22,6 @@ public class SceneOnStart : MonoBehaviour
 
     void adjustELPanelWidth()
     {
-        Vector2 newWidth;
-        Canvas canvas;
-        canvas = GameObject.Find("MenuCanvas").GetComponent<Canvas>();
         if (objectsToDisable[4].name == "DragPanel")
         {
             float cHeight = canvas.GetComponent<RectTransform>().rect.height;
