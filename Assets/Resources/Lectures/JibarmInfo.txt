@@ -1,0 +1,10 @@
+{
+    "jibarmInfo":
+    [
+        {
+            "headline": "1. Was ist ein Jibarm?",
+            "copytext": "Der Egripment JanJib ist ein kleiner Kamerakran mit einer Armlänge von 120 cm, welcher weiche Kamerabewegungen um einen festen Punkt und Beibehaltung einer Ausrichtung ermöglicht. Der JibArm ist mit Encodern und einem Tracking-Interface versehen und liefert so alle nötigen (Kamera-) Parameter und Daten zu seiner Position im Raum. Hierfür wird das X-pecto-Protokoll verwendet."
+        }       
+    ]
+   
+}

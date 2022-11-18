@@ -6,8 +6,11 @@ public class SceneOnStart : MonoBehaviour
 {
     public List<GameObject> objectsToEnable = new List<GameObject>();
     public List<GameObject> objectsToDisable = new List<GameObject>();
+    [HideInInspector]
     public float DragPanel_startX;
-    public Canvas canvas;
+    public Canvas startCanvas;
+    [SerializeField]
+    public float adjustRWidth;
     private Vector2 newWidth;
 
 
@@ -24,16 +27,15 @@ public class SceneOnStart : MonoBehaviour
     {
         if (objectsToDisable[4].name == "DragPanel")
         {
-            float cHeight = canvas.GetComponent<RectTransform>().rect.height;
-            newWidth = new Vector2(canvas.GetComponent<RectTransform>().rect.width, cHeight);
+            float cHeight = startCanvas.GetComponent<RectTransform>().rect.height;
+            newWidth = new Vector2(startCanvas.GetComponent<RectTransform>().rect.width, cHeight);
+            Debug.Log($"Width of canvas {newWidth}");
             //eLPanel
             RectTransform panelRect = objectsToDisable[4].transform.GetChild(0).GetComponent<RectTransform>();
             panelRect.sizeDelta = newWidth;
             // RightPanel
             RectTransform rPanel = objectsToDisable[4].transform.GetChild(2).GetComponent<RectTransform>();
-            rPanel.sizeDelta = new Vector2(newWidth.x * 0.8f, cHeight);
-            //eLPanel
-            Debug.Log($"Panel width: {newWidth}");
+            rPanel.sizeDelta = new Vector2(newWidth.x * adjustRWidth, cHeight);
         }
         else
         {

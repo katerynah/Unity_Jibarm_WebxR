@@ -55,10 +55,6 @@ public class SmartButton : MonoBehaviour
 				Application.OpenURL(Value);
 				break;
 
-			case Usage.SceneLoader:
-				Application.LoadLevel(Value);
-				break;
-
 			case Usage.PanelSwitcher:
 				if (objectsToHide != null)
 				{
