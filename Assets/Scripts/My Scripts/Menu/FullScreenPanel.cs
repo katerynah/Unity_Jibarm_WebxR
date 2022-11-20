@@ -5,7 +5,7 @@ using UnityEngine;
 public class FullScreenPanel : MonoBehaviour
 {
     private float fullXPos;
-    private float currPosX;
+    private float startPos;
     [HideInInspector]
     public bool fullMode = true;
     private DragPanel script;
@@ -17,20 +17,21 @@ public class FullScreenPanel : MonoBehaviour
     {
         script = dragPanel.GetComponent<DragPanel>();
         fullXPos = script.EndX;
-        currPosX = dragPanel.transform.position.x;
+        startPos = script.StartX;
     }
 
     public void OnPointerClick()
     {
         if (fullMode)
         {
-            currPosX = dragPanel.transform.position.x;
             dragPanel.transform.position = new Vector2(fullXPos, dragPanel.transform.position.y);
+            // adapt Text
+            script.adaptTextObjs();
             fullMode = false;
         }
         else if(!fullMode)
         {
-            dragPanel.transform.position = new Vector2(currPosX, dragPanel.transform.position.y);
+            dragPanel.transform.position = new Vector2(startPos, dragPanel.transform.position.y);
             fullMode = true;
         }
     }

@@ -28,14 +28,14 @@ public class SceneOnStart : MonoBehaviour
         if (objectsToDisable[4].name == "DragPanel")
         {
             float cHeight = startCanvas.GetComponent<RectTransform>().rect.height;
-            newWidth = new Vector2(startCanvas.GetComponent<RectTransform>().rect.width, cHeight);
-            Debug.Log($"Width of canvas {newWidth}");
+            newWidth = new Vector2(startCanvas.GetComponent<RectTransform>().rect.width + 5f, cHeight); // + 5f a bit bigger just in case
             //eLPanel
             RectTransform panelRect = objectsToDisable[4].transform.GetChild(0).GetComponent<RectTransform>();
             panelRect.sizeDelta = newWidth;
             // RightPanel
             RectTransform rPanel = objectsToDisable[4].transform.GetChild(2).GetComponent<RectTransform>();
-            rPanel.sizeDelta = new Vector2(newWidth.x * adjustRWidth, cHeight);
+            //rPanel.sizeDelta = new Vector2(newWidth.x * adjustRWidth, cHeight);
+            rPanel.sizeDelta = new Vector2(newWidth.x - 116f, cHeight); // 265 is leftPanel
         }
         else
         {

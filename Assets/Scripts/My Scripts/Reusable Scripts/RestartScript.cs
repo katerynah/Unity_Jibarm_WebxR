@@ -10,16 +10,13 @@ public class RestartScript : MonoBehaviour
     float eLPanel;
     [SerializeField]
     public DragPanel dragScript;
-    [SerializeField]
-    public JibarmControl jibStartScript;
     bool doFirst = true;
     RectTransform eLRect;
 
     void Start()
     {
         eLRect = adaptObj[0].transform.GetChild(0).GetComponent<RectTransform>();
-        //eLPanel = eLRect.anchoredPosition.x;
-        eLPanel = -17.7f;
+        eLPanel = -14f;
     }
 
     public void adaptScripts(GameObject clickedBtn)
@@ -36,7 +33,11 @@ public class RestartScript : MonoBehaviour
                     }
                     else if(!doFirst)
                     {
-                        adaptObj[0].transform.position = new Vector2(dragScript.StartX, adaptObj[0].transform.position.y);
+                        // TEST: change EndX to startX after testing
+                        adaptObj[0].transform.position = new Vector2(dragScript.EndX, adaptObj[0].transform.position.y);
+                        // TEST: remove after testing
+                        dragScript.adaptTextObjs();
+
                     }
                 }
                 else
@@ -45,7 +46,6 @@ public class RestartScript : MonoBehaviour
                 }
                 break;
             case "Resume-btn":
-                jibStartScript.setJibPos();
                 break;
             case "Menu-btn":
                 break;

@@ -4,30 +4,26 @@ using UnityEngine;
 
 public class LockPanel : MonoBehaviour
 {
-    [HideInInspector]
-    public bool locked = false;
     public DragPanel dragScript;
     public GameObject eLFullBtn;
-    public GameObject unlockIcon;
-    public GameObject lockIcon;
 
     // Update is called once per frame
     public void OnPointerClick()
     {
-        if (!locked)
+        if (gameObject.transform.GetChild(1).gameObject.activeSelf)
         {
             dragScript.enabled = false;
+            gameObject.transform.GetChild(1).gameObject.SetActive(false);
+            gameObject.transform.GetChild(0).gameObject.SetActive(true);
             eLFullBtn.SetActive(false);
-            unlockIcon.SetActive(false);
-            lockIcon.SetActive(true);
-            locked = true;
-        } else if (locked)
+
+        } else if (gameObject.transform.GetChild(0).gameObject.activeSelf)
         {
             dragScript.enabled = true;
+            //eLFullBtn.SetActive(true);
+            gameObject.transform.GetChild(0).gameObject.SetActive(false);
+            gameObject.transform.GetChild(1).gameObject.SetActive(true);
             eLFullBtn.SetActive(true);
-            unlockIcon.SetActive(true);
-            lockIcon.SetActive(false);
-            locked = false;
         }
     }
 }
