@@ -9,7 +9,6 @@ public class FullScreenPanel : MonoBehaviour
     [HideInInspector]
     public bool fullMode = true;
     private DragPanel script;
-    public LockPanel lockScript;
     public GameObject dragPanel;
 
     // Start is called before the first frame update
