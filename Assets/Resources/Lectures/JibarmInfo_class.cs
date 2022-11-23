@@ -30,17 +30,6 @@ public class JibarmInfo_class : MonoBehaviour
 
     }
 
-    //public string adaptString()
-    //{
-    //    string textType;
-    //    string objName;
-    //    int charCount;
-    //    objName = textObj.name;
-    //    charCount = objName.Length; // also containing the "-"
-    //    textType = objName.Remove(charCount);
-    //    Debug.Log($"The string is {textType}");
-    //    return textType;
-    //}
 
 }
 

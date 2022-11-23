@@ -6,7 +6,7 @@ public class DragPanel : MonoBehaviour // EventTrigger: event trigger of UI even
 {
     public bool startDragging;
     private float adaptXWidth;
-    public RectTransform rPanel, eLPanel;
+    public RectTransform rPanel, eLPanel, jibarmInfo;
     private float x1, x2, adjustWidth;
     [HideInInspector]
     public float StartX, EndX;
@@ -35,7 +35,7 @@ public class DragPanel : MonoBehaviour // EventTrigger: event trigger of UI even
             transform.position = new Vector2(Input.mousePosition.x, gameObject.transform.position.y);
 
             //x2 = gameObject.transform.position.x;
-            if (gameObject.GetComponent<RectTransform>().anchoredPosition.x < -103.5f)
+            if (gameObject.GetComponent<RectTransform>().anchoredPosition.x < -100f) // < -103.5
             {
                 // Adapt RPanel and Text objects
                 adaptTextObjs();
@@ -59,14 +59,9 @@ public class DragPanel : MonoBehaviour // EventTrigger: event trigger of UI even
     public void adaptTextObjs()
     {
         //RightPanel
-        adjustWidth = -1 * (gameObject.GetComponent<RectTransform>().anchoredPosition.x + 103.5f);
-
-        // Text objects
-        foreach (var obj in textObjects)
-        {
-            RectTransform objRect = obj.GetComponent<RectTransform>();
-            objRect.sizeDelta = new Vector2((adjustWidth + (objRect.anchoredPosition.x * 1.25f)) - 5f, objRect.rect.height); // -5f to increase the padding
-        }
+        adjustWidth = (-1 * (gameObject.GetComponent<RectTransform>().anchoredPosition.x + 100f)); 
+        rPanel.sizeDelta = new Vector2(adjustWidth, rPanel.rect.height); // -5f to increase the padding
+        jibarmInfo.sizeDelta = new Vector2(rPanel.rect.width, rPanel.rect.height);
     }
 
     public void OnPointerDown()
