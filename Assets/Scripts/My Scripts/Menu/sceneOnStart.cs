@@ -18,7 +18,7 @@ public class SceneOnStart : MonoBehaviour
     void Start()
     {
         OnOffObjects();
-        adjustELPanelWidth();
+        adjustELPanelWidth(); 
         DragPanel_startX = objectsToDisable[4].transform.position.x;
 
     }
@@ -34,9 +34,7 @@ public class SceneOnStart : MonoBehaviour
             panelRect.sizeDelta = newWidth;
             // RightPanel
             RectTransform rPanel = objectsToDisable[4].transform.GetChild(2).GetComponent<RectTransform>();
-            //rPanel.sizeDelta = new Vector2(newWidth.x * adjustRWidth, cHeight);
-            //rPanel.sizeDelta = new Vector2(newWidth.x - 116f, cHeight); // 265 is leftPanel
-            rPanel.sizeDelta = new Vector2(0f, cHeight); // 265 is leftPanel
+            rPanel.sizeDelta = new Vector2(0f, cHeight);
         }
         else
         {

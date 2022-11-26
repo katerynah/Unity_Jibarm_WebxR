@@ -19,14 +19,20 @@ public class JibarmInfo_class : MonoBehaviour
         //{
         //    Debug.Log("Found info: " + info.headline + " " + info.copytext);
         //}
+        if (gameObject.name == (textJSON.name + "-hbox"))
+        {
+            textObj = gameObject.transform.GetChild(0).gameObject;
+            textContent = textObj.GetComponent<TextMeshProUGUI>();
+            textContent.SetText(myJson.jibarmInfo[0].headline);
+        } else if(gameObject.name == (textJSON.name + "-tbox"))
+        {
+            textObj = gameObject.transform.GetChild(0).gameObject;
+            textContent = textObj.GetComponent<TextMeshProUGUI>();
+            textContent.SetText(myJson.jibarmInfo[0].copytext);
+        }
+        
 
-        textObj = gameObject.transform.GetChild(0).gameObject;
-        textContent = textObj.GetComponent<TextMeshProUGUI>();
-        textContent.SetText(myJson.jibarmInfo[0].headline);
-
-        textObj = gameObject.transform.GetChild(1).gameObject;
-        textContent = textObj.GetComponent<TextMeshProUGUI>();
-        textContent.SetText(myJson.jibarmInfo[0].copytext);
+       
 
     }
 
