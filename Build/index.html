@@ -36,7 +36,7 @@
 
       var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
-      var canvasContainer = document.querySelector("#unity-canvas-container");
+      var overlayCanvas = document.querySelector("#unity-canvas-container");
       var loadingBar = document.querySelector("#unity-loading-bar");
       var progressBarFull = document.querySelector("#unity-progress-bar-full");
       var fullscreenButton = document.querySelector("#unity-fullscreen-button");
@@ -58,14 +58,13 @@
             fullscreenButton.onclick = () => {
               unityInstance.SetFullscreen(1);
             };
+            
           }
         }).catch((message) => {
           alert(message);
         });
       };
       document.body.appendChild(script);
-
-
     </script>
   </body>
 </html>

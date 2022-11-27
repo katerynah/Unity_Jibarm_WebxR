@@ -9,7 +9,7 @@ public class SceneOnStart : MonoBehaviour
     [HideInInspector]
     public float DragPanel_startX;
     public Canvas startCanvas;
-    [SerializeField]
+    [HideInInspector]
     public float adjustRWidth;
     private Vector2 newWidth;
 

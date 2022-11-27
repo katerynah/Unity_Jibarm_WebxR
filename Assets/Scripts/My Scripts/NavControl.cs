@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,8 +11,7 @@ public class NavControl : MonoBehaviour
 
     public void toggleNav()
     {
-        var clickedObj = this.gameObject.transform;
-        Debug.Log($"This object {clickedObj.GetChild(0).gameObject.name}");
+        var clickedObj = gameObject.transform;
 
         switch (clickedObj.gameObject.name)
         {

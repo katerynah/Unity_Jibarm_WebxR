@@ -4,10 +4,12 @@ using UnityEngine.EventSystems;
 
 public class DragPanel : MonoBehaviour // EventTrigger: event trigger of UI events 
 {
+    [HideInInspector]
     public bool startDragging;
     private float adaptXWidth;
     public RectTransform rPanel, eLPanel, jibarmInfo;
-    private float x1, x2, adjustWidth;
+    [HideInInspector]
+    public float x1, x2, adjustWidth;
     [HideInInspector]
     public float StartX, EndX;
     [HideInInspector]
@@ -70,14 +72,15 @@ public class DragPanel : MonoBehaviour // EventTrigger: event trigger of UI even
             else
             {
                 x2 = gameObject.GetComponent<RectTransform>().anchoredPosition.x;
-                var deltaX = x2 + x1;
                 // Text Objects
                 obj.gameObject.SetActive(true);
                 obj.GetComponent<RectTransform>().sizeDelta = new Vector2(rPanel.rect.width, rPanel.rect.height);
-                //obj.GetComponent<RectTransform>().anchoredPosition += new Vector2(obj.GetComponent<RectTransform>().anchoredPosition.x , obj.GetComponent<RectTransform>().anchoredPosition.y +  deltaX);
             }
         }
-        
+        var objOff = GameObject.FindGameObjectWithTag("off");
+        // Text Objects
+        objOff.GetComponent<RectTransform>().sizeDelta = new Vector2(rPanel.rect.width, rPanel.rect.height);
+
     }
 
     public void OnPointerDown()

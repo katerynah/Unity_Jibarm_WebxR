@@ -7,6 +7,7 @@ TagManager:
   - jibarm
   - text
   - raycast
+  - off
   layers:
   - Default
   - TransparentFX
