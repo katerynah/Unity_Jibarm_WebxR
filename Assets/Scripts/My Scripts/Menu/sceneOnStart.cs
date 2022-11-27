@@ -18,7 +18,7 @@ public class SceneOnStart : MonoBehaviour
     void Start()
     {
         OnOffObjects();
-        adjustELPanelWidth(); 
+        adjustELPanelWidth();
         DragPanel_startX = objectsToDisable[4].transform.position.x;
 
     }
