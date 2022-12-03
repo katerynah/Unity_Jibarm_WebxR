@@ -7,16 +7,15 @@ public class RestartScript : MonoBehaviour
     // dragPanel, Jib, 
     public List<GameObject> adaptObj = new List<GameObject>();
     
-    float eLPanel;
+    Vector2 dragPose;
     [SerializeField]
     public DragPanel dragScript;
     bool doFirst = true;
-    RectTransform eLRect;
+    float startPose = -14f;
 
     void Start()
     {
-        eLRect = adaptObj[0].transform.GetChild(0).GetComponent<RectTransform>();
-        eLPanel = -14f;
+        dragPose = dragScript.gameObject.GetComponent<RectTransform>().anchoredPosition;
     }
 
     public void adaptScripts(GameObject clickedBtn)
@@ -28,16 +27,12 @@ public class RestartScript : MonoBehaviour
                 {
                     if (doFirst)
                     {
-                        eLRect.anchoredPosition = new Vector2(eLPanel, eLRect.anchoredPosition.y);
+                        adaptObj[0].GetComponent<RectTransform>().anchoredPosition = new Vector2(startPose, adaptObj[0].transform.position.y);
                         doFirst = false;
                     }
                     else if(!doFirst)
                     {
-                        // TEST: change EndX to startX after testing
-                        adaptObj[0].transform.position = new Vector2(dragScript.EndX, adaptObj[0].transform.position.y);
-                        // TEST: remove after testing
-                        dragScript.adaptTextObjs();
-
+                        adaptObj[0].GetComponent<RectTransform>().anchoredPosition = dragPose;
                     }
                 }
                 else
@@ -46,6 +41,13 @@ public class RestartScript : MonoBehaviour
                 }
                 break;
             case "Resume-btn":
+                if (!doFirst)
+                {
+                    // TEST: change EndX to startX after testing
+                    adaptObj[0].transform.position = dragScript.currentPose.position;
+                    // TEST: remove after testing
+                    dragScript.adaptTextObjs();
+                }
                 break;
             case "Menu-btn":
                 break;

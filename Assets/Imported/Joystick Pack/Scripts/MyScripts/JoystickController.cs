@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class JoystickController : MonoBehaviour
 {
-    protected Joystick joystick;
-    protected JoystickButton joybutton;
+    private Joystick joystick;
+    private JoystickButton joybutton;
     float speed = 1f;
 
 

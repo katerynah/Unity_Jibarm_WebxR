@@ -13,6 +13,7 @@ public class DragPanel : MonoBehaviour // EventTrigger: event trigger of UI even
     [HideInInspector]
     public float StartX, EndX;
     [HideInInspector]
+    public Transform currentPose;
     public GameObject[] textObjects;
 
     void Start()
@@ -21,7 +22,7 @@ public class DragPanel : MonoBehaviour // EventTrigger: event trigger of UI even
         StartX = StartX == 0f ? gameObject.transform.position.x : StartX;
         x1 = gameObject.GetComponent<RectTransform>().anchoredPosition.x;
 
-        adaptXWidth = (Screen.width * 5.5f / eLPanel.rect.width);  // 7.5f (here 5.5f bc it fits better) Border panel
+        adaptXWidth = (Screen.width * 12f / eLPanel.rect.width);  // 7.5f (here 5.5f bc it fits better) Border panel
         EndX = (Screen.width - StartX) + adaptXWidth; // adjust width 18
 
         // adapt text width
@@ -31,6 +32,8 @@ public class DragPanel : MonoBehaviour // EventTrigger: event trigger of UI even
 
     void Update()
     {
+        currentPose = gameObject.transform;
+
         // check if dragging is on then change the position of ui element according ti mouse input position
         if (startDragging)
         {
@@ -62,6 +65,7 @@ public class DragPanel : MonoBehaviour // EventTrigger: event trigger of UI even
         //RightPanel
         adjustWidth = (-1 * (gameObject.GetComponent<RectTransform>().anchoredPosition.x + 100f)); 
         rPanel.sizeDelta = new Vector2(adjustWidth, rPanel.rect.height);
+        x2 = gameObject.GetComponent<RectTransform>().anchoredPosition.x;
 
         foreach (var obj in textObjects)
         {
@@ -71,12 +75,12 @@ public class DragPanel : MonoBehaviour // EventTrigger: event trigger of UI even
             }
             else
             {
-                x2 = gameObject.GetComponent<RectTransform>().anchoredPosition.x;
                 // Text Objects
                 obj.gameObject.SetActive(true);
                 obj.GetComponent<RectTransform>().sizeDelta = new Vector2(rPanel.rect.width, rPanel.rect.height);
             }
         }
+
         var objOff = GameObject.FindGameObjectWithTag("off");
         // Text Objects
         objOff.GetComponent<RectTransform>().sizeDelta = new Vector2(rPanel.rect.width, rPanel.rect.height);
