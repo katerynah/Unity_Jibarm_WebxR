@@ -9,14 +9,15 @@ TagManager:
   - raycast
   - off
   - rend-lines
+  - text-on
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - AR
   - Water
   - UI
-  - 
+  - Jib
   - 
   - 
   - 

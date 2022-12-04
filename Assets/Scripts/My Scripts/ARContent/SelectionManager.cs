@@ -8,6 +8,7 @@ public class SelectionManager : MonoBehaviour
     public Camera cam;
     [SerializeField]
     private Material selectionMaterial;
+    public ChangeColor colorScript;
     private Material defaultMaterial;
     public GameObject pointer;
     [SerializeField]
@@ -49,18 +50,7 @@ public class SelectionManager : MonoBehaviour
 
                 if (selectionRenderer != null && selection.gameObject.tag == "raycast")
                 {
-                    defaultMaterial = selectionRenderer.material;
-                    Color32 newColor = selectionMaterial.color;
-                    newColor = new Color32(43, 0, 250, 210);
-                    selectionMaterial.color = newColor;
-                    selectionRenderer.material = selectionMaterial;
-                    Debug.Log($"Hit {hit.collider.gameObject.name}");
-
-
-                    Image pointerImage = pointer.GetComponent<Image>();
-                    Color pColor = pointerImage.color;
-                    pColor = Color.yellow;
-                    pointerImage.color = pColor;
+                    //colorScript.setEvent();
 
                     Debug.Log($"Position clicked: {Input.mousePosition}");
                 }

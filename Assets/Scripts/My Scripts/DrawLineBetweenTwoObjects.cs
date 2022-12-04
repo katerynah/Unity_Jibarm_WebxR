@@ -46,13 +46,7 @@ public class DrawLineBetweenTwoObjects : MonoBehaviour
             } 
             else if (removeLines)
             {
-                var objects = GameObject.FindGameObjectsWithTag("rend-lines");
-                foreach (var obj in objects)
-                {
-                    Destroy(obj);
-                }
-                ready = true;
-                whenEnabled.SetActive(false);
+                removeNotes();
             }
         }
 
@@ -89,4 +83,16 @@ public class DrawLineBetweenTwoObjects : MonoBehaviour
             line.SetPosition(1, secondT.position);
             line.sortingLayerName = "Background";
         }
+
+    public void removeNotes()
+    {
+        var objects = GameObject.FindGameObjectsWithTag("rend-lines");
+        foreach (var obj in objects)
+        {
+            Destroy(obj);
+        }
+        ready = true;
+        whenEnabled.SetActive(false);
+        removeLines = false;
+    }
 }

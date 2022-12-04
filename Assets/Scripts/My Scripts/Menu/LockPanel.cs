@@ -8,6 +8,7 @@ public class LockPanel : MonoBehaviour
     //public GameObject eLFullBtn;
     public GameObject hideObject;
     public List<GameObject> changeObj = new List<GameObject>();
+    public bool inAR = false;
     public enum Modes
     {
         Lock, AR
@@ -34,7 +35,7 @@ public class LockPanel : MonoBehaviour
                     }
                     break;
                 case Modes.AR:
-                    hideObject.SetActive(true);
+                    //hideObject.SetActive(true);
                     gameObject.transform.GetChild(1).gameObject.SetActive(false);
                     gameObject.transform.GetChild(0).gameObject.SetActive(true);
                     dragScript.enabled = false;
@@ -45,6 +46,7 @@ public class LockPanel : MonoBehaviour
                         // Unlock inactive
                         changeObj[1].SetActive(false);
                     }
+                    inAR = true;
                     break;
             }
 
@@ -58,7 +60,8 @@ public class LockPanel : MonoBehaviour
                     //eLFullBtn.SetActive(true);
                     break;
                 case Modes.AR:
-                    hideObject.SetActive(false);
+                    //hideObject.SetActive(false);
+                    inAR = false;
                     break;
             }
             gameObject.transform.GetChild(0).gameObject.SetActive(false);

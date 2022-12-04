@@ -19,33 +19,32 @@ public class ChangeColor : MonoBehaviour
     }
     public Materials UseAs;
 
-    void Start()
-    {
-        for (var i = 0; i < objectMats.Count; i++)
-        {
-            if (objectMats[i].GetComponent<MeshRenderer>() != null)
-            {
-                // add Current Objects
-                allMats.Add(objectMats[i]);
-            }
 
-            ChangeChildLayer(objectMats[i].transform, true);
-        }
-
-        for (var i = 0; i < missMats.Count; i++)
-        {
-            ChangeChildLayer(missMats[i].transform, false);
-        }
-
-        allResetMats = allMats;
-    }
-
-    // Update is called once per frame
-    public void setEvent()
+    public void setEvent(List<GameObject> objectMats, List<GameObject> missMats)
     {
         if (setMat)
         {
+
+            for (var i = 0; i < objectMats.Count; i++)
+            {
+                if (objectMats[i].GetComponent<MeshRenderer>() != null)
+                {
+                    // add Current Objects
+                    allMats.Add(objectMats[i]);
+                }
+
+                ChangeChildLayer(objectMats[i].transform, true);
+            }
+
+            for (var i = 0; i < missMats.Count; i++)
+            {
+                ChangeChildLayer(missMats[i].transform, false);
+            }
+
+            allResetMats = allMats;
+
             chooseMaterial();
+
             for (var i = 0; i < allMats.Count; i++)
             {
                 var selectionRenderer = allMats[i].GetComponent<MeshRenderer>();
