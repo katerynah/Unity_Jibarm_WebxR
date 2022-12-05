@@ -23,6 +23,10 @@ public class AllgemeinLect : MonoBehaviour
     {
         //startRaycasting(false);
         currAR.GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
+        foreach (GameObject note in noteObjects.ToArray())
+        {
+            note.GetComponent<ChangeColor>().setColor(false);
+        }
         currAR.SetActive(false);
         currCtrl.SetActive(false);
     }

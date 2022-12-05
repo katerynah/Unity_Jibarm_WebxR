@@ -16,7 +16,6 @@ public class SelectionManager : MonoBehaviour
     public GameObject currLect, currAR, currCtrl;
     public AllgemeinLect allgemeinScript;
     public string currLectName;
-    public bool removeAR = false;
     int add;
 
     public void selectLecture(int assignARContent)
