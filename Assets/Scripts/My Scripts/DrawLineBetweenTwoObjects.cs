@@ -7,7 +7,6 @@ public class DrawLineBetweenTwoObjects : MonoBehaviour
     GameObject lineRend;
     GameObject linePrefab;
     [SerializeField]
-    public GameObject whenEnabled;  
     LineRenderer line;
     bool ready = true;
     public bool removeLines = false;
@@ -29,36 +28,28 @@ public class DrawLineBetweenTwoObjects : MonoBehaviour
         }
     }
 
-        public List<RendererLines> rendererList = new List<RendererLines>();
+    public List<RendererLines> rendererList = new List<RendererLines>();
 
-        void Start()
-        {
-            vec = Vector3.zero;
-            quat = Quaternion.identity;
+    void Start()
+    {
+        vec = Vector3.zero;
+        quat = Quaternion.identity;
 
-        }
+    }
 
-        void Update()
-        {
-            if (whenEnabled.activeSelf == true && !removeLines && ready)
-            {
-                setLine();
-            } 
-            else if (removeLines)
-            {
-                removeNotes();
-            }
-        }
-
-        void setLine()
+    public void setLines()
+    {
+        if (ready == true)
         {
             for (int i = 0; i < rendererList.Count; i++)
             {
+                // Note Object and its first child -> Line Renderer for transform position
                 lineRendOffset = rendererList[i].NoteObj.transform.GetChild(0).gameObject;
 
                 linePrefab = Resources.Load<GameObject>("Templates/LineRend_temp");
 
                 lineRend = Instantiate(linePrefab, vec, quat);
+
                 line = lineRend.GetComponent<LineRenderer>();
 
                 // Set the position count of the linerenderer to two
@@ -71,18 +62,18 @@ public class DrawLineBetweenTwoObjects : MonoBehaviour
                 Transform second = rendererList[i].RefObj.transform;
                 DrawLineBetweenObjects(first, second);
             }
-
             ready = false;
-
         }
+        
+    }
 
-        void DrawLineBetweenObjects(Transform firstT, Transform secondT)
-        {
-            // Set the positions of the LineRenderer
-            line.SetPosition(0, firstT.position);
-            line.SetPosition(1, secondT.position);
-            line.sortingLayerName = "Background";
-        }
+    void DrawLineBetweenObjects(Transform firstT, Transform secondT)
+    {
+        // Set the positions of the LineRenderer
+        line.SetPosition(0, firstT.position);
+        line.SetPosition(1, secondT.position);
+        line.sortingLayerName = "Background";
+    }
 
     public void removeNotes()
     {
@@ -92,7 +83,6 @@ public class DrawLineBetweenTwoObjects : MonoBehaviour
             Destroy(obj);
         }
         ready = true;
-        whenEnabled.SetActive(false);
         removeLines = false;
     }
 }

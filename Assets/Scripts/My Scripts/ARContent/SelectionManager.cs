@@ -5,57 +5,114 @@ using UnityEngine.UI;
 
 public class SelectionManager : MonoBehaviour
 {
-    public Camera cam;
-    [SerializeField]
-    private Material selectionMaterial;
-    public ChangeColor colorScript;
-    private Material defaultMaterial;
-    public GameObject pointer;
-    [SerializeField]
-    private GameObject jibarm;
-    //private LayerMask Selectable;
+    //public enum Lectures
+    //{
+    //    Allgemein, Einschalt, Sicherheit, Bremsen, Verzerrung,
+    //    Tracking, Homing, Diagnose, Resposition, Koordsys, Landmarks, Laser, Vermessen, Verschieben, Nivellieren
+    //}
+    // public Lectures UseAs;
 
-    void Start()
+    [HideInInspector]
+    public GameObject currLect, currAR, currCtrl;
+    public AllgemeinLect allgemeinScript;
+    public string currLectName;
+    public bool removeAR = false;
+    int add;
+
+    public void selectLecture(int assignARContent)
     {
-        //Screen.lockCursor = true;
+        add = assignARContent;
+        // Find Lecture Section
+        currLect = GameObject.FindGameObjectWithTag("text-on") != null ? GameObject.FindGameObjectWithTag("text-on") : GameObject.FindGameObjectWithTag("off");
+        var btnName = currLect.name;
+        var adaptString = btnName.Replace("-tbox", "");
+        currLectName = adaptString;
+
+        // Find AR Section for this Lecture
+        chooseAR();
+
+        // Find Control Section for this Lecture
+        chooseControl();
+
+        // direct to Section script
+        switchAR();
     }
 
-    private Transform _selection;
 
-    void Update()
+    public void switchAR()
     {
-        if (jibarm.activeSelf)
+        switch (currLectName)
         {
-            //Screen.lockCursor = true;
-
-            if (_selection != null && _selection.gameObject.tag == "raycast")
-            {
-                //var selectionRenderer = _selection.GetComponent<Renderer>();
-                //selectionRenderer.material = defaultMaterial;
-                //var pointerRenderer = pointer.GetComponent<Renderer>();
-                Image pointerImage = pointer.GetComponent<Image>();
-                Color pColor = pointerImage.color;
-                pColor = Color.blue;
-                pointerImage.color = pColor;
-                _selection = null;
-            }
-
-            var ray = cam.ScreenPointToRay(Input.mousePosition);
-            //cam.transform.position, cam.transform.forward
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
-            {
-                var selection = hit.transform;
-                var selectionRenderer = selection.GetComponent<Renderer>();
-
-                if (selectionRenderer != null && selection.gameObject.tag == "raycast")
+            case "Allgemein":
+                // go to Section Script and give important infos
+                if (add == 0)
                 {
-                    //colorScript.setEvent();
-
-                    Debug.Log($"Position clicked: {Input.mousePosition}");
+                    allgemeinScript.addContent(currAR, currCtrl);
+                } else if (add == 1)
+                {
+                    allgemeinScript.removeContent(currAR, currCtrl);
+                } else
+                {
+                    Debug.LogError("Check SelectionManager.cs SwitchAR addARContent-values (should be 0 or 1)");
                 }
-                _selection = selection;
+                //Raycast
+                //control 
+                break;
+            case "Einschalt":
+                break;
+            case "Sicherheit":
+                break;
+            case "Bremsen":
+                break;
+            case "Verzerrung":
+                break;
+            case "Tracking":
+                break;
+            case "Homing":
+                break;
+            case "Diagnose":
+                break;
+            case "Resposition":
+                break;
+            case "Koordsys":
+                break;
+            case "Landmarks":
+                break;
+            case "Laser":
+                break;
+            case "Vermessen":
+                break;
+            case "Verschieben":
+                break;
+            case "Nivellieren":
+                break;
+        }
+    }
+
+    public void chooseAR()
+    {
+        var name = currLectName.Insert(currLectName.Length, "-ar");
+        var objects = Resources.FindObjectsOfTypeAll(typeof(GameObject));
+        foreach (GameObject obj in objects)
+        {
+            if (obj.name == name)
+            {
+                currAR = obj;
             }
         }
     }
+
+    public void chooseControl()
+    {
+        var name = currLectName.Insert(currLectName.Length, "-ctrl");
+        var objects = Resources.FindObjectsOfTypeAll(typeof(GameObject));
+        foreach (GameObject obj in objects)
+        {
+            if (obj.name == name)
+            {
+                currCtrl = obj;
+            }
+        }
+    }
+
 }

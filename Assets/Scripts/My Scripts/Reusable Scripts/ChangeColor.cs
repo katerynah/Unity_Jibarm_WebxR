@@ -12,7 +12,6 @@ public class ChangeColor : MonoBehaviour
     private Material selectionMaterial;
     private List<Material> defaultMaterial = new List<Material>();
     Material newMat;
-    bool setMat = true;
     public enum Materials
     {
         Purple, Green, Blue, DWhite
@@ -20,9 +19,10 @@ public class ChangeColor : MonoBehaviour
     public Materials UseAs;
 
 
-    public void setEvent(List<GameObject> objectMats, List<GameObject> missMats)
+    public void setColor(bool setMat)
     {
-        if (setMat)
+        // Set color
+        if (setMat == true)
         {
 
             for (var i = 0; i < objectMats.Count; i++)
@@ -53,8 +53,8 @@ public class ChangeColor : MonoBehaviour
                 selectionRenderer.material = selectionMaterial;
             }
             setMat = false;
-        }
-        else if (!setMat)
+        } // Remove color
+        else if (setMat == false)
         {
             for (var i = 0; i < allResetMats.Count; i++)
             {
@@ -62,7 +62,6 @@ public class ChangeColor : MonoBehaviour
                 selectionMaterial = defaultMaterial[i];
                 selectionRenderer.material = selectionMaterial;
             }
-            setMat = true;
         }
 
     }

@@ -35,7 +35,7 @@ public class LockPanel : MonoBehaviour
                     }
                     break;
                 case Modes.AR:
-                    //hideObject.SetActive(true);
+                    hideObject.SetActive(true);
                     gameObject.transform.GetChild(1).gameObject.SetActive(false);
                     gameObject.transform.GetChild(0).gameObject.SetActive(true);
                     dragScript.enabled = false;
@@ -60,7 +60,7 @@ public class LockPanel : MonoBehaviour
                     //eLFullBtn.SetActive(true);
                     break;
                 case Modes.AR:
-                    //hideObject.SetActive(false);
+                    hideObject.SetActive(false);
                     inAR = false;
                     break;
             }
