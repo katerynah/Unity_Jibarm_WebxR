@@ -31,7 +31,7 @@ public class SmartButton : MonoBehaviour
 		{
 			Debug.LogWarning("Warning! Smart button might not work without a collider or collider2D attached to the GameObject");
 		}
-		restartScr = GameObject.Find("Methods").GetComponent<RestartScript>();
+		restartScr = GameObject.Find("StartMethods").GetComponent<RestartScript>();
 	}
 
 

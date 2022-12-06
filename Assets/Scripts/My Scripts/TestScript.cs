@@ -5,26 +5,28 @@ using UnityEngine;
 
 public class TestScript : MonoBehaviour
 {
-    public ChangeColor checkObject;
 
     // Start is called before the first frame update
-    void OnMouseDown()
-    {
-        testFunction();
-    }
-
-    //void OnTriggerEnter(Collider other)
+    //void OnMouseDown()
     //{
-    //    if (other.gameObject.tag == "raycast")
-    //    {
-    //        //checkObject.setEvent();
-    //        Debug.Log($"Entered {other.gameObject.name}");
-
-    //    }
+    //    testFunction();
     //}
 
-    public void testFunction()
+    //void Update()
+    //{
+
+    //}
+
+    void OnTriggerEnter(Collider other)
     {
-        Debug.Log($"Test: {gameObject.name} presses");
+        if (other.gameObject.tag == "raycast")
+        {
+            Debug.Log($"Entered {other.gameObject.name}");
+        }
     }
+
+    //public void testFunction()
+    //{
+    //    Debug.Log($"Test: {gameObject.name} presses");
+    //}
 }

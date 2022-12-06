@@ -10,7 +10,8 @@ public class RaycastingAR : MonoBehaviour
     public bool raycasting = false;
 
     // Lactures
-    AllgemeinLect allgemeinScript;
+    //AllgemeinLect allgemeinScript;
+    public StahlseilenWeg seilenScript;
 
     // Update is called once per frame
     void Update()
@@ -38,50 +39,49 @@ public class RaycastingAR : MonoBehaviour
             {
                 // TEST
                 Debug.Log($"Raycast started");
-                var selection = hit.transform;
-                var selectionRenderer = selection.GetComponent<Renderer>();
+                var selection = hit.collider;
 
                 // When colliding with object
-                if (selectionRenderer != null && selection.gameObject.tag == "raycast")
+                if (selection != null && selection.gameObject.tag == "raycast")
                 {
                     Debug.Log($"Current Lecture name {selectScript.currLectName}");
                     switch (selectScript.currLectName)
                     {
-                        case "Allgemein":
-                            // No
+                        //case "Allgemein":
+                        //    break;
+                        case "Einschalt":
+                            seilenScript.seilenTouch(selection.gameObject);
                             break;
-                        //case "Einschalt":
-                        //    break;
-                        //case "Sicherheit":
-                        //    break;
-                        //case "Bremsen":
-                        //    break;
-                        //case "Verzerrung":
-                        //    break;
-                        //case "Tracking":
-                        //    break;
-                        //case "Homing":
-                        //    break;
-                        //case "Diagnose":
-                        //    break;
-                        //case "Resposition":
-                        //    break;
-                        //case "Koordsys":
-                        //    break;
-                        //case "Landmarks":
-                        //    break;
-                        //case "Laser":
-                        //    break;
-                        //case "Vermessen":
-                        //    break;
-                        //case "Verschieben":
-                        //    break;
-                        //case "Nivellieren":
-                        //    break;
+                            //case "Sicherheit":
+                            //    break;
+                            //case "Bremsen":
+                            //    break;
+                            //case "Verzerrung":
+                            //    break;
+                            //case "Tracking":
+                            //    break;
+                            //case "Homing":
+                            //    break;
+                            //case "Diagnose":
+                            //    break;
+                            //case "Resposition":
+                            //    break;
+                            //case "Koordsys":
+                            //    break;
+                            //case "Landmarks":
+                            //    break;
+                            //case "Laser":
+                            //    break;
+                            //case "Vermessen":
+                            //    break;
+                            //case "Verschieben":
+                            //    break;
+                            //case "Nivellieren":
+                            //    break;
                     }
 
                 }
-                _selection = selection;
+                //_selection = selection;
             }
         }
     }

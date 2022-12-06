@@ -15,6 +15,7 @@ public class SelectionManager : MonoBehaviour
     [HideInInspector]
     public GameObject currLect, currAR, currCtrl;
     public AllgemeinLect allgemeinScript;
+    public EinschaltLect einschaltScript;
     public string currLectName;
     int add;
 
@@ -54,20 +55,44 @@ public class SelectionManager : MonoBehaviour
                 {
                     Debug.LogError("Check SelectionManager.cs SwitchAR addARContent-values (should be 0 or 1)");
                 }
-                //Raycast
-                //control 
                 break;
             case "Einschalt":
+                if (add == 0)
+                {
+                    einschaltScript.addContent(currAR, currCtrl);
+                }
+                else if (add == 1)
+                {
+                    einschaltScript.removeContent(currAR, currCtrl);
+                }
+                else
+                {
+                    Debug.LogError("Check SelectionManager.cs SwitchAR addARContent-values (should be 0 or 1)");
+                }
+                // Task Window in Control View
+                // Check-Title -> Task description and arrows to change task
+                // Firework in the end
+                // 1. StahlSeilen 1, 2
+                // 2. Kamera drehen
+                // 3. WAK ?
+                // 4. When pause Screen off ?
                 break;
             case "Sicherheit":
+                // 1. Animation with some guy who isn't allowed
+                // 2. 4 Points auch Jacks sammeln
+                // 3. 
                 break;
             case "Bremsen":
+                //
+                //
                 break;
             case "Verzerrung":
                 break;
             case "Tracking":
                 break;
             case "Homing":
+                // Dreiecks 1, 2, 3
+                //
                 break;
             case "Diagnose":
                 break;

@@ -6,7 +6,6 @@ public class ChangeARContent : MonoBehaviour
 {
     public SelectionManager selectLectScript;
     public LockPanel enableARScript;
-    DrawLineBetweenTwoObjects lineScript;
 
     void Update()
     {   

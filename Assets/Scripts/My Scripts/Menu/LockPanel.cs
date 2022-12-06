@@ -38,14 +38,14 @@ public class LockPanel : MonoBehaviour
                     hideObject.SetActive(true);
                     gameObject.transform.GetChild(1).gameObject.SetActive(false);
                     gameObject.transform.GetChild(0).gameObject.SetActive(true);
-                    dragScript.enabled = false;
-                    if (changeObj[0].activeSelf == false)
-                    {
-                        // Lock active
-                        changeObj[0].SetActive(true);
-                        // Unlock inactive
-                        changeObj[1].SetActive(false);
-                    }
+                    //dragScript.enabled = false;
+                    //if (changeObj[0].activeSelf == false)
+                    //{
+                    //    // Lock active
+                    //    changeObj[0].SetActive(true);
+                    //    // Unlock inactive
+                    //    changeObj[1].SetActive(false);
+                    //}
                     inAR = true;
                     break;
             }
