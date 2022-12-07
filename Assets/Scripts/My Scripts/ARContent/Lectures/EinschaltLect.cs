@@ -6,7 +6,6 @@ public class EinschaltLect : MonoBehaviour
 {
     public List<GameObject> taskObjects = new List<GameObject>();
     public List<GameObject> checkObjects = new List<GameObject>();
-
     public GameObject controlNav;
 
     public void addContent(GameObject currAR, GameObject currCtrl)
@@ -15,7 +14,9 @@ public class EinschaltLect : MonoBehaviour
         currAR.SetActive(true);
         currCtrl.SetActive(true);
         controlNav.SetActive(true);
-       // ControlNav.cs OnMouseDown for Arrows and task change
+        // ControlNav.cs OnMouseDown for Arrows and task change
+        // OntriggerEnter from StahlseilenWeg
+        // Raycast with Collider from StahlseilenWeg
     }
 
     public void removeContent(GameObject currAR, GameObject currCtrl)
@@ -26,4 +27,5 @@ public class EinschaltLect : MonoBehaviour
         controlNav.SetActive(false);
 
     }
+
 }

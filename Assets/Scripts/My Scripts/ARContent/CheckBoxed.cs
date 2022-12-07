@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class CheckBoxed : MonoBehaviour
 {
-    public GameObject check1, check2;
+    public GameObject[] checkmarks;
     public EinschaltLect einschaltScript;
 
-    public void checkTheBox(string whichWire)
+    public void checkTheBox(string checkString)
     {
-        if (whichWire == "left")
+        if (checkString == "left")
         {
-            check1.SetActive(true);
-        } else if (whichWire == "right")
+            checkmarks[0].SetActive(true);
+        } else if (checkString == "right")
         {
-            check2.SetActive(true);
+            checkmarks[1].SetActive(true);
+        }else if (checkString == "camera-pos")
+        {
+            checkmarks[2].SetActive(true);
+        } else if (checkString == "switch-on")
+        {
+            checkmarks[3].SetActive(true);
         }
     }
 }

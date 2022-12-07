@@ -7,7 +7,7 @@ public class ControlNav : MonoBehaviour
     public EinschaltLect einschaltScript;
     public GameObject ArrowL, ArrowR;
 
-    int i = 0;
+    public int taskIndex = 0;
 
     void Start()
     {
@@ -17,38 +17,45 @@ public class ControlNav : MonoBehaviour
 
     public void setArrowL()
     {
-        if (i > 0 && i < einschaltScript.checkObjects.Count - 1)
+        if (taskIndex > 0 && taskIndex < einschaltScript.checkObjects.Count - 1)
         {
-            einschaltScript.checkObjects[i - 1].SetActive(true);
-            einschaltScript.checkObjects[i].SetActive(false);
+            einschaltScript.checkObjects[taskIndex - 1].SetActive(true);
+            einschaltScript.taskObjects[taskIndex - 1].SetActive(true);
+            einschaltScript.checkObjects[taskIndex].SetActive(false);
+            einschaltScript.taskObjects[taskIndex].SetActive(false);
             ArrowL.SetActive(false);
-            i--;
+            taskIndex--;
         }
-        else if (i == einschaltScript.checkObjects.Count - 1)
+        else if (taskIndex == einschaltScript.checkObjects.Count - 1)
         {
-            einschaltScript.checkObjects[i - 1].SetActive(true);
-            einschaltScript.checkObjects[i].SetActive(false);
+            einschaltScript.checkObjects[taskIndex - 1].SetActive(true);
+            einschaltScript.taskObjects[taskIndex - 1].SetActive(true);
+            einschaltScript.checkObjects[taskIndex].SetActive(false);
+            einschaltScript.taskObjects[taskIndex].SetActive(false);
             ArrowR.SetActive(true);
-            i--;
+            taskIndex--;
         }
     }
 
     public void setArrowR()
     {
-        if (i > 0 && i < einschaltScript.checkObjects.Count - 1)
+        if (taskIndex > 0 && taskIndex < einschaltScript.checkObjects.Count - 1)
         {
-            einschaltScript.checkObjects[i + 1].SetActive(true);
-            einschaltScript.checkObjects[i].SetActive(false);
+            einschaltScript.checkObjects[taskIndex + 1].SetActive(true);
+            einschaltScript.taskObjects[taskIndex + 1].SetActive(true);
+            einschaltScript.checkObjects[taskIndex].SetActive(false);
+            einschaltScript.taskObjects[taskIndex].SetActive(false);
             ArrowR.SetActive(false);
-            i++;
+            taskIndex++;
         }
-        else if (i == 0)
+        else if (taskIndex == 0)
         {
-            einschaltScript.checkObjects[i + 1].SetActive(true);
-            einschaltScript.checkObjects[i].SetActive(false);
+            einschaltScript.checkObjects[taskIndex + 1].SetActive(true);
+            einschaltScript.taskObjects[taskIndex + 1].SetActive(true);
+            einschaltScript.checkObjects[taskIndex].SetActive(false);
+            einschaltScript.taskObjects[taskIndex].SetActive(false);
             ArrowL.SetActive(true);
-            Debug.Log($"Arrow L to enable");
-            i++;
+            taskIndex++;
         }
     }
 }
