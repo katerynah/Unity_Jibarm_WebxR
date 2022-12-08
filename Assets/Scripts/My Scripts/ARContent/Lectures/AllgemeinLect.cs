@@ -11,7 +11,23 @@ public class AllgemeinLect : MonoBehaviour
 
     public bool raycasting = false;
 
-    public void addContent(GameObject currAR, GameObject currCtrl)
+    public void setLecureValues(int add, GameObject currAR, GameObject currCtrl)
+    {
+        if (add == 0)
+        {
+            addContent(currAR, currCtrl);
+        }
+        else if (add == 1)
+        {
+            removeContent(currAR, currCtrl);
+        }
+        else
+        {
+            Debug.LogError("Check SelectionManager.cs SwitchAR addARContent-values (should be 0 or 1)");
+        }
+    }
+
+    void addContent(GameObject currAR, GameObject currCtrl)
     {
         // TO DO: desc on control panel
         currAR.SetActive(true);
@@ -19,11 +35,12 @@ public class AllgemeinLect : MonoBehaviour
         currCtrl.SetActive(true);
     }
 
-    public void removeContent(GameObject currAR, GameObject currCtrl)
+    void removeContent(GameObject currAR, GameObject currCtrl)
     {
         //startRaycasting(false);
         currAR.GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
-        foreach (GameObject note in noteObjects.ToArray())
+        disableDesc();
+        foreach (var note in noteObjects.ToArray())
         {
             note.GetComponent<ChangeColor>().setColor(false);
         }
@@ -31,5 +48,18 @@ public class AllgemeinLect : MonoBehaviour
         currCtrl.SetActive(false);
     }
 
+
+    public void disableDesc()
+    {
+        foreach (GameObject desc in descObjects.ToArray())
+        {
+            desc.SetActive(false);
+        }
+
+        foreach (GameObject note in noteObjects.ToArray())
+        {
+            note.GetComponent<ChangeColor>().setColor(false);
+        }
+    }
 
 }

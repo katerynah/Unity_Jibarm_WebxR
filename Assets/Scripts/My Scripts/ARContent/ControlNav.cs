@@ -5,9 +5,15 @@ using UnityEngine;
 public class ControlNav : MonoBehaviour
 {
     public EinschaltLect einschaltScript;
+    public SicherheitLect sicherheitScript;
+    public SicherheitTasks sicherheitTaskScript;
+    public SelectionManager selectScript;
     public GameObject ArrowL, ArrowR;
+    List<GameObject> currDescList = new List<GameObject>();
+    List<GameObject> currTaskList = new List<GameObject>();
 
-    public int taskIndex = 0;
+
+    public int currIndex = 0;
 
     void Start()
     {
@@ -15,48 +21,73 @@ public class ControlNav : MonoBehaviour
         ArrowL.SetActive(false);
     }
 
+    public void setObjectList()
+    {
+        switch (selectScript.currLectName)
+        {
+            case "Einschalt":
+                currDescList = einschaltScript.checkObjects;
+                currTaskList = einschaltScript.taskObjects;
+                break;
+            case "Sicherheit":
+                currDescList = sicherheitScript.descObjects;
+                currTaskList = sicherheitScript.taskObjects;
+                break;
+        }
+    }
+
     public void setArrowL()
     {
-        if (taskIndex > 0 && taskIndex < einschaltScript.checkObjects.Count - 1)
+        if (currIndex > 0 && currIndex < currDescList.Count - 1)
         {
-            einschaltScript.checkObjects[taskIndex - 1].SetActive(true);
-            einschaltScript.taskObjects[taskIndex - 1].SetActive(true);
-            einschaltScript.checkObjects[taskIndex].SetActive(false);
-            einschaltScript.taskObjects[taskIndex].SetActive(false);
+            currDescList[currIndex - 1].SetActive(true);
+            currTaskList[currIndex - 1].SetActive(true);
+            currDescList[currIndex].SetActive(false);
+            currTaskList[currIndex].SetActive(false);
             ArrowL.SetActive(false);
-            taskIndex--;
+            currIndex--;
         }
-        else if (taskIndex == einschaltScript.checkObjects.Count - 1)
+        else if (currIndex == currDescList.Count - 1)
         {
-            einschaltScript.checkObjects[taskIndex - 1].SetActive(true);
-            einschaltScript.taskObjects[taskIndex - 1].SetActive(true);
-            einschaltScript.checkObjects[taskIndex].SetActive(false);
-            einschaltScript.taskObjects[taskIndex].SetActive(false);
+            currDescList[currIndex - 1].SetActive(true);
+            currTaskList[currIndex - 1].SetActive(true);
+            currDescList[currIndex].SetActive(false);
+            currTaskList[currIndex].SetActive(false);
             ArrowR.SetActive(true);
-            taskIndex--;
+            if (currDescList.Count == 2)
+            {
+                ArrowL.SetActive(false);
+            }
+            currIndex--;
         }
+        sicherheitTaskScript.checkCurrTask = true;
     }
 
     public void setArrowR()
     {
-        if (taskIndex > 0 && taskIndex < einschaltScript.checkObjects.Count - 1)
+        if (currIndex > 0 && currIndex < currDescList.Count - 1)
         {
-            einschaltScript.checkObjects[taskIndex + 1].SetActive(true);
-            einschaltScript.taskObjects[taskIndex + 1].SetActive(true);
-            einschaltScript.checkObjects[taskIndex].SetActive(false);
-            einschaltScript.taskObjects[taskIndex].SetActive(false);
+            currDescList[currIndex + 1].SetActive(true);
+            currTaskList[currIndex + 1].SetActive(true);
+            currDescList[currIndex].SetActive(false);
+            currTaskList[currIndex].SetActive(false);
             ArrowR.SetActive(false);
-            taskIndex++;
+            currIndex++;
         }
-        else if (taskIndex == 0)
+        else if (currIndex == 0)
         {
-            einschaltScript.checkObjects[taskIndex + 1].SetActive(true);
-            einschaltScript.taskObjects[taskIndex + 1].SetActive(true);
-            einschaltScript.checkObjects[taskIndex].SetActive(false);
-            einschaltScript.taskObjects[taskIndex].SetActive(false);
+            currDescList[currIndex + 1].SetActive(true);
+            currTaskList[currIndex + 1].SetActive(true);
+            currDescList[currIndex].SetActive(false);
+            currTaskList[currIndex].SetActive(false);
             ArrowL.SetActive(true);
-            taskIndex++;
+            if (currDescList.Count == 2)
+            {
+                ArrowR.SetActive(false);
+            }
+            currIndex++;
         }
+        sicherheitTaskScript.checkCurrTask = true;
     }
 }
 

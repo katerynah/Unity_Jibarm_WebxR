@@ -13,12 +13,6 @@ public class FollowCurve : MonoBehaviour
     public Vector3 objEuler;
     Transform localTrans;
 
-    public enum Rotations
-    {
-        RotateX, RotateY, RotateZ
-    }
-    public Rotations UseAs;
-
     void Start()
     {
         localTrans = objToRotate.GetComponent<Transform>();
@@ -34,22 +28,9 @@ public class FollowCurve : MonoBehaviour
             // Check if the mouse has moved since the last frame
             if (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0)
             {
-                switch (UseAs)
-                {
-                    case Rotations.RotateX:
-                        objToRotate.transform.Rotate(Input.GetAxis("Mouse X") / speed, 0f, 0f);
-                        break;
-                    case Rotations.RotateY:
-                        // Rotation limit set so it moves between -0.35 and 0.1
-                        objToRotate.transform.Rotate(0f, 0f, Input.GetAxis("Mouse X") / -speed);
-                        limitRot();
-                        //tr.localEulerAngles = new Vector3(tr.localEulerAngles.x, tr.localEulerAngles.y, Mathf.Clamp(tr.localEulerAngles.z, -30, tr.localEulerAngles.z));
-                        break;
-                    case Rotations.RotateZ:
-                        objToRotate.transform.Rotate(0f, Input.GetAxis("Mouse X") / speed, 0f);
-                        break;
-                }
-                Debug.Log($"Script on {gameObject.name}");
+                // Rotation limit set so it moves between -0.35 and 0.1
+                objToRotate.transform.Rotate(0f, 0f, Input.GetAxis("Mouse X") / -speed);
+                limitRot();
             }
 
             // Check if the left mouse button was released this frame

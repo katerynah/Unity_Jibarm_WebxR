@@ -10,7 +10,7 @@ public class RaycastingAR : MonoBehaviour
     public bool raycasting = false;
 
     // Lactures
-    public StahlseilenWeg seilenScript;
+    public EinschaltTasks seilenScript;
 
     // Update is called once per frame
     void Update()

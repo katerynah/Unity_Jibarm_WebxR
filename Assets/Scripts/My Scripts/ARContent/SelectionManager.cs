@@ -16,6 +16,7 @@ public class SelectionManager : MonoBehaviour
     public GameObject currLect, currAR, currCtrl;
     public AllgemeinLect allgemeinScript;
     public EinschaltLect einschaltScript;
+    public SicherheitLect sicherheitScript;
     public string currLectName;
     int add;
 
@@ -45,42 +46,15 @@ public class SelectionManager : MonoBehaviour
         {
             case "Allgemein":
                 // go to Section Script and give important infos
-                if (add == 0)
-                {
-                    allgemeinScript.addContent(currAR, currCtrl);
-                } else if (add == 1)
-                {
-                    allgemeinScript.removeContent(currAR, currCtrl);
-                } else
-                {
-                    Debug.LogError("Check SelectionManager.cs SwitchAR addARContent-values (should be 0 or 1)");
-                }
+                allgemeinScript.setLecureValues(add, currAR, currCtrl);
                 break;
             case "Einschalt":
-                if (add == 0)
-                {
-                    einschaltScript.addContent(currAR, currCtrl);
-                }
-                else if (add == 1)
-                {
-                    einschaltScript.removeContent(currAR, currCtrl);
-                }
-                else
-                {
-                    Debug.LogError("Check SelectionManager.cs SwitchAR addARContent-values (should be 0 or 1)");
-                }
-                // Task Window in Control View
-                // Check-Title -> Task description and arrows to change task
-                // Firework in the end
-                // 1. StahlSeilen 1, 2
-                // 2. Kamera drehen
-                // 3. WAK ?
-                // 4. When pause Screen off ?
+                einschaltScript.setLecureValues(add, currAR, currCtrl);
+                // 4. WAK ?
                 break;
             case "Sicherheit":
-                // 1. Animation with some guy who isn't allowed
-                // 2. 4 Points auch Jacks sammeln
-                // 3. 
+                // Drag rotation 
+                sicherheitScript.setLecureValues(add, currAR, currCtrl);
                 break;
             case "Bremsen":
                 //

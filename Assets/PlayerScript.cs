@@ -15,6 +15,4 @@ public class PlayerScript : MonoBehaviour
             player.transform.position = ARCam.transform.position + new Vector3(0, -0.44f, 0);
         }
     }
-        
-
 }

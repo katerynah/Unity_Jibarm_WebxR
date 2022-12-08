@@ -6,12 +6,13 @@ public class LockPanel : MonoBehaviour
 {
     public DragPanel dragScript;
     //public GameObject eLFullBtn;
-    public GameObject hideObject;
     public List<GameObject> changeObj = new List<GameObject>();
     public bool inAR = false;
+    bool withArrows = false;
+    // Lectures without Arrows
     public enum Modes
     {
-        Lock, AR
+        Lock, AR, ControlView
     }
     public Modes UseAs;
 
@@ -25,28 +26,26 @@ public class LockPanel : MonoBehaviour
             {
                 case Modes.Lock:
                     dragScript.enabled = true;
-                    //eLFullBtn.SetActive(false);
-
-                    // check if Book is inaactive
-                    if (!changeObj[0].activeSelf)
-                    {
-                        gameObject.transform.GetChild(1).gameObject.SetActive(false);
-                        gameObject.transform.GetChild(0).gameObject.SetActive(true);
-                    }
+                    this.changeObj[1].SetActive(false);
+                    this.changeObj[0].SetActive(true);
                     break;
                 case Modes.AR:
-                    hideObject.SetActive(true);
-                    gameObject.transform.GetChild(1).gameObject.SetActive(false);
-                    gameObject.transform.GetChild(0).gameObject.SetActive(true);
-                    //dragScript.enabled = false;
-                    //if (changeObj[0].activeSelf == false)
-                    //{
-                    //    // Lock active
-                    //    changeObj[0].SetActive(true);
-                    //    // Unlock inactive
-                    //    changeObj[1].SetActive(false);
-                    //}
+                    this.changeObj[1].SetActive(false);
+                    this.changeObj[0].SetActive(true);
+                    this.changeObj[2].SetActive(true);
+                    this.changeObj[3].SetActive(true);
+                    this.changeObj[4].SetActive(true);
                     inAR = true;
+                    break;
+                case Modes.ControlView:
+                    this.changeObj[1].SetActive(false);
+                    this.changeObj[0].SetActive(true);
+                    this.changeObj[2].SetActive(false);
+                    if (this.changeObj[3].activeSelf == true)
+                    {
+                        this.changeObj[3].SetActive(false);
+                        withArrows = true;
+                    }
                     break;
             }
 
@@ -57,15 +56,31 @@ public class LockPanel : MonoBehaviour
             {
                 case Modes.Lock:
                     dragScript.enabled = false;
+                    this.changeObj[0].SetActive(false);
+                    this.changeObj[1].SetActive(true);
                     //eLFullBtn.SetActive(true);
                     break;
                 case Modes.AR:
-                    hideObject.SetActive(false);
+                    this.changeObj[0].SetActive(false);
+                    this.changeObj[1].SetActive(true);
+                    this.changeObj[2].SetActive(false);
+                    this.changeObj[3].SetActive(false);
+                    this.changeObj[4].SetActive(false);
                     inAR = false;
                     break;
+                case Modes.ControlView:
+                    this.changeObj[0].SetActive(false);
+                    this.changeObj[1].SetActive(true);
+                    this.changeObj[2].SetActive(true);
+                    if (withArrows == true)
+                    {
+                        this.changeObj[3].SetActive(true);
+                        withArrows = false;
+                    }
+                    break;
             }
-            gameObject.transform.GetChild(0).gameObject.SetActive(false);
-            gameObject.transform.GetChild(1).gameObject.SetActive(true);
+
         }
     }
+
 }

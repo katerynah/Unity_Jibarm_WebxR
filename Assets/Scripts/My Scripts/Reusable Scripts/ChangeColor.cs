@@ -14,7 +14,7 @@ public class ChangeColor : MonoBehaviour
     Material newMat;
     public enum Materials
     {
-        Purple, Green, Blue, DWhite
+        Purple, Green, Blue, DWhite, Red
     }
     public Materials UseAs;
 
@@ -39,6 +39,7 @@ public class ChangeColor : MonoBehaviour
             for (var i = 0; i < missMats.Count; i++)
             {
                 ChangeChildLayer(missMats[i].transform, false);
+                allMats.Remove(missMats[i]);
             }
 
             allResetMats = allMats;
@@ -81,6 +82,9 @@ public class ChangeColor : MonoBehaviour
                 break;
             case Materials.DWhite:
                 newMat = Resources.Load<Material>("Materials/Select_dwhite_mat");
+                break;
+            case Materials.Red:
+                newMat = Resources.Load<Material>("Materials/Select_red_mat");
                 break;
         }
     }

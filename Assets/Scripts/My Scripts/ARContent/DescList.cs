@@ -15,23 +15,11 @@ public class DescList : MonoBehaviour
     public void chooseDesc()
     {
         // disable all description objects
-        disableDesc();
+        allgemeinScript.disableDesc();
 
         gameObject.GetComponent<ChangeColor>().setColor(true);
         deskObject.SetActive(true);
     }
 
 
-    public void disableDesc()
-    {
-        foreach (GameObject desc in allgemeinScript.descObjects.ToArray())
-        {
-            desc.SetActive(false);
-        }
-
-        foreach (GameObject note in allgemeinScript.noteObjects.ToArray())
-        {
-            note.GetComponent<ChangeColor>().setColor(false);
-        }
-    }
 }
