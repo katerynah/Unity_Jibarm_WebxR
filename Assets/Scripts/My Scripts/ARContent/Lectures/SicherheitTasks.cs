@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class SicherheitTasks : MonoBehaviour
 {
-    
     int index;
     List<GameObject> descs;
+    public GameObject modelsGroup;
+    [HideInInspector]
     public bool checkCurrTask = true;
     public SicherheitLect sicherheitScript;
+    public CollectObjects collectScript;
     public ChangeColor colorScript;
+    public Camera ARCamera;
     public VerticalJoint vJointScript;
 
     [System.Serializable]
@@ -52,41 +55,24 @@ public class SicherheitTasks : MonoBehaviour
                 vJointScript.direction = "y";
                 vJointScript.isActive = true;
                 colorScript.setColor(false);
+                foreach (Transform child in modelsGroup.GetComponent<Transform>())
+                {
+                    child.gameObject.tag = "Untagged";
+                    collectScript.raycasting = false;
+                }
             }
             else if (index == 2)
             {
-               
+                foreach (Transform child in modelsGroup.GetComponent<Transform>())
+                {
+                    child.gameObject.tag = "raycast";
+                    collectScript.raycasting = true;
+                }
             }
             checkCurrTask = false;
         }
 
     }
 
-    //public void doTouch(GameObject selected)
-    //{
-    //    Debug.Log($"Object {selected} selected");
-    //    if (selected == wireList[0].WireFront || selected == wireList[0].WireFront)
-    //    {
-    //        wireList[0].WireBack.SetActive(false);
-    //        wireList[0].WireFront.SetActive(false);
-    //        wireList[0].WireFront.tag = "Untagged";
-    //        checkBoxScript.checkTheBox("left");
-    //    }
-    //    else if (selected == wireList[1].WireFront || selected == wireList[1].WireFront)
-    //    {
-    //        wireList[1].WireBack.SetActive(false);
-    //        wireList[1].WireFront.SetActive(false);
-    //        wireList[1].WireFront.tag = "Untagged";
-    //        checkBoxScript.checkTheBox("right");
-    //    }
-    //    else if (selected == switchBtn)
-    //    {
-    //        Transform objectTransform = switchBtn.GetComponent<Transform>();
-    //        objectTransform.Rotate(0f, -20f, 0f);
-    //        switchLight.GetComponent<MeshRenderer>().material = redMat;
-    //        switchBtn.tag = "Untagged";
-    //        checkBoxScript.checkTheBox("switch-on");
-    //    }
-
-    //}
+    
 }

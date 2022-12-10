@@ -37,7 +37,6 @@ public class AllgemeinLect : MonoBehaviour
 
     void removeContent(GameObject currAR, GameObject currCtrl)
     {
-        //startRaycasting(false);
         currAR.GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
         disableDesc();
         foreach (var note in noteObjects.ToArray())

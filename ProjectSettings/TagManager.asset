@@ -10,6 +10,8 @@ TagManager:
   - off
   - rend-lines
   - text-on
+  - FxTemporaire
+  - collect
   layers:
   - Default
   - TransparentFX
