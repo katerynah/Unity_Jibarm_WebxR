@@ -1,51 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class PickObjectOnTouch : MonoBehaviour
 {
-    [HideInInspector]
     public CollectObjects collectScript;
     bool dragObject = false;
     float yValue = 0f;
 
     void Start()
     {
-        collectScript = GameObject.Find("RaycastManager").GetComponent<CollectObjects>();
         yValue = transform.position.y;
     }
 
-    void OnMouseOver()
-    {
-        // Check if the mouse button is down
-        if (Input.GetMouseButton(0))
-        {
-            // Start moving the object with the camera
-            dragObject = true;
-        }
-        // Check if the mouse button is up
-        else if (Input.GetMouseButtonUp(0))
-        {
-            // Stop moving the object and reset its position
-            dragObject = false;
-            //transform.position = originalPosition;
-            transform.position = new Vector3(transform.position.x, yValue, transform.position.z);
-            collectScript.raycasting = true;
-            Debug.Log($"Object {gameObject.name} dropping");
-            gameObject.GetComponent<PickObjectOnTouch>().enabled = false;
-        }
-    }
 
     void Update()
     {
-        // If the object is moving with the camera, update its position
+        // Check if the mouse button is down
+        if (Input.GetMouseButtonDown(0))
+        {
+            // Start moving the object with the camera
+            dragObject = true;
+            //collectScript.raycasting = true;
+            //gameObject.GetComponent<PickObjectOnTouch>().enabled = false;
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            // Set the isDragging flag to false
+            dragObject = false;
+            transform.position = new Vector3(transform.position.x, yValue, transform.position.z);
+            //collectScript.raycasting = false;
+            //gameObject.GetComponent<PickObjectOnTouch>().enabled = false;
+        }
+
+        // Check if the object is being dragged
         if (dragObject)
         {
-            collectScript.raycasting = false;
-            Debug.Log($"Object {gameObject.name} dragging");
-            transform.position = collectScript.ARCamera.transform.position + new Vector3(0.5f, -0.25f, 1f);
+            transform.position = collectScript.ARCamera.transform.position + new Vector3(0f, -0.25f, 0.5f);
         }
     }
-
 }
+

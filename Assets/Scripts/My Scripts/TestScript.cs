@@ -5,6 +5,13 @@ using UnityEngine;
 
 public class TestScript : MonoBehaviour
 {
+    public GameObject jib;
+    public Camera ARCamera;
+
+    //void Start()
+    //{
+
+    //}
 
     // Start is called before the first frame update
     //void OnMouseDown()
@@ -17,16 +24,18 @@ public class TestScript : MonoBehaviour
 
     //}
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "raycast")
-        {
-            Debug.Log($"Entered {other.gameObject.name}");
-        }
-    }
-
-    //public void testFunction()
+    //void OnTriggerEnter(Collider other)
     //{
-    //    Debug.Log($"Test: {gameObject.name} presses");
+    //    if (other.gameObject.tag == "raycast")
+    //    {
+    //        Debug.Log($"Entered {other.gameObject.name}");
+    //    }
     //}
+
+    public void testFunction()
+    {
+        jib.SetActive(true);
+        ARCamera.GetComponent<Camera>().enabled = true;
+        //Debug.Log($"Test: {gameObject.name} presses");
+    }
 }

@@ -22,5 +22,9 @@ public class CheckBoxed : MonoBehaviour
         {
             checkmarks[3].SetActive(true);
         }
+        else if (checkString == "area-free")
+        {
+            checkmarks[0].SetActive(true);
+        }
     }
 }

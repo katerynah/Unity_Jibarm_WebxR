@@ -8,6 +8,7 @@ public class CollectObjects : MonoBehaviour
 {
     private Collider _selection;
     public Camera ARCamera;
+    public CountExitObject countScript;
     public SelectionManager selectScript;
     [HideInInspector]
     public GameObject currObject;
@@ -47,6 +48,7 @@ public class CollectObjects : MonoBehaviour
                                     child.gameObject.GetComponent<QuickOutline>().enabled = true;
                                     currObject = child.gameObject;
                                     currObject.GetComponent<PickObjectOnTouch>().enabled = true;
+                                    countScript.enabled = true;
                                     Debug.Log($"Object {child.gameObject.name} selected");
                                 }
                             }
@@ -57,9 +59,7 @@ public class CollectObjects : MonoBehaviour
                 _selection = selection;
             }
         }
-
     }
-
 
     public void deselectObj()
     {
@@ -69,31 +69,4 @@ public class CollectObjects : MonoBehaviour
         }
         currObject = null;
     }
-
 }
-
-
-    //void OnTriggerEnter(Collider other)
-    //{
-    //    tasks = einschaltScript.taskObjects;
-
-    //    if (other.gameObject.tag == "raycast" && start)
-    //    {
-    //        for (int i = 0; i < tasks.Count; i++)
-    //        {
-    //            if (tasks[i].activeSelf == true)
-    //            {
-    //                circleIndex = i;
-    //            }
-    //        }
-
-    //        if (circleIndex == 1)
-    //        {
-    //            curveScript.enabled = true;
-    //        }
-    //        else if (circleIndex == 2)
-    //        {
-    //            switchBtn.tag = "raycast";
-    //        }
-
-    //        raycastScript.raycasting = true;
