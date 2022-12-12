@@ -20,6 +20,8 @@ public class SelectionManager : MonoBehaviour
     public EinschaltLect einschaltScript;
     [HideInInspector]
     public DiagnoseLect diagnoseScript;
+    [HideInInspector]
+    public KoordsysLect koordsysScript;
     public string currLectName;
     int add;
 
@@ -77,6 +79,7 @@ public class SelectionManager : MonoBehaviour
             case "Resposition":
                 break;
             case "Koordsys":
+                currAR.GetComponent<KoordsysLect>().setLectureValues(add, currAR, currCtrl);
                 break;
             case "Landmarks":
                 break;

@@ -9,6 +9,8 @@ public class ControlNav : MonoBehaviour
     public SicherheitTasks sicherheitTaskScript;
     public DiagnoseLect diagnoseScript;
     public DiagnoseTasks diagnoseTaskScript;
+    public KoordsysLect koordsysScript;
+    public KoordsysTasks koordsysTaskScript;
     public SelectionManager selectScript;
     public GameObject ArrowL, ArrowR;
     List<GameObject> currDescList = new List<GameObject>();
@@ -21,7 +23,6 @@ public class ControlNav : MonoBehaviour
     {
         if (ArrowL.activeSelf == true)
             ArrowL.SetActive(false);
-
     }
 
 
@@ -42,6 +43,11 @@ public class ControlNav : MonoBehaviour
                 currTaskList = diagnoseScript.taskObjects;
                 Debug.Log($"Curr -1 is { currDescList.Count - 1}");
                 break;
+            case "Koordsys":
+                currDescList = koordsysScript.descObjects;
+                currTaskList = koordsysScript.taskObjects;
+                Debug.Log($"Curr -1 is { currDescList.Count - 1}");
+                break;
         }
     }
 
@@ -57,7 +63,6 @@ public class ControlNav : MonoBehaviour
             {
                 ArrowL.SetActive(false);
             }
-            //ArrowL.SetActive(false);
             currIndex--;
         }
         else if (currIndex == currDescList.Count - 1)
@@ -67,12 +72,11 @@ public class ControlNav : MonoBehaviour
             currDescList[currIndex].SetActive(false);
             currTaskList[currIndex].SetActive(false);
             ArrowR.SetActive(true);
-            //if (currDescList.Count == 2)
-            //{
-            //    ArrowL.SetActive(false);
-            //}
+            if (currDescList.Count == 2)
+            {
+                ArrowL.SetActive(false);
+            }
             currIndex--;
-
         }
 
         resetCheck();
@@ -100,13 +104,13 @@ public class ControlNav : MonoBehaviour
             currDescList[currIndex].SetActive(false);
             currTaskList[currIndex].SetActive(false);
             ArrowL.SetActive(true);
-            //if (currDescList.Count == 2)
-            //{
-            //    ArrowR.SetActive(false);
-            //}
+            if (currDescList.Count == 2)
+            {
+                ArrowR.SetActive(false);
+            }
             currIndex++;
-
         }
+       
         resetCheck();
     }
 
@@ -119,6 +123,9 @@ public class ControlNav : MonoBehaviour
                 break;
             case "Diagnose":
                 diagnoseTaskScript.checkCurrTask = true;
+                break;
+            case "Koordsys":
+                koordsysTaskScript.checkCurrTask = true;
                 break;
         }
     }
