@@ -10,7 +10,7 @@ public class SicherheitTasks : MonoBehaviour
     [HideInInspector]
     public bool checkCurrTask = true;
     public GameObject bereichCount, checkBereich;
-    public SicherheitLect sicherheitScript;
+    SicherheitLect sicherheitScript;
     public CollectObjects collectScript;
     public ChangeColor colorScript;
     public Camera ARCamera;
@@ -31,6 +31,7 @@ public class SicherheitTasks : MonoBehaviour
 
     void Start()
     {
+        sicherheitScript = gameObject.GetComponent<SicherheitLect>();
         descs = sicherheitScript.descObjects;
     }
 
@@ -49,6 +50,7 @@ public class SicherheitTasks : MonoBehaviour
             if (index == 0)
             {
                 colorScript.setColor(true);
+                vJointScript.resetRotation();
                 vJointScript.enabled = false;
             }
             else if (index == 1)
@@ -66,6 +68,7 @@ public class SicherheitTasks : MonoBehaviour
             }
             else if (index == 2)
             {
+                vJointScript.resetRotation();
                 vJointScript.enabled = false;
                 bereichCount.SetActive(true);
                 foreach (Transform child in modelsGroup.GetComponent<Transform>())

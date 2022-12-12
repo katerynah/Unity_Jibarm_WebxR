@@ -7,6 +7,8 @@ public class ControlNav : MonoBehaviour
     public EinschaltLect einschaltScript;
     public SicherheitLect sicherheitScript;
     public SicherheitTasks sicherheitTaskScript;
+    public DiagnoseLect diagnoseScript;
+    public DiagnoseTasks diagnoseTaskScript;
     public SelectionManager selectScript;
     public GameObject ArrowL, ArrowR;
     List<GameObject> currDescList = new List<GameObject>();
@@ -18,8 +20,10 @@ public class ControlNav : MonoBehaviour
     void Start()
     {
         if (ArrowL.activeSelf == true)
-        ArrowL.SetActive(false);
+            ArrowL.SetActive(false);
+
     }
+
 
     public void setObjectList()
     {
@@ -27,11 +31,16 @@ public class ControlNav : MonoBehaviour
         {
             case "Einschalt":
                 currDescList = einschaltScript.checkObjects;
-                currTaskList = einschaltScript.taskObjects;
+                currTaskList = einschaltScript.tasksObjects;
                 break;
             case "Sicherheit":
                 currDescList = sicherheitScript.descObjects;
                 currTaskList = sicherheitScript.taskObjects;
+                break;
+            case "Diagnose":
+                currDescList = diagnoseScript.descObjects;
+                currTaskList = diagnoseScript.taskObjects;
+                Debug.Log($"Curr -1 is { currDescList.Count - 1}");
                 break;
         }
     }
@@ -44,7 +53,11 @@ public class ControlNav : MonoBehaviour
             currTaskList[currIndex - 1].SetActive(true);
             currDescList[currIndex].SetActive(false);
             currTaskList[currIndex].SetActive(false);
-            ArrowL.SetActive(false);
+            if (currIndex == 1)
+            {
+                ArrowL.SetActive(false);
+            }
+            //ArrowL.SetActive(false);
             currIndex--;
         }
         else if (currIndex == currDescList.Count - 1)
@@ -54,13 +67,15 @@ public class ControlNav : MonoBehaviour
             currDescList[currIndex].SetActive(false);
             currTaskList[currIndex].SetActive(false);
             ArrowR.SetActive(true);
-            if (currDescList.Count == 2)
-            {
-                ArrowL.SetActive(false);
-            }
+            //if (currDescList.Count == 2)
+            //{
+            //    ArrowL.SetActive(false);
+            //}
             currIndex--;
+
         }
-        sicherheitTaskScript.checkCurrTask = true;
+
+        resetCheck();
     }
 
     public void setArrowR()
@@ -71,8 +86,12 @@ public class ControlNav : MonoBehaviour
             currTaskList[currIndex + 1].SetActive(true);
             currDescList[currIndex].SetActive(false);
             currTaskList[currIndex].SetActive(false);
-            ArrowR.SetActive(false);
+            if (currIndex == currDescList.Count - 2)
+            {
+                ArrowR.SetActive(false);
+            }
             currIndex++;
+
         }
         else if (currIndex == 0)
         {
@@ -81,13 +100,27 @@ public class ControlNav : MonoBehaviour
             currDescList[currIndex].SetActive(false);
             currTaskList[currIndex].SetActive(false);
             ArrowL.SetActive(true);
-            if (currDescList.Count == 2)
-            {
-                ArrowR.SetActive(false);
-            }
+            //if (currDescList.Count == 2)
+            //{
+            //    ArrowR.SetActive(false);
+            //}
             currIndex++;
+
         }
-        sicherheitTaskScript.checkCurrTask = true;
+        resetCheck();
+    }
+
+    void resetCheck()
+    {
+        switch (selectScript.currLectName)
+        {
+            case "Sicherheit":
+                sicherheitTaskScript.checkCurrTask = true;
+                break;
+            case "Diagnose":
+                diagnoseTaskScript.checkCurrTask = true;
+                break;
+        }
     }
 }
 

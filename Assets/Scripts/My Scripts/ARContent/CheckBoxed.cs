@@ -26,5 +26,9 @@ public class CheckBoxed : MonoBehaviour
         {
             checkmarks[0].SetActive(true);
         }
+        else if (checkString == "switch-diag")
+        {
+            checkmarks[0].SetActive(true);
+        }
     }
 }

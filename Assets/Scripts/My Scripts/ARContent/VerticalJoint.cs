@@ -11,6 +11,7 @@ public class VerticalJoint : MonoBehaviour
     float minZ = -30f; // -> -45
     float maxZ = 30f;  // -> 0
     public Vector3 objEuler;
+    Quaternion startRot;
     public string direction = "x";
     Transform localTrans;
     public GameObject levelPointer;
@@ -24,6 +25,7 @@ public class VerticalJoint : MonoBehaviour
     void Start()
     {
         localTrans = objToRotate.GetComponent<Transform>();
+        startRot = objToRotate.transform.rotation;
     }
 
     // Update is called once per frame
@@ -79,6 +81,10 @@ public class VerticalJoint : MonoBehaviour
         // 60 grad, line length 0.416f
         float res = (1 / (30 / objEuler.z)) * 0.21f;
         levelPointer.transform.position = new Vector3(res, levelPointer.transform.position.y, levelPointer.transform.position.z);
+    }
 
+    public void resetRotation()
+    {
+        objToRotate.transform.rotation = startRot;
     }
 }

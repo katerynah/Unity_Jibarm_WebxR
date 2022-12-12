@@ -14,9 +14,12 @@ public class SelectionManager : MonoBehaviour
 
     [HideInInspector]
     public GameObject currLect, currAR, currCtrl;
+    [HideInInspector]
     public AllgemeinLect allgemeinScript;
+    [HideInInspector]
     public EinschaltLect einschaltScript;
-    public SicherheitLect sicherheitScript;
+    [HideInInspector]
+    public DiagnoseLect diagnoseScript;
     public string currLectName;
     int add;
 
@@ -46,15 +49,15 @@ public class SelectionManager : MonoBehaviour
         {
             case "Allgemein":
                 // go to Section Script and give important infos
-                allgemeinScript.setLecureValues(add, currAR, currCtrl);
+                currAR.GetComponent<AllgemeinLect>().setLectureValues(add, currAR, currCtrl);
                 break;
             case "Einschalt":
-                einschaltScript.setLecureValues(add, currAR, currCtrl);
+                currAR.GetComponent<EinschaltLect>().setLectureValues(add, currAR, currCtrl);
                 // 4. WAK ?
                 break;
             case "Sicherheit":
                 // Drag rotation 
-                sicherheitScript.setLecureValues(add, currAR, currCtrl);
+                currAR.GetComponent<SicherheitLect>().setLectureValues(add, currAR, currCtrl);
                 break;
             case "Bremsen":
                 //
@@ -69,6 +72,7 @@ public class SelectionManager : MonoBehaviour
                 //
                 break;
             case "Diagnose":
+                currAR.GetComponent<DiagnoseLect>().setLectureValues(add, currAR, currCtrl);
                 break;
             case "Resposition":
                 break;

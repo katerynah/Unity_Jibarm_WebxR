@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RaycastingAR : MonoBehaviour
 {
+    // DESC: Raycasting using Mouse Input Postition and Selection when Mouse Clocked on the Object.tag = "raycast"
+
     private Transform _selection;
     public Camera ARCamera;
     public SelectionManager selectScript;
@@ -11,6 +13,7 @@ public class RaycastingAR : MonoBehaviour
 
     // Lactures
     public EinschaltTasks seilenScript;
+    public DiagnoseTasks diagnoseTScript;
 
     // Update is called once per frame
     void Update()
@@ -47,18 +50,17 @@ public class RaycastingAR : MonoBehaviour
                         case "Einschalt":
                             seilenScript.doTouch(selection.gameObject);
                             break;
-                            //case "Sicherheit":
-                            //    break;
-                            //case "Bremsen":
-                            //    break;
-                            //case "Verzerrung":
-                            //    break;
-                            //case "Tracking":
-                            //    break;
-                            //case "Homing":
-                            //    break;
-                            //case "Diagnose":
-                            //    break;
+                        //case "Bremsen":
+                        //    break;
+                        //case "Verzerrung":
+                        //    break;
+                        //case "Tracking":
+                        //    break;
+                        //case "Homing":
+                        //    break;
+                        case "Diagnose":
+                            diagnoseTScript.doTouch(selection.gameObject);
+                            break;
                             //case "Resposition":
                             //    break;
                             //case "Koordsys":

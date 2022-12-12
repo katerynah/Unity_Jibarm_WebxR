@@ -17,7 +17,6 @@ public class CountExitObject : MonoBehaviour
         if (other.gameObject.CompareTag("raycast"))
         {
             count++;
-            Debug.Log($"{other.gameObject.name} exited");
         }
     }
 
@@ -26,7 +25,6 @@ public class CountExitObject : MonoBehaviour
         if (other.gameObject.CompareTag("raycast"))
         {
             count--;
-            Debug.Log($"{other.gameObject.name} entered");
         }
     }
 

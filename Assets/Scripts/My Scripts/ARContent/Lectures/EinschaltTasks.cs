@@ -54,7 +54,7 @@ public class EinschaltTasks : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        tasks = einschaltScript.taskObjects;
+        tasks = einschaltScript.tasksObjects;
 
         if (other.gameObject.tag == "Player" && start)
         {
@@ -73,6 +73,8 @@ public class EinschaltTasks : MonoBehaviour
             }
             else if (circleIndex == 1)
             {
+                wireList[0].WireFront.tag = "Untagged";
+                wireList[1].WireFront.tag = "Untagged";
                 curveScript.enabled = true;
             }
             else if (circleIndex == 2)

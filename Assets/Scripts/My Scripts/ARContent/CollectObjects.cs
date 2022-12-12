@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class CollectObjects : MonoBehaviour
 {
+    // DESC: Raycasting using Camera Screen Center-Postition and Selection when Mouse Over the Object.tag = "raycast"
+
     private Collider _selection;
     public Camera ARCamera;
     public CountExitObject countScript;
@@ -49,7 +51,6 @@ public class CollectObjects : MonoBehaviour
                                     currObject = child.gameObject;
                                     currObject.GetComponent<PickObjectOnTouch>().enabled = true;
                                     countScript.enabled = true;
-                                    Debug.Log($"Object {child.gameObject.name} selected");
                                 }
                             }
                             break;

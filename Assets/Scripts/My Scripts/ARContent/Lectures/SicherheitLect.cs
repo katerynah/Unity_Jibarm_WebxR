@@ -12,7 +12,7 @@ public class SicherheitLect : MonoBehaviour
 
     public bool raycasting = false;
 
-    public void setLecureValues(int add, GameObject currAR, GameObject currCtrl)
+    public void setLectureValues(int add, GameObject currAR, GameObject currCtrl)
     {
         if (add == 0)
         {

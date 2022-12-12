@@ -32,6 +32,7 @@ public class PickObjectOnTouch : MonoBehaviour
             // Set the isDragging flag to false
             dragObject = false;
             transform.position = new Vector3(transform.position.x, yValue, transform.position.z);
+            gameObject.SetActive(false);
             //collectScript.raycasting = false;
             //gameObject.GetComponent<PickObjectOnTouch>().enabled = false;
         }

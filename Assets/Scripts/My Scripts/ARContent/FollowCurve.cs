@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class FollowCurve : MonoBehaviour
 {
-    public bool isActive = false;
+    public bool isActive = true;
     public GameObject objToRotate;
     [SerializeField] float speed = 2f;
     float minZ = -115f; // -> -45
