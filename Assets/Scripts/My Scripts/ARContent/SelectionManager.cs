@@ -22,6 +22,8 @@ public class SelectionManager : MonoBehaviour
     public DiagnoseLect diagnoseScript;
     [HideInInspector]
     public KoordsysLect koordsysScript;
+    [HideInInspector]
+    public KoordsysLect vermessenScript;
     public string currLectName;
     int add;
 
@@ -86,6 +88,7 @@ public class SelectionManager : MonoBehaviour
             case "Laser":
                 break;
             case "Vermessen":
+                currAR.GetComponent<VermessenLect>().setLectureValues(add, currAR, currCtrl);
                 break;
             case "Verschieben":
                 break;

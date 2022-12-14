@@ -15,6 +15,7 @@ public class RaycastingAR : MonoBehaviour
     public EinschaltTasks seilenScript;
     public DiagnoseTasks diagnoseTScript;
     public KoordsysTasks koordsysTScript;
+    public VermessenTasks vermessenTScript;
 
     // Update is called once per frame
     void Update()
@@ -67,12 +68,13 @@ public class RaycastingAR : MonoBehaviour
                         case "Koordsys":
                             koordsysTScript.doTouch(selection.gameObject);
                             break;
-                            //case "Landmarks":
-                            //    break;
-                            //case "Laser":
-                            //    break;
-                            //case "Vermessen":
-                            //    break;
+                        //case "Landmarks":
+                        //    break;
+                        //case "Laser":
+                        //    break;
+                        case "Vermessen":
+                            vermessenTScript.doTouch(selection.gameObject);
+                            break;
                             //case "Verschieben":
                             //    break;
                             //case "Nivellieren":

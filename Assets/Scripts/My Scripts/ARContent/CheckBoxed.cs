@@ -30,5 +30,9 @@ public class CheckBoxed : MonoBehaviour
         {
             checkmarks[0].SetActive(true);
         }
+        else if (checkString == "cam-rot")
+        {
+            checkmarks[0].SetActive(true);
+        }
     }
 }

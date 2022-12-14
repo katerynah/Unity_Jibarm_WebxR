@@ -6,11 +6,13 @@ public class ControlNav : MonoBehaviour
 {
     public EinschaltLect einschaltScript;
     public SicherheitLect sicherheitScript;
-    public SicherheitTasks sicherheitTaskScript;
+    SicherheitTasks sicherheitTaskScript;
     public DiagnoseLect diagnoseScript;
-    public DiagnoseTasks diagnoseTaskScript;
+    DiagnoseTasks diagnoseTaskScript;
     public KoordsysLect koordsysScript;
-    public KoordsysTasks koordsysTaskScript;
+    KoordsysTasks koordsysTaskScript;
+    public VermessenLect vermessenScript;
+    VermessenTasks vermessenTaskScript;
     public SelectionManager selectScript;
     public GameObject ArrowL, ArrowR;
     List<GameObject> currDescList = new List<GameObject>();
@@ -23,6 +25,12 @@ public class ControlNav : MonoBehaviour
     {
         if (ArrowL.activeSelf == true)
             ArrowL.SetActive(false);
+
+        sicherheitTaskScript = sicherheitScript.gameObject.GetComponent<SicherheitTasks>();
+        diagnoseTaskScript = diagnoseScript.gameObject.GetComponent<DiagnoseTasks>();
+        koordsysTaskScript = koordsysScript.gameObject.GetComponent<KoordsysTasks>();
+        diagnoseTaskScript = diagnoseScript.gameObject.GetComponent<DiagnoseTasks>();
+        vermessenTaskScript = vermessenScript.GetComponent<VermessenTasks>();
     }
 
 
@@ -41,12 +49,14 @@ public class ControlNav : MonoBehaviour
             case "Diagnose":
                 currDescList = diagnoseScript.descObjects;
                 currTaskList = diagnoseScript.taskObjects;
-                Debug.Log($"Curr -1 is { currDescList.Count - 1}");
                 break;
             case "Koordsys":
                 currDescList = koordsysScript.descObjects;
                 currTaskList = koordsysScript.taskObjects;
-                Debug.Log($"Curr -1 is { currDescList.Count - 1}");
+                break;
+            case "Vermessen":
+                currDescList = vermessenScript.descObjects;
+                currTaskList = vermessenScript.taskObjects;
                 break;
         }
     }
@@ -126,6 +136,9 @@ public class ControlNav : MonoBehaviour
                 break;
             case "Koordsys":
                 koordsysTaskScript.checkCurrTask = true;
+                break;
+            case "Vermessen":
+                vermessenTaskScript.checkCurrTask = true;
                 break;
         }
     }
