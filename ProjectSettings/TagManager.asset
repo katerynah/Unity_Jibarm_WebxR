@@ -12,6 +12,7 @@ TagManager:
   - text-on
   - FxTemporaire
   - collect
+  - landmark
   layers:
   - Default
   - TransparentFX

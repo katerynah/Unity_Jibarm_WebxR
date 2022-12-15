@@ -12,7 +12,7 @@ public class CheckBoxed : MonoBehaviour
         if (checkString == "left")
         {
             checkmarks[0].SetActive(true);
-        } else if (checkString == "right")
+        }else if (checkString == "right")
         {
             checkmarks[1].SetActive(true);
         }else if (checkString == "camera-pos")

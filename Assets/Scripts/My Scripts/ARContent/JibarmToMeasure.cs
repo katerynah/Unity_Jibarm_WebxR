@@ -6,7 +6,6 @@ public class JibarmToMeasure : MonoBehaviour
 {
     public bool isActive = false;
     public GameObject horRotation, vertRotation;
-    public CheckBoxed checkBoxScript;
     [SerializeField]
     float speedH = 2f;
     [SerializeField]
@@ -14,8 +13,6 @@ public class JibarmToMeasure : MonoBehaviour
 
     float horMinZ = -179f;
     float horMaxZ = -100f; // -> start z
-    //float vertMinY = 30f;
-    //float vertMaxY = 120f;
     public Vector3 objEulerH, objEulerV;
     Quaternion startRotH, startRotV; // to reset rotation
     Transform localTransH, localTransV;
@@ -55,38 +52,16 @@ public class JibarmToMeasure : MonoBehaviour
             }
         }
 
-        if (horRotation.transform.localEulerAngles.z < 300f && horRotation.transform.localEulerAngles.z > 270f)
-        {
-            first = false;
-            Debug.Log($"first rot");
-        }
-
-        if (vertRotation.transform.localEulerAngles.y < 90f && vertRotation.transform.localEulerAngles.y > 70f)
-        {
-            second = false;
-            Debug.Log($"second rot");
-        }
-
-        if (!first && !second)
-        {
-            checkBoxScript.checkTheBox("cam-rot");
-        }
     }
 
     void limitRotH()
     {
-        if (first || second)
-        {
-            horRotation.transform.Rotate(0f, 0f, Input.GetAxis("Mouse X") / -speedH);
-        }
+        horRotation.transform.Rotate(0f, Input.GetAxis("Mouse X") / speedH, 0f);
     }
 
     void limitRotV()
     {
-        if (first || second)
-        {
-            vertRotation.transform.Rotate(0f, Input.GetAxis("Mouse Y") / speedV, 0f);
-        }
+        vertRotation.transform.Rotate(0f, 0f, Input.GetAxis("Mouse Y") / speedV);
     }
 
 

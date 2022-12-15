@@ -39,7 +39,7 @@ public class AllgemeinLect : MonoBehaviour
     {
         currAR.GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
         disableDesc();
-        foreach (var note in noteObjects.ToArray())
+        foreach (var note in noteObjects)
         {
             note.GetComponent<ChangeColor>().setColor(false);
         }
@@ -50,12 +50,12 @@ public class AllgemeinLect : MonoBehaviour
 
     public void disableDesc()
     {
-        foreach (GameObject desc in descObjects.ToArray())
+        foreach (GameObject desc in descObjects)
         {
             desc.SetActive(false);
         }
 
-        foreach (GameObject note in noteObjects.ToArray())
+        foreach (GameObject note in noteObjects)
         {
             note.GetComponent<ChangeColor>().setColor(false);
         }

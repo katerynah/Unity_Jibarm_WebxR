@@ -13,6 +13,7 @@ public class JoystickController : MonoBehaviour
     void Start()
     {
         joystick = FindObjectOfType<Joystick>();
+
         joybutton = FindObjectOfType<JoystickButton>();
     }
 

@@ -1,25 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class VermessenTasks : MonoBehaviour
 {
     public bool checkCurrTask = true;
     VermessenLect vermessenScript;
     public CameraToMeasure cameraRotScript;
+    //public JibarmToMeasure jibRotScript; // id using drag - not convinient
+    public VermessenJoystick vermessenJoys;
     public RaycastingAR raycastScript;
     public Material redMat, greenMat;
-    public GameObject switchBtn, switchLight;
-    public GameObject screenView;
+    public GameObject switchBtn, switchLight, screenView, mGroup, joystick, controlView;
     List<GameObject> descs = new List<GameObject>();
+    [HideInInspector]
+    public List<GameObject> mPoints = new List<GameObject>();
     int index;
     bool start = true;
+    bool joystickOn = true;
 
     // Start is called before the first frame update
     void Start()
     {
         vermessenScript = gameObject.GetComponent<VermessenLect>();
         descs = vermessenScript.descObjects;
+
+        foreach (Transform point in mGroup.GetComponent<Transform>())
+        {
+            var pointImage = point.gameObject.GetComponent<Image>();
+            pointImage.color = new Color32(212, 135, 123, 255);
+            var pointText = point.gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+            pointText.color = new Color32(113, 71, 67, 255);
+            mPoints.Add(point.gameObject);
+        }
     }
 
     void Update()
@@ -55,12 +70,25 @@ public class VermessenTasks : MonoBehaviour
             }
             else if (index == 2)
             {
+                //vermessenJoys.enabled = false;
                 cameraRotScript.enabled = false;
             }
-
+            else if (index == 3)
+            {
+                //vermessenJoys.enabled = true;
+                
+            }
             checkCurrTask = false;
         }
 
+        if (controlView.activeSelf == false && index != 1)
+        {
+            joystick.SetActive(true);
+        }
+        else
+        {
+            joystick.SetActive(false);
+        }
     }
 
 
