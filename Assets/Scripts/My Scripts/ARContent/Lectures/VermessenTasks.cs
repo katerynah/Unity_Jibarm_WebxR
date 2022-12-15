@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class VermessenTasks : MonoBehaviour
 {
     public bool checkCurrTask = true;
-    VermessenLect vermessenScript;
+    LectManager manageLScript;
     public CameraToMeasure cameraRotScript;
     //public JibarmToMeasure jibRotScript; // id using drag - not convinient
     public VermessenJoystick vermessenJoys;
@@ -24,8 +24,8 @@ public class VermessenTasks : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        vermessenScript = gameObject.GetComponent<VermessenLect>();
-        descs = vermessenScript.descObjects;
+        manageLScript = gameObject.GetComponent<LectManager>();
+        descs = manageLScript.descObjects;
 
         foreach (Transform point in mGroup.GetComponent<Transform>())
         {

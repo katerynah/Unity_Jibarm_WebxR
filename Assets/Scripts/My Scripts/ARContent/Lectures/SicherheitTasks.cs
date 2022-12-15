@@ -10,7 +10,7 @@ public class SicherheitTasks : MonoBehaviour
     [HideInInspector]
     public bool checkCurrTask = true;
     public GameObject bereichCount, checkBereich;
-    SicherheitLect sicherheitScript;
+    LectManager manageLScript;
     public CollectObjects collectScript;
     public ChangeColor colorScript;
     public Camera ARCamera;
@@ -31,8 +31,8 @@ public class SicherheitTasks : MonoBehaviour
 
     void Start()
     {
-        sicherheitScript = gameObject.GetComponent<SicherheitLect>();
-        descs = sicherheitScript.descObjects;
+        manageLScript = gameObject.GetComponent<LectManager>();
+        descs = manageLScript.descObjects;
     }
 
     void Update()

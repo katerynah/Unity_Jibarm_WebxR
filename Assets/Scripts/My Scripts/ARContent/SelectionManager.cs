@@ -15,15 +15,7 @@ public class SelectionManager : MonoBehaviour
     [HideInInspector]
     public GameObject currLect, currAR, currCtrl;
     [HideInInspector]
-    public AllgemeinLect allgemeinScript;
-    [HideInInspector]
-    public EinschaltLect einschaltScript;
-    [HideInInspector]
-    public DiagnoseLect diagnoseScript;
-    [HideInInspector]
-    public KoordsysLect koordsysScript;
-    [HideInInspector]
-    public KoordsysLect vermessenScript;
+    public LectManager manageLScript;
     public string currLectName;
     int add;
 
@@ -43,59 +35,9 @@ public class SelectionManager : MonoBehaviour
         chooseControl();
 
         // direct to Section script
-        switchAR();
+        currAR.GetComponent<LectManager>().setLectureValues(add, currAR, currCtrl);
     }
 
-
-    public void switchAR()
-    {
-        switch (currLectName)
-        {
-            case "Allgemein":
-                // go to Section Script and give important infos
-                currAR.GetComponent<AllgemeinLect>().setLectureValues(add, currAR, currCtrl);
-                break;
-            case "Einschalt":
-                currAR.GetComponent<EinschaltLect>().setLectureValues(add, currAR, currCtrl);
-                // 4. WAK ?
-                break;
-            case "Sicherheit":
-                // Drag rotation 
-                currAR.GetComponent<SicherheitLect>().setLectureValues(add, currAR, currCtrl);
-                break;
-            case "Bremsen":
-                //
-                //
-                break;
-            case "Verzerrung":
-                break;
-            case "Tracking":
-                break;
-            case "Homing":
-                // Dreiecks 1, 2, 3
-                //
-                break;
-            case "Diagnose":
-                currAR.GetComponent<DiagnoseLect>().setLectureValues(add, currAR, currCtrl);
-                break;
-            case "Resposition":
-                break;
-            case "Koordsys":
-                currAR.GetComponent<KoordsysLect>().setLectureValues(add, currAR, currCtrl);
-                break;
-            case "Landmarks":
-                break;
-            case "Laser":
-                break;
-            case "Vermessen":
-                currAR.GetComponent<VermessenLect>().setLectureValues(add, currAR, currCtrl);
-                break;
-            case "Verschieben":
-                break;
-            case "Nivellieren":
-                break;
-        }
-    }
 
     public void chooseAR()
     {

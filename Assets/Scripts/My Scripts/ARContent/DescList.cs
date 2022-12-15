@@ -5,7 +5,7 @@ using UnityEngine;
 public class DescList : MonoBehaviour
 {
     public GameObject deskObject;
-    public AllgemeinLect allgemeinScript;
+    public LectManager lectManagerAllgemein;
 
     void OnMouseDown()
     {
@@ -15,7 +15,7 @@ public class DescList : MonoBehaviour
     public void chooseDesc()
     {
         // disable all description objects
-        allgemeinScript.disableDesc();
+        lectManagerAllgemein.disableDesc("one");
 
         gameObject.GetComponent<ChangeColor>().setColor(true);
         deskObject.SetActive(true);

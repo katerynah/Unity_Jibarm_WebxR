@@ -5,7 +5,7 @@ using UnityEngine;
 public class DiagnoseTasks : MonoBehaviour
 {
     public bool checkCurrTask = true;
-    DiagnoseLect diagnoseScript;
+    LectManager manageLScript;
     public GameObject checkScSwitch;
     public RaycastingAR raycastScript;
     public CheckBoxed checkBoxScript;
@@ -40,8 +40,8 @@ public class DiagnoseTasks : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        diagnoseScript = gameObject.GetComponent<DiagnoseLect>();
-        descs = diagnoseScript.descObjects;
+        manageLScript = gameObject.GetComponent<LectManager>();
+        descs = manageLScript.descObjects;
 
         for (int i = 0; i < screenButtons.Count; i++)
         {

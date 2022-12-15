@@ -5,7 +5,6 @@ using UnityEngine;
 public class CheckBoxed : MonoBehaviour
 {
     public GameObject[] checkmarks;
-    public EinschaltLect einschaltScript;
 
     public void checkTheBox(string checkString)
     {

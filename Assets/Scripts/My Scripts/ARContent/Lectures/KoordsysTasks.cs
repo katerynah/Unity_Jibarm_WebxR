@@ -7,7 +7,7 @@ public class KoordsysTasks : MonoBehaviour
     public bool checkCurrTask = true;
     int countDown = 0;
     public GameObject[] checkScSwitch;
-    KoordsysLect koordsysScript;
+    LectManager manageLScript;
     public RaycastingAR raycastScript;
     float timeRemaining = 5;
     public Material redMat, greenMat;
@@ -20,8 +20,8 @@ public class KoordsysTasks : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        koordsysScript = gameObject.GetComponent<KoordsysLect>();
-        descs = koordsysScript.descObjects;
+        manageLScript = gameObject.GetComponent<LectManager>();
+        descs = manageLScript.descObjects;
     }
 
     void Update()
@@ -38,14 +38,14 @@ public class KoordsysTasks : MonoBehaviour
 
             if (index == 0)
             {
-                gameObject.transform.GetChild(0).GetComponent<DrawLineBetweenTwoObjects>().setLines();
+                gameObject.transform.GetChild(0).GetComponent<DrawLineBetweenTwoObjects>().setLines("all");
                 gameObject.transform.GetChild(0).GetComponent<ChangeColor>().setColor(true);
                 gameObject.transform.GetChild(1).GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
                 gameObject.transform.GetChild(1).GetComponent<ChangeColor>().setColor(false);
             }
             else if (index == 1)
             {
-                gameObject.transform.GetChild(1).GetComponent<DrawLineBetweenTwoObjects>().setLines();
+                gameObject.transform.GetChild(1).GetComponent<DrawLineBetweenTwoObjects>().setLines("all");
                 gameObject.transform.GetChild(1).GetComponent<ChangeColor>().setColor(true);
                 gameObject.transform.GetChild(0).GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
                 gameObject.transform.GetChild(0).GetComponent<ChangeColor>().setColor(false);

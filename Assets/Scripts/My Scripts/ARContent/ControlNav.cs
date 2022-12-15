@@ -4,20 +4,10 @@ using UnityEngine;
 
 public class ControlNav : MonoBehaviour
 {
-    public EinschaltLect einschaltScript;
-    public SicherheitLect sicherheitScript;
-    SicherheitTasks sicherheitTaskScript;
-    public DiagnoseLect diagnoseScript;
-    DiagnoseTasks diagnoseTaskScript;
-    public KoordsysLect koordsysScript;
-    KoordsysTasks koordsysTaskScript;
-    public VermessenLect vermessenScript;
-    VermessenTasks vermessenTaskScript;
     public SelectionManager selectScript;
     public GameObject ArrowL, ArrowR;
     List<GameObject> currDescList = new List<GameObject>();
     List<GameObject> currTaskList = new List<GameObject>();
-
 
     public int currIndex = 0;
 
@@ -25,40 +15,13 @@ public class ControlNav : MonoBehaviour
     {
         if (ArrowL.activeSelf == true)
             ArrowL.SetActive(false);
-
-        sicherheitTaskScript = sicherheitScript.gameObject.GetComponent<SicherheitTasks>();
-        diagnoseTaskScript = diagnoseScript.gameObject.GetComponent<DiagnoseTasks>();
-        koordsysTaskScript = koordsysScript.gameObject.GetComponent<KoordsysTasks>();
-        diagnoseTaskScript = diagnoseScript.gameObject.GetComponent<DiagnoseTasks>();
-        vermessenTaskScript = vermessenScript.GetComponent<VermessenTasks>();
     }
 
 
     public void setObjectList()
     {
-        switch (selectScript.currLectName)
-        {
-            case "Einschalt":
-                currDescList = einschaltScript.checkObjects;
-                currTaskList = einschaltScript.tasksObjects;
-                break;
-            case "Sicherheit":
-                currDescList = sicherheitScript.descObjects;
-                currTaskList = sicherheitScript.taskObjects;
-                break;
-            case "Diagnose":
-                currDescList = diagnoseScript.descObjects;
-                currTaskList = diagnoseScript.taskObjects;
-                break;
-            case "Koordsys":
-                currDescList = koordsysScript.descObjects;
-                currTaskList = koordsysScript.taskObjects;
-                break;
-            case "Vermessen":
-                currDescList = vermessenScript.descObjects;
-                currTaskList = vermessenScript.taskObjects;
-                break;
-        }
+        currDescList = selectScript.currAR.GetComponent<LectManager>().descObjects;
+        currTaskList = selectScript.currAR.GetComponent<LectManager>().taskObjects;
     }
 
     public void setArrowL()
@@ -66,9 +29,10 @@ public class ControlNav : MonoBehaviour
         if (currIndex > 0 && currIndex < currDescList.Count - 1)
         {
             currDescList[currIndex - 1].SetActive(true);
-            currTaskList[currIndex - 1].SetActive(true);
             currDescList[currIndex].SetActive(false);
+            currTaskList[currIndex - 1].SetActive(true);
             currTaskList[currIndex].SetActive(false);
+            // when only 2 object elements
             if (currIndex == 1)
             {
                 ArrowL.SetActive(false);
@@ -78,10 +42,11 @@ public class ControlNav : MonoBehaviour
         else if (currIndex == currDescList.Count - 1)
         {
             currDescList[currIndex - 1].SetActive(true);
-            currTaskList[currIndex - 1].SetActive(true);
             currDescList[currIndex].SetActive(false);
+            currTaskList[currIndex - 1].SetActive(true);
             currTaskList[currIndex].SetActive(false);
             ArrowR.SetActive(true);
+            // when only 2 object elements
             if (currDescList.Count == 2)
             {
                 ArrowL.SetActive(false);
@@ -97,9 +62,10 @@ public class ControlNav : MonoBehaviour
         if (currIndex > 0 && currIndex < currDescList.Count - 1)
         {
             currDescList[currIndex + 1].SetActive(true);
-            currTaskList[currIndex + 1].SetActive(true);
             currDescList[currIndex].SetActive(false);
+            currTaskList[currIndex + 1].SetActive(true);
             currTaskList[currIndex].SetActive(false);
+        // when only 2 object elements
             if (currIndex == currDescList.Count - 2)
             {
                 ArrowR.SetActive(false);
@@ -110,10 +76,11 @@ public class ControlNav : MonoBehaviour
         else if (currIndex == 0)
         {
             currDescList[currIndex + 1].SetActive(true);
-            currTaskList[currIndex + 1].SetActive(true);
             currDescList[currIndex].SetActive(false);
+            currTaskList[currIndex + 1].SetActive(true);
             currTaskList[currIndex].SetActive(false);
             ArrowL.SetActive(true);
+            // when only 2 object elements
             if (currDescList.Count == 2)
             {
                 ArrowR.SetActive(false);
@@ -129,17 +96,21 @@ public class ControlNav : MonoBehaviour
         switch (selectScript.currLectName)
         {
             case "Sicherheit":
-                sicherheitTaskScript.checkCurrTask = true;
+                selectScript.currAR.GetComponent<SicherheitTasks>().checkCurrTask = true;
+                break;
+            case "Bremsen":
+                selectScript.currAR.GetComponent<BremsenTasks>().checkCurrTask = true;
                 break;
             case "Diagnose":
-                diagnoseTaskScript.checkCurrTask = true;
+                selectScript.currAR.GetComponent<DiagnoseTasks>().checkCurrTask = true;
                 break;
             case "Koordsys":
-                koordsysTaskScript.checkCurrTask = true;
+                selectScript.currAR.GetComponent<KoordsysTasks>().checkCurrTask = true;
                 break;
             case "Vermessen":
-                vermessenTaskScript.checkCurrTask = true;
+                selectScript.currAR.GetComponent<VermessenTasks>().checkCurrTask = true;
                 break;
+            
         }
     }
 }

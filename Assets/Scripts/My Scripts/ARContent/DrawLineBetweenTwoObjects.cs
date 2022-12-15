@@ -9,6 +9,8 @@ public class DrawLineBetweenTwoObjects : MonoBehaviour
     LineRenderer line;
     bool ready = true;
     public bool removeLines = false;
+    [HideInInspector]
+    public int currIndex;
     Vector3 vec;
     Quaternion quat;
 
@@ -16,7 +18,6 @@ public class DrawLineBetweenTwoObjects : MonoBehaviour
     [System.Serializable]
     public class RendererLines
     {
-
         public GameObject NoteObj;
         public GameObject RefObj;
 
@@ -33,17 +34,39 @@ public class DrawLineBetweenTwoObjects : MonoBehaviour
     {
         vec = Vector3.zero;
         quat = Quaternion.identity;
-
     }
 
-    public void setLines()
+    public void setLines(string amount)
     {
         if (ready == true)
         {
-            for (int i = 0; i < rendererList.Count; i++)
+            if (amount == "all")
+            {
+                for (int i = 0; i < rendererList.Count; i++)
+                {
+                    // Note Object and its first child -> Line Renderer for transform position
+                    lineRendOffset = rendererList[i].NoteObj.transform.GetChild(0).gameObject;
+
+                    linePrefab = Resources.Load<GameObject>("Templates/LineRend_temp");
+
+                    lineRend = Instantiate(linePrefab, vec, quat);
+
+                    line = lineRend.GetComponent<LineRenderer>();
+
+                    // Set the position count of the linerenderer to two
+                    line.positionCount = 2;
+                    line.material = new Material(Shader.Find("Sprites/Default"));
+
+                    // (100f * 0.075f /2f)
+
+                    Transform first = lineRendOffset.transform;
+                    Transform second = rendererList[i].RefObj.transform;
+                    DrawLineBetweenObjects(first, second);
+                }
+            } else if (amount == "one")
             {
                 // Note Object and its first child -> Line Renderer for transform position
-                lineRendOffset = rendererList[i].NoteObj.transform.GetChild(0).gameObject;
+                lineRendOffset = rendererList[currIndex].NoteObj.transform.GetChild(0).gameObject;
 
                 linePrefab = Resources.Load<GameObject>("Templates/LineRend_temp");
 
@@ -58,9 +81,10 @@ public class DrawLineBetweenTwoObjects : MonoBehaviour
                 // (100f * 0.075f /2f)
 
                 Transform first = lineRendOffset.transform;
-                Transform second = rendererList[i].RefObj.transform;
+                Transform second = rendererList[currIndex].RefObj.transform;
                 DrawLineBetweenObjects(first, second);
             }
+            
             ready = false;
         }
         

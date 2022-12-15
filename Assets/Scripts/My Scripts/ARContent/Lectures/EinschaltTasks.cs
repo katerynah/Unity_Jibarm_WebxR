@@ -12,13 +12,12 @@ public class EinschaltTasks : MonoBehaviour
     public CheckBoxed checkBoxScript;
     public FollowCurve curveScript;
     public SelectionManager selectScript;
-    public EinschaltLect einschaltScript;
+    LectManager manageLScript;
     public Material redMat;
     public GameObject switchBtn, switchLight;
     Material selectionMaterial;
     bool start = true;
     int circleIndex;
-    List<GameObject> tasks;
 
     [System.Serializable]
     public class Wires
@@ -34,6 +33,7 @@ public class EinschaltTasks : MonoBehaviour
     }
 
     public List<Wires> wireList = new List<Wires>();
+
 
     [System.Serializable]
     public class Circles
@@ -52,15 +52,19 @@ public class EinschaltTasks : MonoBehaviour
 
     public List<Circles> circleList = new List<Circles>();
 
+    void Start()
+    {
+        manageLScript = selectScript.currAR.GetComponent<LectManager>();
+    }
+
     void OnTriggerEnter(Collider other)
     {
-        tasks = einschaltScript.tasksObjects;
 
         if (other.gameObject.tag == "Player" && start)
         {
-            for (int i = 0; i < tasks.Count; i++)
+            for (int i = 0; i < manageLScript.taskObjects.Count; i++)
             {
-                if (tasks[i].activeSelf == true)
+                if (manageLScript.taskObjects[i].activeSelf == true)
                 {
                     circleIndex = i;
                 }
