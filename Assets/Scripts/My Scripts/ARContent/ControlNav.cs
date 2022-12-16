@@ -101,6 +101,9 @@ public class ControlNav : MonoBehaviour
             case "Bremsen":
                 selectScript.currAR.GetComponent<BremsenTasks>().checkCurrTask = true;
                 break;
+            case "Tracking":
+                selectScript.currAR.GetComponent<TrackingTasks>().checkCurrTask = true;
+                break;
             case "Diagnose":
                 selectScript.currAR.GetComponent<DiagnoseTasks>().checkCurrTask = true;
                 break;

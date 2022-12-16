@@ -11,7 +11,6 @@ public class BremsenTasks : MonoBehaviour
     public List<GameObject> objToRotate = new List<GameObject>();
     public GameObject[] checkboxes;
     public List<GameObject> spheres = new List<GameObject>();
-    bool colorsSet = true;
     [HideInInspector]
     public bool checkCurrTask = true;
     public SelectionManager selectScript;
@@ -41,12 +40,7 @@ public class BremsenTasks : MonoBehaviour
                 }
             }
 
-            eachOfThem(index);             
-
-            if (index == 0)
-            {
-                
-            }
+            eachOfThem(index);       
 
             checkCurrTask = false;
         }

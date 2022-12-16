@@ -38,16 +38,18 @@ public class KoordsysTasks : MonoBehaviour
 
             if (index == 0)
             {
-                gameObject.transform.GetChild(0).GetComponent<DrawLineBetweenTwoObjects>().setLines("all");
+                gameObject.transform.GetChild(0).GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
+                gameObject.transform.GetChild(0).GetComponent<DrawLineBetweenTwoObjects>().setLines("one");
+                gameObject.transform.GetChild(0).GetComponent<DrawLineBetweenTwoObjects>().currIndex = 0;
                 gameObject.transform.GetChild(0).GetComponent<ChangeColor>().setColor(true);
-                gameObject.transform.GetChild(1).GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
                 gameObject.transform.GetChild(1).GetComponent<ChangeColor>().setColor(false);
             }
             else if (index == 1)
             {
-                gameObject.transform.GetChild(1).GetComponent<DrawLineBetweenTwoObjects>().setLines("all");
+                gameObject.transform.GetChild(1).GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
+                gameObject.transform.GetChild(1).GetComponent<DrawLineBetweenTwoObjects>().setLines("one");
+                gameObject.transform.GetChild(1).GetComponent<DrawLineBetweenTwoObjects>().currIndex = 0;
                 gameObject.transform.GetChild(1).GetComponent<ChangeColor>().setColor(true);
-                gameObject.transform.GetChild(0).GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
                 gameObject.transform.GetChild(0).GetComponent<ChangeColor>().setColor(false);
 
                 // check on Einschalt- and Diagnose checkmarks - if enabled

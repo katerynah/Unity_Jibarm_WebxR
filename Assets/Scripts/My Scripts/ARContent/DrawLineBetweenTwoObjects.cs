@@ -14,7 +14,6 @@ public class DrawLineBetweenTwoObjects : MonoBehaviour
     Vector3 vec;
     Quaternion quat;
 
-
     [System.Serializable]
     public class RendererLines
     {
@@ -55,7 +54,7 @@ public class DrawLineBetweenTwoObjects : MonoBehaviour
 
                     // Set the position count of the linerenderer to two
                     line.positionCount = 2;
-                    line.material = new Material(Shader.Find("Sprites/Default"));
+                    //line.material = new Material(Shader.Find("Sprites/Default"));
 
                     // (100f * 0.075f /2f)
 

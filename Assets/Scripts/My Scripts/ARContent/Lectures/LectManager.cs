@@ -6,6 +6,7 @@ public class LectManager : MonoBehaviour
 {
     public SelectionManager selectScript;
     public RaycastingAR raycastScript;
+    public GameObject arGrey;
     [HideInInspector]
     public List<GameObject> descObjects = new List<GameObject>();
     [HideInInspector]
@@ -15,6 +16,8 @@ public class LectManager : MonoBehaviour
     public List<GameObject> checkMarksCheck = new List<GameObject>();
     bool resetWires = false;
     bool start = true;
+    [HideInInspector]
+    public bool check = true;
 
     public bool raycasting = false;
 
@@ -80,8 +83,13 @@ public class LectManager : MonoBehaviour
                 break;
             //case "Verzerrung":
             //    break;
-            //case "Tracking":
-            //    break;
+            case "Tracking":
+                if (check == true)
+                {
+                    var script = currAR.GetComponent<TrackingTasks>();
+                    script.checkCurrTask = true;
+                }
+                break;
             //case "Homing":
             //    break;
             case "Diagnose":
@@ -123,11 +131,13 @@ public class LectManager : MonoBehaviour
                 break;
             case "Bremsen":
                 currAR.GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
+                currAR.GetComponent<TrackingTasks>().checkCurrTask = false;
                 break;
             //case "Verzerrung":
             //    break;
-            //case "Tracking":
-            //    break;
+            case "Tracking":
+                disableDesc("only-colors");
+                break;
             //case "Homing":
             //    break;
             case "Diagnose":
@@ -187,7 +197,15 @@ public class LectManager : MonoBehaviour
                 }
                 i++;
             }
-        } 
+        } else if (amount == "only-colors")
+        {
+            foreach (GameObject note in taskObjects)
+            {
+                note.GetComponent<ChangeColor>().setColor(false);
+            }
+        }
+
+        check = true;
         
     }
 }

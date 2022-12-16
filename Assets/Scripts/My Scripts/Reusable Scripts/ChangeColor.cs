@@ -14,7 +14,7 @@ public class ChangeColor : MonoBehaviour
     Material newMat;
     public enum Materials
     {
-        Purple, Green, Blue, DWhite, Red
+        Purple, Green, Blue, DWhite, Red, Black, White
     }
     public Materials UseAs;
 
@@ -85,6 +85,12 @@ public class ChangeColor : MonoBehaviour
                 break;
             case Materials.Red:
                 newMat = Resources.Load<Material>("Materials/Select_red_mat");
+                break;
+            case Materials.Black:
+                newMat = Resources.Load<Material>("Materials/Select_black_mat");
+                break;
+            case Materials.White:
+                newMat = Resources.Load<Material>("Materials/Select_white_mat");
                 break;
         }
     }
