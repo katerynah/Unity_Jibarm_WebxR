@@ -31,29 +31,6 @@ public class TrackingTasks : MonoBehaviour
                 }
             }
 
-            //if (index == 0)
-            //{
-            //    tasks[1].GetComponent<ChangeColor>().setColor(false);
-            //    tasks[0].GetComponent<ChangeColor>().setColor(true);
-            //}
-            //else if (index == 1)
-            //{
-            //    tasks[0].GetComponent<ChangeColor>().setColor(false);
-            //    tasks[2].GetComponent<ChangeColor>().setColor(false);
-            //    tasks[1].GetComponent<ChangeColor>().setColor(true);
-            //}
-            //else if (index == 2)
-            //{
-            //    tasks[1].GetComponent<ChangeColor>().setColor(false);
-            //    tasks[3].GetComponent<ChangeColor>().setColor(false);
-            //    tasks[2].GetComponent<ChangeColor>().setColor(true);
-            //}
-            //else if (index == 3)
-            //{
-            //    tasks[2].GetComponent<ChangeColor>().setColor(false);
-            //    tasks[3].GetComponent<ChangeColor>().setColor(true);
-            //}
-
             eachOfThem(index);
 
             manageLScript.check = false;

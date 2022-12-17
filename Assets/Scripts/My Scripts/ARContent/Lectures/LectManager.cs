@@ -6,7 +6,6 @@ public class LectManager : MonoBehaviour
 {
     public SelectionManager selectScript;
     public RaycastingAR raycastScript;
-    public GameObject arGrey;
     [HideInInspector]
     public List<GameObject> descObjects = new List<GameObject>();
     [HideInInspector]
@@ -164,9 +163,9 @@ public class LectManager : MonoBehaviour
     }
 
 
-    public void disableDesc(string amount)
+    public void disableDesc(string type)
     {
-        if (amount == "one")
+        if (type == "one")
         {
             foreach (GameObject desc in descObjects)
             {
@@ -177,7 +176,7 @@ public class LectManager : MonoBehaviour
             {
                 note.GetComponent<ChangeColor>().setColor(false);
             }
-        } else if (amount == "all")
+        } else if (type == "all")
         {
             int i = 0;
             foreach (GameObject desc in descObjects)
@@ -197,11 +196,17 @@ public class LectManager : MonoBehaviour
                 }
                 i++;
             }
-        } else if (amount == "only-colors")
+        } else if (type == "only-colors")
         {
             foreach (GameObject note in taskObjects)
             {
                 note.GetComponent<ChangeColor>().setColor(false);
+            }
+        } else if (type == "draw-lined")
+        {
+            foreach (GameObject note in taskObjects)
+            {
+                note.GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
             }
         }
 

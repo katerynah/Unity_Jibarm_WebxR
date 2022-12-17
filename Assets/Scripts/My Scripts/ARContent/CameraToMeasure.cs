@@ -13,9 +13,7 @@ public class CameraToMeasure : MonoBehaviour
     float speedV = 2f;
 
     float horMinZ = -179f;
-    float horMaxZ = -100f; // -> start z
-    //float vertMinY = 30f;
-    //float vertMaxY = 120f;
+    float horMaxZ = -100f; 
     public Vector3 objEulerH, objEulerV;
     Quaternion startRotH, startRotV; // to reset rotation
     Transform localTransH, localTransV;
