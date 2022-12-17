@@ -113,6 +113,9 @@ public class ControlNav : MonoBehaviour
             case "Koordsys":
                 selectScript.currAR.GetComponent<KoordsysTasks>().checkCurrTask = true;
                 break;
+            case "Laser":
+                selectScript.currAR.GetComponent<LaserTasks>().checkCurrTask = true;
+                break;
             case "Vermessen":
                 selectScript.currAR.GetComponent<VermessenTasks>().checkCurrTask = true;
                 break;

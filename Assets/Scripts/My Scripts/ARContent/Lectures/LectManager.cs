@@ -98,8 +98,6 @@ public class LectManager : MonoBehaviour
             case "Koordsys":
                 studioEnv.SetActive(true);
                 break;
-            //case "Landmarks":
-            //    break;
             //case "Laser":
             //    break;
             case "Vermessen":
@@ -148,8 +146,7 @@ public class LectManager : MonoBehaviour
             case "Koordsys":
                 studioEnv.SetActive(false);
                 break;
-            //case "Landmarks":
-            //    break;
+                break;
             //case "Laser":
             //    break;
             case "Vermessen":

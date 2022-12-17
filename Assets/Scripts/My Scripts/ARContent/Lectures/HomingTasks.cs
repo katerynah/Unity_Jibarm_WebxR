@@ -72,39 +72,5 @@ public class HomingTasks : MonoBehaviour
 
     }
 
-    void eachOfThem(int nr)
-    {
-        //foreach (GameObject obj in objToRotate)
-        //{
-        //    obj.GetComponent<BremsenControl>().enabled = false;
-        //}
 
-        //if (nr < 4)
-        //    objToRotate[nr].GetComponent<BremsenControl>().enabled = true;
-        //    objToRotate[nr].GetComponent<BremsenControl>().isActive = true;
-
-        //}
-        
-    }
-
-    void setStartRotation()
-    {
-        var hBoomRot = zeroScripts[0].horRotation.transform.rotation.eulerAngles;
-        hBoomRot.y = -25f;
-        zeroScripts[0].horRotation.transform.rotation = Quaternion.Euler(hBoomRot);
-
-        var vBoomRot = zeroScripts[0].vertRotation.transform.rotation.eulerAngles;
-        vBoomRot.z = -15f;
-        zeroScripts[0].vertRotation.transform.rotation = Quaternion.Euler(vBoomRot);
-
-        var hHeadRot = zeroScripts[1].horRotation.transform.rotation.eulerAngles;
-        hHeadRot.z = -120f;
-        zeroScripts[1].horRotation.transform.rotation = Quaternion.Euler(hHeadRot);
-
-        var vHeadRot = zeroScripts[1].vertRotation.transform.rotation.eulerAngles;
-        vHeadRot.y = 45f;
-        zeroScripts[1].vertRotation.transform.rotation = Quaternion.Euler(vHeadRot);
-
-        start = false;
-    }
 }
