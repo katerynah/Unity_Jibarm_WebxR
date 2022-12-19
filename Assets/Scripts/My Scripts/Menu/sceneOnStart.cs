@@ -8,7 +8,9 @@ public class SceneOnStart : MonoBehaviour
     public List<GameObject> objectsToDisable = new List<GameObject>();
     [HideInInspector]
     public float DragPanel_startX;
-    public Canvas startCanvas;
+    public GameObject startCanvasDesk, startCanvasMob;
+    [HideInInspector]
+    public Canvas currCanvas;
     public GameObject dragPanel;
 
     [HideInInspector]
@@ -19,17 +21,43 @@ public class SceneOnStart : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        checkScreenSize();
         Screen.orientation = ScreenOrientation.LandscapeLeft;
         OnOffObjects();
         adjustELPanelWidth();
         DragPanel_startX = dragPanel.transform.position.x;
+    }
 
+    private void Update()
+    {
+        if (currCanvas.gameObject.activeSelf == true)
+        {
+            checkScreenSize();
+        }
+    }
+
+    public void checkScreenSize()
+    {
+        if (Screen.width/Screen.height < 1f)
+        {
+            currCanvas = startCanvasMob.GetComponent<Canvas>();
+            startCanvasMob.SetActive(true);
+            startCanvasDesk.SetActive(false);
+            Debug.Log($"mob {Screen.width / Screen.height}");
+        }
+        else if (Screen.width / Screen.height >= 1f)
+        {
+            currCanvas = startCanvasDesk.GetComponent<Canvas>();
+            startCanvasDesk.SetActive(true);
+            startCanvasMob.SetActive(false);
+            Debug.Log($"desk {Screen.width / Screen.height}");
+        }
     }
 
     void adjustELPanelWidth()
     {
-        float cHeight = startCanvas.GetComponent<RectTransform>().rect.height;
-        newWidth = new Vector2(startCanvas.GetComponent<RectTransform>().rect.width, cHeight); // width + 5f a bit bigger just in case
+        float cHeight = currCanvas.GetComponent<RectTransform>().rect.height;
+        newWidth = new Vector2(currCanvas.GetComponent<RectTransform>().rect.width, cHeight); // width + 5f a bit bigger just in case
         //eLPanel
         RectTransform panelRect = dragPanel.transform.GetChild(0).GetComponent<RectTransform>();
         panelRect.sizeDelta = newWidth;

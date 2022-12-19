@@ -18,6 +18,9 @@ public class SelectionManager : MonoBehaviour
     public LectManager manageLScript;
     public string currLectName;
     int add;
+    [HideInInspector]
+    public GameObject arrows;
+
 
     public void selectLecture(int assignARContent)
     {

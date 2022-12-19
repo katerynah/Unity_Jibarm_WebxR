@@ -7,8 +7,9 @@ using UnityEngine.UI;
 public class ChangeTextContent : MonoBehaviour
 {
     [SerializeField]
-    GameObject textToDisplay;
+    GameObject textToDisplay, ARBtn;
     private DragPanel dragScript;
+    private SelectionManager selectScript;
     private ScrollRect scrollObj;
     string textName;
 
@@ -18,6 +19,8 @@ public class ChangeTextContent : MonoBehaviour
         dragScript = scriptObj.GetComponent<DragPanel>();
         var lPanel = GameObject.Find("Lectures-scroll");
         scrollObj = lPanel.GetComponent<ScrollRect>();
+        selectScript = GameObject.Find("SelectionManager").GetComponent<SelectionManager>();
+        ARBtn = GameObject.Find("AR-btn");
     }
 
     void OnEnable()
@@ -36,6 +39,9 @@ public class ChangeTextContent : MonoBehaviour
 
     public void changeText()
     {
+        ARBtn.transform.GetChild(0).gameObject.SetActive(false);
+        ARBtn.transform.GetChild(1).gameObject.SetActive(true);
+        selectScript.selectLecture(1);
         var offObj = GameObject.FindGameObjectWithTag("off");
         offObj.SetActive(false);
         textToDisplay.SetActive(true);

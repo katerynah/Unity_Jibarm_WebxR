@@ -14,6 +14,7 @@ public class CollectObjects : MonoBehaviour
     public SelectionManager selectScript;
     [HideInInspector]
     public GameObject currObject;
+    public CheckTheArea areaScript;
     public bool raycasting = false;
 
     // Lactures
@@ -45,7 +46,7 @@ public class CollectObjects : MonoBehaviour
                         case "Sicherheit":
                             foreach (Transform child in sicherheitTasksScript.modelsGroup.GetComponent<Transform>())
                             {
-                                if (selection.gameObject == child.gameObject)
+                                if (selection.gameObject == child.gameObject && areaScript.isInside == true)
                                 {
                                     child.gameObject.GetComponent<QuickOutline>().enabled = true;
                                     currObject = child.gameObject;

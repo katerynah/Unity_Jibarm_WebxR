@@ -18,6 +18,7 @@ public class SetZeroPoints : MonoBehaviour
     Quaternion qHor, qVert;
     public GameObject[] checkmarks;
     bool stopVert, stopHor = false;
+    public string option = "homing";
 
     public enum JibRotationArea
     {
@@ -42,7 +43,7 @@ public class SetZeroPoints : MonoBehaviour
             if (Input.GetAxis("Mouse X") != 0 && Input.GetAxis("Mouse Y") != 0)
             {
                 controlRot();
-                setLimits();
+                setLimits(option);
             }
 
             // Check if the left mouse button was released this frame
@@ -82,41 +83,58 @@ public class SetZeroPoints : MonoBehaviour
                 break;
         }
 
-       
-
-      
-
         //horRotation.transform.Rotate(0f, Input.GetAxis("Mouse X") / speedH, 0f);
     }
 
-    void setLimits()
+    void setLimits(string lect)
     {
         switch (UseAs)
         {
             case JibRotationArea.Boom:
-                var adaptH = horRotation.transform.localEulerAngles;
-                adaptH.y = (adaptH.y > 180) ? adaptH.y - 360 : adaptH.y;
-                if (adaptH.y > 0 && adaptH.y < 1)
+                if (lect == "homing")
                 {
-                    stopHor = true;
-                    checkmarks[1].SetActive(true);
-                }
-                else {
-                    checkmarks[1].SetActive(false);
-                }
-                //Debug.Log($"Hoz y is {adaptH.y}");
+                    var adaptH = horRotation.transform.localEulerAngles;
+                    adaptH.y = (adaptH.y > 180) ? adaptH.y - 360 : adaptH.y;
+                    if (adaptH.y > 0 && adaptH.y < 1)
+                    {
+                        stopHor = true;
+                        checkmarks[1].SetActive(true);
+                    }
+                    else
+                    {
+                        checkmarks[1].SetActive(false);
+                    } 
 
-                var adaptV = vertRotation.transform.localEulerAngles;
-                adaptV.z = (adaptV.z > 180) ? adaptV.z - 360 : adaptV.z;
-                if (adaptV.z > 0 && adaptV.z < 1)
-                {
-                    stopVert = true;
-                    checkmarks[0].SetActive(true);
+                    var adaptV = vertRotation.transform.localEulerAngles;
+                    adaptV.z = (adaptV.z > 180) ? adaptV.z - 360 : adaptV.z;
+                    if (adaptV.z > 0 && adaptV.z < 1)
+                    {
+                        stopVert = true;
+                        checkmarks[0].SetActive(true);
+                    }
+                    else
+                    {
+                        checkmarks[0].SetActive(false);
+                    }
+
+                    
+                    //Debug.Log($"Hoz y is {adaptH.y}");
                 }
-                else
+                else if (lect == "verschieben")
                 {
-                    checkmarks[0].SetActive(false);
+                    var adaptV = vertRotation.transform.localEulerAngles;
+                    adaptV.z = (adaptV.z > 180) ? adaptV.z - 360 : adaptV.z;
+                    if (adaptV.z > 0 && adaptV.z < 1)
+                    {
+                        stopVert = true;
+                        checkmarks[0].SetActive(true);
+                    }
+                    else
+                    {
+                        checkmarks[0].SetActive(false);
+                    }
                 }
+               
 
                 //Debug.Log($"Vert Z is {adaptV.z}");
                 break;

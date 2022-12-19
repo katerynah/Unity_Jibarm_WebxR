@@ -55,6 +55,7 @@ public class HomingTasks : MonoBehaviour
 
                 tasks[0].GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
                 tasks[1].GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
+                zeroScripts[0].option = "homing";
                 zeroScripts[0].enabled = true;
                 zeroScripts[0].isActive = true;
 
@@ -72,5 +73,18 @@ public class HomingTasks : MonoBehaviour
 
     }
 
+    public void resetTScript()
+    {
+        int i = 0;
+        foreach (GameObject note in tasks)
+        {
+            if (i != 2)
+            {
+                note.GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
+            }
+            i++;
+        }
 
+
+    }
 }

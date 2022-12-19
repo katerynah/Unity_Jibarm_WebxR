@@ -54,12 +54,12 @@ public class BremsenControl : MonoBehaviour
                         {
                             gameObject.transform.Rotate(0f, 0f, Input.GetAxis("Mouse X") * speed);
                             gameObject.transform.Rotate(0f, 0f, Input.GetAxis("Mouse Y") * -speed);
-                            limitRot(90f, objEuler.z, 1, true);
+                            Debug.Log($"Now {gameObject.transform.eulerAngles.z}");
+                            limitRot(230f, objEuler.z, 1, true);
                         }
                         break;
                     case Brakes.HeadTilt:
                         objEuler = gameObject.transform.eulerAngles;
-                        Debug.Log($"Now {gameObject.transform.eulerAngles.z}");
 
                         if (startRotation == true)
                         {
@@ -91,13 +91,13 @@ public class BremsenControl : MonoBehaviour
     void limitRot(float limit, float axisValue, int index, bool bigger)
     {
         
-        if (axisValue > limit && bigger == true)
+        if (axisValue > limit && axisValue < (limit + 1) && bigger == true)
         {
             startRotation = false;
             MeshRenderer newColor = bremsenTScript.spheres[index].GetComponent<MeshRenderer>();
             newColor.material = greenMat;
             bremsenTScript.checkboxes[index].SetActive(true);
-        } else if (bigger == false && axisValue > limit)
+        } else if (bigger == false && axisValue > limit && axisValue < (limit + 1))
         {
             startRotation = false;
             MeshRenderer newColor = bremsenTScript.spheres[index].GetComponent<MeshRenderer>();

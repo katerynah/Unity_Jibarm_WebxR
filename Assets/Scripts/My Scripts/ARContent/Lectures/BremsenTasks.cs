@@ -65,4 +65,19 @@ public class BremsenTasks : MonoBehaviour
         selectScript.currAR.GetComponent<DrawLineBetweenTwoObjects>().currIndex = nr;
         selectScript.currAR.GetComponent<DrawLineBetweenTwoObjects>().setLines("one");
     }
+
+    public void resetTScript()
+    {
+        gameObject.GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
+        int i = 0;
+        foreach (GameObject obj in gameObject.GetComponent<BremsenTasks>().objToRotate)
+        {
+            if (i < 4)
+            {
+                obj.GetComponent<BremsenControl>().enabled = false;
+                obj.GetComponent<BremsenControl>().isActive = false;
+            }
+            i++;
+        }
+    }
 }

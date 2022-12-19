@@ -73,7 +73,7 @@ public class RaycastingAR : MonoBehaviour
                         //case "Laser":
                         //    break;
                         case "Vermessen":
-                            vermessenTScript.doTouch(selection.gameObject);
+                            //vermessenTScript.doTouch(selection.gameObject);
                             break;
                             //case "Verschieben":
                             //    break;

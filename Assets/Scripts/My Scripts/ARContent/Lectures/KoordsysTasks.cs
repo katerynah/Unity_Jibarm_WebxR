@@ -14,6 +14,7 @@ public class KoordsysTasks : MonoBehaviour
     public GameObject switchBtn, switchLight;
     public GameObject screenView;
     List<GameObject> descs = new List<GameObject>();
+    List<GameObject> tasks = new List<GameObject>();
     int index;
     bool start = true;
 
@@ -22,6 +23,7 @@ public class KoordsysTasks : MonoBehaviour
     {
         manageLScript = gameObject.GetComponent<LectManager>();
         descs = manageLScript.descObjects;
+        tasks = manageLScript.taskObjects;
     }
 
     void Update()
@@ -53,7 +55,7 @@ public class KoordsysTasks : MonoBehaviour
                 gameObject.transform.GetChild(0).GetComponent<ChangeColor>().setColor(false);
 
                 // check on Einschalt- and Diagnose checkmarks - if enabled
-                if (start == true && checkScSwitch[0].activeSelf == false && checkScSwitch[1].activeSelf == false)
+                if (start == true)
                 {
                     Transform objectTransform = switchBtn.GetComponent<Transform>();
                     objectTransform.Rotate(0f, -20f, 0f);
@@ -96,4 +98,29 @@ public class KoordsysTasks : MonoBehaviour
 
     }
 
+    public void resetTScript()
+    {
+        if (start == false)
+        {
+            int i = 0;
+            foreach (GameObject obj in tasks)
+            {
+                if (i != 2)
+                {
+                    obj.GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
+                    obj.GetComponent<ChangeColor>().setColor(false);
+                    start = true;
+                    countDown = 0;
+                    i++;
+                }
+            }
+            switchBtn.tag = "Untagged";
+            raycastScript.raycasting = false;
+
+            Transform objectTransform = switchBtn.GetComponent<Transform>();
+            objectTransform.Rotate(0f, -20f, 0f);
+            switchLight.GetComponent<MeshRenderer>().material = redMat;
+        }
+        
+    }
 }

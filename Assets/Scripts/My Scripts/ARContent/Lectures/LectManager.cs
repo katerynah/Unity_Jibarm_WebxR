@@ -14,7 +14,8 @@ public class LectManager : MonoBehaviour
     public GameObject studioEnv, player;
     public List<GameObject> checkMarksCheck = new List<GameObject>();
     bool resetWires = false;
-    bool start = true;
+    bool resetIndex = true;
+    bool start, resetArrows = true;
     [HideInInspector]
     public bool check = true;
 
@@ -36,21 +37,49 @@ public class LectManager : MonoBehaviour
         }
     }
 
-    void addContent(GameObject currAR, GameObject currCtrl)
+    /**  ADD  **/
+
+    public void addContent(GameObject currAR, GameObject currCtrl)
     {
         // TO DO: desc on control panel
         currAR.SetActive(true);
         currCtrl.SetActive(true);
+        if (resetIndex)
+        {
+            start = true;
+            resetIndex = false;
+        }
+        
+        int i = 0;
         if (start == true)
         {
             foreach (Transform child in currCtrl.GetComponent<Transform>())
             {
                 descObjects.Add(child.gameObject);
+                if (i == 0 && selectScript.currLectName != "Allgemein")
+                {
+                    descObjects[i].SetActive(true);
+                }
+                else if (selectScript.currLectName != "Allgemein")
+                    {
+                    descObjects[i].SetActive(false);
+                }
+                i++;
+              
             }
-
+            i = 0;
             foreach (Transform child in currAR.GetComponent<Transform>())
             {
                 taskObjects.Add(child.gameObject);
+                if (i == 0 && selectScript.currLectName != "Allgemein")
+                {
+                    taskObjects[i].SetActive(true);
+                }
+                else if(selectScript.currLectName != "Allgemein")
+                {
+                    taskObjects[i].SetActive(false);
+                }
+                i++;
             }
             start = false;
         }
@@ -74,11 +103,10 @@ public class LectManager : MonoBehaviour
             case "Allgemein":
                  currAR.GetComponent<DrawLineBetweenTwoObjects>().setLines("all");
                 break;
+            case "Sicherheit":
+                currAR.GetComponent<SicherheitTasks>().handIcons.SetActive(true);
+                break;
             case "Bremsen":
-                //foreach (GameObject obj in currAR.GetComponent<BremsenTasks>().spheres)
-                //{
-                //    obj.SetActive(false);
-                //}
                 break;
             //case "Verzerrung":
             //    break;
@@ -98,8 +126,8 @@ public class LectManager : MonoBehaviour
             case "Koordsys":
                 studioEnv.SetActive(true);
                 break;
-            //case "Laser":
-            //    break;
+            case "Laser":
+                break;
             case "Vermessen":
                 studioEnv.SetActive(true);
                 break;
@@ -108,15 +136,22 @@ public class LectManager : MonoBehaviour
                 //case "Nivellieren":
                 //    break;
         }
+
     }
 
-    void removeContent(GameObject currAR, GameObject currCtrl)
+    /**  REMOVE  **/
+
+    public void removeContent(GameObject currAR, GameObject currCtrl)
     {
       
         currAR.SetActive(false);
         currCtrl.SetActive(false);
+        resetIndex = true;
         if (descObjects.Count > 1 && selectScript.currLectName != "Allgemein")
         {
+            arrowScript.currIndex = 0;
+            selectScript.arrows.transform.GetChild(0).gameObject.SetActive(false);
+            selectScript.arrows.transform.GetChild(1).gameObject.SetActive(true);
             arrowScript.gameObject.SetActive(false);
         }
 
@@ -126,30 +161,42 @@ public class LectManager : MonoBehaviour
                 currAR.GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
                 disableDesc("all");
                 break;
+            case "Einschalt":
+                EinschaltTasks einschaltScript = GameObject.Find("Player").GetComponent<EinschaltTasks>();
+                einschaltScript.enabled = false;
+                break;
+            case "Sicherheit":
+                currAR.GetComponent<SicherheitTasks>().resetTScript();
+                break;
             case "Bremsen":
-                currAR.GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
-                currAR.GetComponent<TrackingTasks>().checkCurrTask = false;
+                currAR.GetComponent<BremsenTasks>().resetTScript();
+                //currAR.GetComponent<TrackingTasks>().checkCurrTask = false;
                 break;
             //case "Verzerrung":
             //    break;
             case "Tracking":
-                disableDesc("only-colors");
+                currAR.GetComponent<TrackingTasks>().resetTScript();
+                //disableDesc("only-colors");
                 break;
-            //case "Homing":
-            //    break;
+            case "Homing":
+                currAR.GetComponent<HomingTasks>().resetTScript();
+                break;
             case "Diagnose":
-                gameObject.GetComponent<DiagnoseTasks>().switchBtn.tag = "Untagged";
-                raycastScript.raycasting = false;
+                currAR.GetComponent<DiagnoseTasks>().resetTScript();
+                //gameObject.GetComponent<DiagnoseTasks>().switchBtn.tag = "Untagged";
+                //raycastScript.raycasting = false;
                 break;
             //case "Resposition":
             //    break;
             case "Koordsys":
+                currAR.GetComponent<KoordsysTasks>().resetTScript();
                 studioEnv.SetActive(false);
                 break;
+            case "Laser":
+                currAR.GetComponent<LaserTasks>().resetTScript();
                 break;
-            //case "Laser":
-            //    break;
             case "Vermessen":
+                currAR.GetComponent<VermessenTasks>().resetTScript();
                 studioEnv.SetActive(false);
                 break;
                 //case "Verschieben":
@@ -157,6 +204,8 @@ public class LectManager : MonoBehaviour
                 //case "Nivellieren":
                 //    break;
         }
+
+        resetArrows = true;
     }
 
 

@@ -114,4 +114,20 @@ public class DiagnoseTasks : MonoBehaviour
 
     }
 
+    public void resetTScript()
+    {
+        if (start == false)
+        {
+            countDown = 0;
+            screenView.SetActive(false);
+            switchBtn.tag = "Untagged";
+            raycastScript.raycasting = false;
+
+            Transform objectTransform = switchBtn.GetComponent<Transform>();
+            objectTransform.Rotate(0f, -20f, 0f);
+            switchLight.GetComponent<MeshRenderer>().material = redMat;
+        }
+
+    }
+
 }

@@ -6,7 +6,6 @@ public class VerticalJoint : MonoBehaviour
 {
     public bool isActive = false;
     public GameObject objToRotate;
-    [SerializeField] 
     float speed = 1.5f;
     float minZ = -30f; // -> -45
     float maxZ = 30f;  // -> 0
@@ -70,10 +69,22 @@ public class VerticalJoint : MonoBehaviour
 
     void limitRot()
     {
+        
+
         objEuler = localTrans.rotation.eulerAngles;
         objEuler.z = (objEuler.z > 180) ? objEuler.z - 360 : objEuler.z;
         objEuler.z = Mathf.Clamp(objEuler.z, minZ, maxZ);
         localTrans.rotation = Quaternion.Euler(objEuler);
+
+        if (objEuler.z < -20f || objEuler.z > 20f)
+        {
+            speed = 3f;
+        }else {
+            speed = 1.5f;
+        }
+
+        Debug.Log($"Current euler angles {objEuler.z}");
+
     }
 
     void moveLevel()

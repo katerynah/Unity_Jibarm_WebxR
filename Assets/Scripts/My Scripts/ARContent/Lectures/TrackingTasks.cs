@@ -50,4 +50,12 @@ public class TrackingTasks : MonoBehaviour
         Debug.Log($"Now color {tasks[nr].name}");
     }
 
+    public void resetTScript()
+    {
+        foreach (GameObject note in tasks)
+        {
+            note.GetComponent<ChangeColor>().setColor(false);
+        }
+    }
+
 }

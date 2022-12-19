@@ -50,6 +50,7 @@ public class RestartScript : MonoBehaviour
                 }
                 break;
             case "Menu-btn":
+                //gameObject.GetComponent<SceneOnStart>().checkScreenSize();
                 break;
 
 

@@ -91,13 +91,21 @@ public class VermessenTasks : MonoBehaviour
         }
     }
 
-
-    public void doTouch(GameObject selected)
+    public void resetTScript()
     {
-        if (selected == switchBtn)
+        if (start == false)
         {
-            
-        }
+            Transform objectTransform = switchBtn.GetComponent<Transform>();
+            Quaternion onRot = new Quaternion();
+            onRot.Set(objectTransform.rotation.x, -20f, objectTransform.rotation.z, 1);
+            switchLight.GetComponent<MeshRenderer>().material = redMat;
+            screenView.SetActive(false);
 
+            cameraRotScript.enabled = false;
+            cameraRotScript.isActive = false;
+            joystick.SetActive(false);
+        }
     }
+
+
 }

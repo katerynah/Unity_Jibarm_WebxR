@@ -64,19 +64,26 @@ public class LaserTasks : MonoBehaviour
 
     }
 
-    void eachOfThem(int nr)
+    public void resetTScript()
     {
-        //foreach (GameObject obj in objToRotate)
-        //{
-        //    obj.GetComponent<BremsenControl>().enabled = false;
-        //}
-
-        //if (nr < 4)
-        //    objToRotate[nr].GetComponent<BremsenControl>().enabled = true;
-        //    objToRotate[nr].GetComponent<BremsenControl>().isActive = true;
-
-        //}
-
+        if (start == false)
+        {
+            gameObject.transform.GetChild(0).GetComponent<ChangeColor>().setColor(false);
+            gameObject.transform.GetChild(1).GetComponent<ChangeColor>().setColor(false);
+            gameObject.transform.GetChild(0).GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
+            gameObject.transform.GetChild(1).GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
+            if (start == false)
+            {
+                Transform objectTransform = switchBtn.GetComponent<Transform>();
+                Quaternion onRot = new Quaternion();
+                onRot.Set(objectTransform.rotation.x, -10f, objectTransform.rotation.z, 1);
+                switchLight.GetComponent<MeshRenderer>().material = redMat;
+                screenView.SetActive(false);
+                start = false;
+            }
+            start = true;
+        }
+        
     }
-   
+
 }

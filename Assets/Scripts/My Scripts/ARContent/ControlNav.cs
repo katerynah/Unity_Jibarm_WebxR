@@ -6,6 +6,7 @@ public class ControlNav : MonoBehaviour
 {
     public SelectionManager selectScript;
     public GameObject ArrowL, ArrowR;
+    public bool start = true;
     List<GameObject> currDescList = new List<GameObject>();
     List<GameObject> currTaskList = new List<GameObject>();
 
@@ -23,7 +24,7 @@ public class ControlNav : MonoBehaviour
         currDescList = selectScript.currAR.GetComponent<LectManager>().descObjects;
         currTaskList = selectScript.currAR.GetComponent<LectManager>().taskObjects;
     }
-
+    
     public void setArrowL()
     {
         if (currIndex > 0 && currIndex < currDescList.Count - 1)
