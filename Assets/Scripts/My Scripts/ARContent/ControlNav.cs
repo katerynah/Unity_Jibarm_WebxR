@@ -96,6 +96,9 @@ public class ControlNav : MonoBehaviour
     {
         switch (selectScript.currLectName)
         {
+            case "Einschalt":
+                GameObject.Find("Player").GetComponent<EinschaltTasks>().checkCurrTask = true;
+                break;
             case "Sicherheit":
                 selectScript.currAR.GetComponent<SicherheitTasks>().checkCurrTask = true;
                 break;
@@ -120,7 +123,10 @@ public class ControlNav : MonoBehaviour
             case "Vermessen":
                 selectScript.currAR.GetComponent<VermessenTasks>().checkCurrTask = true;
                 break;
-            
+            case "Verschieben":
+                selectScript.currAR.GetComponent<VerschiebenTasks>().checkCurrTask = true;
+                break;
+
         }
     }
 }

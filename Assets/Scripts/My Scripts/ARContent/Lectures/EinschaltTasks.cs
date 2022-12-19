@@ -11,6 +11,7 @@ public class EinschaltTasks : MonoBehaviour
     public RaycastingAR raycastScript;
     public CheckBoxed checkBoxScript;
     public FollowCurve curveScript;
+    public bool checkCurrTask = true;
     public SelectionManager selectScript;
     LectManager manageLScript;
     public Material redMat;
@@ -60,7 +61,7 @@ public class EinschaltTasks : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject.tag == "Player" && start)
+        if (other.gameObject.tag == "Player" && start && checkCurrTask)
         {
             for (int i = 0; i < manageLScript.taskObjects.Count; i++)
             {
@@ -92,6 +93,8 @@ public class EinschaltTasks : MonoBehaviour
             selectionRenderer1.material = selectionMaterial;
             selectionRenderer2.material = selectionMaterial;
             raycastScript.raycasting = true;
+
+            checkCurrTask = false;
         }
     }
 

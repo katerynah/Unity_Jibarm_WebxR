@@ -64,10 +64,14 @@ public class SetZeroPoints : MonoBehaviour
                     horRotation.transform.Rotate(0f, Input.GetAxis("Mouse X") * speedH, 0f);
                 }
 
-                if (stopVert == false)
+                if (option == "homing")
                 {
-                    vertRotation.transform.Rotate(0f, 0f, Input.GetAxis("Mouse Y") / speedV);
+                    if (stopVert == false)
+                    {
+                        vertRotation.transform.Rotate(0f, 0f, Input.GetAxis("Mouse Y") / speedV);
+                    }
                 }
+                    
                 break;
 
             case JibRotationArea.Head:
@@ -178,6 +182,9 @@ public class SetZeroPoints : MonoBehaviour
     public void resetRotation()
     {
         horRotation.transform.rotation = startRotH;
-        vertRotation.transform.rotation = startRotV;
+        if (option == "homing")
+        {
+            vertRotation.transform.rotation = startRotV;
+        }
     }
 }
