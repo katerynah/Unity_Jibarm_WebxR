@@ -14,6 +14,7 @@ public class SelectionManager : MonoBehaviour
 
     [HideInInspector]
     public GameObject currLect, currAR, currCtrl;
+    public List<GameObject> screenObjs = new List<GameObject>();
     [HideInInspector]
     public LectManager manageLScript;
     public string currLectName;

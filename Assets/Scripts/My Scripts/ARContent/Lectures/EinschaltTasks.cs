@@ -61,7 +61,7 @@ public class EinschaltTasks : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject.tag == "Player" && start && checkCurrTask)
+        if (other.gameObject.tag == "Player" && start)
         {
             for (int i = 0; i < manageLScript.taskObjects.Count; i++)
             {
@@ -94,7 +94,6 @@ public class EinschaltTasks : MonoBehaviour
             selectionRenderer2.material = selectionMaterial;
             raycastScript.raycasting = true;
 
-            checkCurrTask = false;
         }
     }
 
@@ -131,6 +130,21 @@ public class EinschaltTasks : MonoBehaviour
             switchBtn.tag = "Untagged";
             checkBoxScript.checkTheBox("switch-on");
         }
+
+    }
+
+    public void resetTScript()
+    {
+        //wireList[0].WireBack.SetActive(false);
+        //wireList[0].WireFront.SetActive(false);
+        //wireList[1].WireBack.SetActive(false);
+        //wireList[1].WireFront.SetActive(false);
+        wireList[0].WireFront.tag = "Untagged";
+        wireList[1].WireFront.tag = "Untagged";
+        switchBtn.tag = "Untagged";
+        curveScript.enabled = false;
+        curveScript.isActive = false;
+        raycastScript.raycasting = false;
 
     }
 

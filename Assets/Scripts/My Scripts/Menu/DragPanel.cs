@@ -27,6 +27,7 @@ public class DragPanel : MonoBehaviour // EventTrigger: event trigger of UI even
         // adapt text width
         var objects = GameObject.FindGameObjectsWithTag("text");
         textObjects = objects;
+
     }
 
     void Update()
@@ -36,6 +37,7 @@ public class DragPanel : MonoBehaviour // EventTrigger: event trigger of UI even
         // check if dragging is on then change the position of ui element according ti mouse input position
         if (startDragging)
         {
+
             transform.position = new Vector2(Input.mousePosition.x, gameObject.transform.position.y);
 
             if (gameObject.GetComponent<RectTransform>().anchoredPosition.x < -100f) // < -103.5
@@ -73,7 +75,7 @@ public class DragPanel : MonoBehaviour // EventTrigger: event trigger of UI even
 
         foreach (var obj in textObjects)
         {
-            if (gameObject.GetComponent<RectTransform>().anchoredPosition.x > -198)
+            if (gameObject.GetComponent<RectTransform>().anchoredPosition.x > -198)  // -198
             {
                 obj.gameObject.SetActive(false);
             }

@@ -39,19 +39,22 @@ public class ChangeTextContent : MonoBehaviour
 
     public void changeText()
     {
-        ARBtn.transform.GetChild(0).gameObject.SetActive(false);
-        ARBtn.transform.GetChild(1).gameObject.SetActive(true);
-        selectScript.selectLecture(1);
-        var offObj = GameObject.FindGameObjectWithTag("off");
-        offObj.SetActive(false);
-        textToDisplay.SetActive(true);
-        textToDisplay.tag = "text-on";
-        var reactObj = textToDisplay.GetComponent<RectTransform>();
-        var text = textToDisplay.transform.GetChild(0).GetComponent<RectTransform>();
-        scrollObj.content = text;
-        reactObj.anchoredPosition = new Vector2(dragScript.x2, reactObj.anchoredPosition.y);
-        reactObj.sizeDelta = new Vector2(dragScript.panelsForWidth[0].rect.width, reactObj.rect.height);
-        textToDisplay.tag = "off";
+        if (textToDisplay.tag != "off")
+        {
+            ARBtn.transform.GetChild(0).gameObject.SetActive(false);
+            ARBtn.transform.GetChild(1).gameObject.SetActive(true);
+            selectScript.selectLecture(1);
+            var offObj = GameObject.FindGameObjectWithTag("off");
+            offObj.SetActive(false);
+            textToDisplay.SetActive(true);
+            textToDisplay.tag = "text-on";
+            var reactObj = textToDisplay.GetComponent<RectTransform>();
+            var text = textToDisplay.transform.GetChild(0).GetComponent<RectTransform>();
+            scrollObj.content = text;
+            reactObj.anchoredPosition = new Vector2(dragScript.x2, reactObj.anchoredPosition.y);
+            reactObj.sizeDelta = new Vector2(dragScript.panelsForWidth[0].rect.width, reactObj.rect.height);
+            textToDisplay.tag = "off";
+        } 
     }
 
 }

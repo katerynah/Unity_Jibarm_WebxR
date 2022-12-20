@@ -6,7 +6,7 @@ public class VerticalJoint : MonoBehaviour
 {
     public bool isActive = false;
     public GameObject objToRotate;
-    float speed = 1.5f;
+    float speed = 2.5f;
     float minZ = -30f; // -> -45
     float maxZ = 30f;  // -> 0
     public Vector3 objEuler;
@@ -78,9 +78,9 @@ public class VerticalJoint : MonoBehaviour
 
         if (objEuler.z < -20f || objEuler.z > 20f)
         {
-            speed = 3f;
+            speed = 5f;
         }else {
-            speed = 1.5f;
+            speed = 2.5f;
         }
 
         Debug.Log($"Current euler angles {objEuler.z}");

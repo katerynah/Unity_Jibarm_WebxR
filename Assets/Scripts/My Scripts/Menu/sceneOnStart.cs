@@ -43,14 +43,12 @@ public class SceneOnStart : MonoBehaviour
             currCanvas = startCanvasMob.GetComponent<Canvas>();
             startCanvasMob.SetActive(true);
             startCanvasDesk.SetActive(false);
-            Debug.Log($"mob {Screen.width / Screen.height}");
         }
         else if (Screen.width / Screen.height >= 1f)
         {
             currCanvas = startCanvasDesk.GetComponent<Canvas>();
             startCanvasDesk.SetActive(true);
             startCanvasMob.SetActive(false);
-            Debug.Log($"desk {Screen.width / Screen.height}");
         }
     }
 

@@ -38,8 +38,8 @@ public class LockPanel : MonoBehaviour
                     inAR = true;
                     break;
                 case Modes.ControlView:
-                    this.changeObj[1].SetActive(false);
-                    this.changeObj[0].SetActive(true);
+                    //this.changeObj[1].SetActive(false);
+                    //this.changeObj[0].SetActive(true);
                     this.changeObj[2].SetActive(false);
                     if (this.changeObj[3].activeSelf == true)
                     {
@@ -69,8 +69,8 @@ public class LockPanel : MonoBehaviour
                     inAR = false;
                     break;
                 case Modes.ControlView:
-                    this.changeObj[0].SetActive(false);
-                    this.changeObj[1].SetActive(true);
+                    //this.changeObj[0].SetActive(false);
+                    //this.changeObj[1].SetActive(true);
                     this.changeObj[2].SetActive(true);
                     if (withArrows == true)
                     {

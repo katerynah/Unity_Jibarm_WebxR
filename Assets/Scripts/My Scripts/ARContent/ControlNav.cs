@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ControlNav : MonoBehaviour
@@ -7,8 +8,11 @@ public class ControlNav : MonoBehaviour
     public SelectionManager selectScript;
     public GameObject ArrowL, ArrowR;
     public bool start = true;
+    public GameObject tasksNum;
     List<GameObject> currDescList = new List<GameObject>();
     List<GameObject> currTaskList = new List<GameObject>();
+    int currNr, totalNr;
+    TextMeshProUGUI theText;
 
     public int currIndex = 0;
 
@@ -23,8 +27,12 @@ public class ControlNav : MonoBehaviour
     {
         currDescList = selectScript.currAR.GetComponent<LectManager>().descObjects;
         currTaskList = selectScript.currAR.GetComponent<LectManager>().taskObjects;
+        currNr = currIndex + 1 ;
+        totalNr = currTaskList.Count;
+        theText = tasksNum.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
+        theText.SetText($"{currNr}/{totalNr}");
     }
-    
+
     public void setArrowL()
     {
         if (currIndex > 0 && currIndex < currDescList.Count - 1)
@@ -57,6 +65,8 @@ public class ControlNav : MonoBehaviour
 
         resetCheck();
     }
+
+  
 
     public void setArrowR()
     {
@@ -94,6 +104,8 @@ public class ControlNav : MonoBehaviour
 
     void resetCheck()
     {
+        setTaskNumber();
+
         switch (selectScript.currLectName)
         {
             case "Einschalt":
@@ -128,6 +140,12 @@ public class ControlNav : MonoBehaviour
                 break;
 
         }
+    }
+
+    public void setTaskNumber()
+    {
+        currNr = currIndex;
+        theText.SetText($"{currNr}/{totalNr}");
     }
 }
 

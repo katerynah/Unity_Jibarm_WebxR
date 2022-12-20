@@ -8,6 +8,7 @@ public class LectManager : MonoBehaviour
     public RaycastingAR raycastScript;
     [HideInInspector]
     public List<GameObject> descObjects = new List<GameObject>();
+    List<GameObject> disableScreen = new List<GameObject>();
     [HideInInspector]
     public List<GameObject> taskObjects = new List<GameObject>();
     public ControlNav arrowScript;
@@ -20,6 +21,11 @@ public class LectManager : MonoBehaviour
     public bool check = true;
 
     public bool raycasting = false;
+
+    private void Start()
+    {
+        disableScreen = selectScript.screenObjs;
+    }
 
     public void setLectureValues(int add, GameObject currAR, GameObject currCtrl)
     {
@@ -102,6 +108,11 @@ public class LectManager : MonoBehaviour
         {
             case "Allgemein":
                  currAR.GetComponent<DrawLineBetweenTwoObjects>().setLines("all");
+                currAR.GetComponent<DrawLineBetweenTwoObjects>().setLines("one");
+                break;
+            case "Einschalt":
+                EinschaltTasks einschaltScript = GameObject.Find("Player").GetComponent<EinschaltTasks>();
+                einschaltScript.enabled = true;
                 break;
             case "Sicherheit":
                 currAR.GetComponent<SicherheitTasks>().handIcons.SetActive(true);
@@ -159,10 +170,11 @@ public class LectManager : MonoBehaviour
         {
            case "Allgemein":
                 currAR.GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
-                disableDesc("all");
+                disableDesc("one");
                 break;
             case "Einschalt":
                 EinschaltTasks einschaltScript = GameObject.Find("Player").GetComponent<EinschaltTasks>();
+                einschaltScript.resetTScript();
                 einschaltScript.enabled = false;
                 break;
             case "Sicherheit":
@@ -183,6 +195,7 @@ public class LectManager : MonoBehaviour
                 break;
             case "Diagnose":
                 currAR.GetComponent<DiagnoseTasks>().resetTScript();
+                resetScreenUI();
                 //gameObject.GetComponent<DiagnoseTasks>().switchBtn.tag = "Untagged";
                 //raycastScript.raycasting = false;
                 break;
@@ -194,10 +207,12 @@ public class LectManager : MonoBehaviour
                 break;
             case "Laser":
                 currAR.GetComponent<LaserTasks>().resetTScript();
+                resetScreenUI();
                 break;
             case "Vermessen":
                 currAR.GetComponent<VermessenTasks>().resetTScript();
                 studioEnv.SetActive(false);
+                resetScreenUI();
                 break;
                 //case "Verschieben":
                 //    break;
@@ -205,9 +220,17 @@ public class LectManager : MonoBehaviour
                 //    break;
         }
 
+
         resetArrows = true;
     }
 
+    void resetScreenUI()
+    {
+        foreach (GameObject menu in disableScreen)
+        {
+            menu.SetActive(false);
+        }
+    }
 
     public void disableDesc(string type)
     {

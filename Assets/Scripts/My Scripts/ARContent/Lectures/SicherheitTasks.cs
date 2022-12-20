@@ -96,6 +96,14 @@ public class SicherheitTasks : MonoBehaviour
     public void resetTScript()
     {
         collectScript.raycasting = false;
+        foreach (Transform child in modelsGroup.GetComponent<Transform>())
+        {
+            child.gameObject.tag = "Untagged";
+
+        }
+        collectScript.raycasting = false;
+        colorScript.setColor(false);
+        vJointScript.resetRotation();
         vJointScript.enabled = false;
         bereichCount.SetActive(false);
         handIcons.transform.GetChild(0).gameObject.SetActive(false);
