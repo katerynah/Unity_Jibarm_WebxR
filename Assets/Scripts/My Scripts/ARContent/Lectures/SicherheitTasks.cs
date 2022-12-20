@@ -76,7 +76,7 @@ public class SicherheitTasks : MonoBehaviour
                 foreach (Transform child in modelsGroup.GetComponent<Transform>())
                 {
                     child.gameObject.tag = "raycast";
-                    
+
                     collectScript.raycasting = true;
                 }
                 if (checkBereich.activeSelf == true)
@@ -95,11 +95,10 @@ public class SicherheitTasks : MonoBehaviour
 
     public void resetTScript()
     {
-        collectScript.raycasting = false;
         foreach (Transform child in modelsGroup.GetComponent<Transform>())
         {
             child.gameObject.tag = "Untagged";
-
+            collectScript.raycasting = false;
         }
         collectScript.raycasting = false;
         colorScript.setColor(false);

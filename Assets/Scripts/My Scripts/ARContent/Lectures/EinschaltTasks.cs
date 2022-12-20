@@ -75,16 +75,21 @@ public class EinschaltTasks : MonoBehaviour
             {
                 wireList[0].WireFront.tag = "raycast";
                 wireList[1].WireFront.tag = "raycast";
+                curveScript.isActive = false;
+                curveScript.enabled = false;
             }
             else if (circleIndex == 1)
             {
                 wireList[0].WireFront.tag = "Untagged";
                 wireList[1].WireFront.tag = "Untagged";
                 curveScript.enabled = true;
+                curveScript.isActive = true;
             }
             else if (circleIndex == 2)
             {
                 switchBtn.tag = "raycast";
+                curveScript.isActive = false;
+                curveScript.enabled = false;
             }
 
             var selectionRenderer1 = circleList[circleIndex].Circle1.GetComponent<MeshRenderer>();
@@ -116,13 +121,15 @@ public class EinschaltTasks : MonoBehaviour
             wireList[0].WireFront.SetActive(false);
             wireList[0].WireFront.tag = "Untagged";
             checkBoxScript.checkTheBox("left");
-        } else if (selected == wireList[1].WireFront || selected == wireList[1].WireFront)
+        }
+        else if (selected == wireList[1].WireFront || selected == wireList[1].WireFront)
         {
             wireList[1].WireBack.SetActive(false);
             wireList[1].WireFront.SetActive(false);
             wireList[1].WireFront.tag = "Untagged";
             checkBoxScript.checkTheBox("right");
-        } else if (selected == switchBtn)
+        }
+        else if (selected == switchBtn)
         {
             Transform objectTransform = switchBtn.GetComponent<Transform>();
             objectTransform.Rotate(0f, -20f, 0f);

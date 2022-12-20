@@ -7,7 +7,7 @@ public class VerschiebenTasks : MonoBehaviour
     int index;
     List<GameObject> descs = new List<GameObject>();
     List<GameObject> tasks = new List<GameObject>();
-    public GameObject sphere, playView, modelsGroup, fx;
+    public GameObject sphere, playView, modelsGroup;
     public JointForRepos jointRotScript;
     //bool start = true;
     [HideInInspector]
@@ -62,12 +62,10 @@ public class VerschiebenTasks : MonoBehaviour
                 jointRotScript.isActive = false;
                 playView.GetComponent<ManagePlaylist>().select = 0;
                 playView.GetComponent<ManagePlaylist>().animator[1].Play("Step2", -1, 0f);
-                fx.SetActive(false);
             }
             else if (index == 3)
             {
                 // anim 2
-                fx.SetActive(true);
                 playView.SetActive(true);
                 sphere.SetActive(false);
                 playView.GetComponent<ManagePlaylist>().select = 1;
@@ -101,7 +99,6 @@ public class VerschiebenTasks : MonoBehaviour
         modelsGroup.SetActive(false);
         playView.SetActive(false);
         tasks[0].GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
-        fx.SetActive(false);
         playView.GetComponent<ManagePlaylist>().animator[0].Play("Step1", -1, 0f);
         playView.GetComponent<ManagePlaylist>().animator[1].Play("Step2", -1, 0f);
 

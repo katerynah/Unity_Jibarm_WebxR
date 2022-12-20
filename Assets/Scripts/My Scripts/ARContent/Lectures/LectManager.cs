@@ -15,10 +15,13 @@ public class LectManager : MonoBehaviour
     public GameObject studioEnv, player;
     public List<GameObject> checkMarksCheck = new List<GameObject>();
     bool resetWires = false;
-    bool resetIndex = true;
-    bool start, resetArrows = true;
+    bool resetIndex, start, resetArrows, resetPos = true;
     [HideInInspector]
     public bool check = true;
+    public JibArmValues jibValuesScript;
+    List<Vector3> positions = new List<Vector3>();
+    List<Quaternion> rotations = new List<Quaternion>();
+
 
     public bool raycasting = false;
 
@@ -47,6 +50,20 @@ public class LectManager : MonoBehaviour
 
     public void addContent(GameObject currAR, GameObject currCtrl)
     {
+        if (resetPos == true)
+        {
+            jibValuesScript.setTheValues();
+            resetPos = false;
+        }
+
+        // Jib
+        // Arm Tilt
+        // Arm Pan
+        // Kamera Tilt
+        // Kamera Pan
+
+
+
         // TO DO: desc on control panel
         currAR.SetActive(true);
         currCtrl.SetActive(true);
@@ -55,7 +72,7 @@ public class LectManager : MonoBehaviour
             start = true;
             resetIndex = false;
         }
-        
+
         int i = 0;
         if (start == true)
         {
@@ -67,11 +84,11 @@ public class LectManager : MonoBehaviour
                     descObjects[i].SetActive(true);
                 }
                 else if (selectScript.currLectName != "Allgemein")
-                    {
+                {
                     descObjects[i].SetActive(false);
                 }
                 i++;
-              
+
             }
             i = 0;
             foreach (Transform child in currAR.GetComponent<Transform>())
@@ -81,7 +98,7 @@ public class LectManager : MonoBehaviour
                 {
                     taskObjects[i].SetActive(true);
                 }
-                else if(selectScript.currLectName != "Allgemein")
+                else if (selectScript.currLectName != "Allgemein")
                 {
                     taskObjects[i].SetActive(false);
                 }
@@ -99,7 +116,8 @@ public class LectManager : MonoBehaviour
         if (selectScript.currLectName == "Einschalt")
         {
             player.GetComponent<EinschaltTasks>().enabled = true;
-        } else
+        }
+        else
         {
             player.GetComponent<EinschaltTasks>().enabled = false;
         }
@@ -107,7 +125,7 @@ public class LectManager : MonoBehaviour
         switch (selectScript.currLectName)
         {
             case "Allgemein":
-                 currAR.GetComponent<DrawLineBetweenTwoObjects>().setLines("all");
+                currAR.GetComponent<DrawLineBetweenTwoObjects>().setLines("all");
                 currAR.GetComponent<DrawLineBetweenTwoObjects>().setLines("one");
                 break;
             case "Einschalt":
@@ -154,7 +172,7 @@ public class LectManager : MonoBehaviour
 
     public void removeContent(GameObject currAR, GameObject currCtrl)
     {
-      
+
         currAR.SetActive(false);
         currCtrl.SetActive(false);
         resetIndex = true;
@@ -168,7 +186,7 @@ public class LectManager : MonoBehaviour
 
         switch (selectScript.currLectName)
         {
-           case "Allgemein":
+            case "Allgemein":
                 currAR.GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
                 disableDesc("one");
                 break;
@@ -221,7 +239,14 @@ public class LectManager : MonoBehaviour
         }
 
 
+        if (resetPos == false && start == false)
+        {
+            jibValuesScript.resetTheValues();
+            resetPos = true;
+        }
+
         resetArrows = true;
+        resetPos = true;
     }
 
     void resetScreenUI()
@@ -245,12 +270,13 @@ public class LectManager : MonoBehaviour
             {
                 note.GetComponent<ChangeColor>().setColor(false);
             }
-        } else if (type == "all")
+        }
+        else if (type == "all")
         {
             int i = 0;
             foreach (GameObject desc in descObjects)
             {
-                if (i!=0)
+                if (i != 0)
                 {
                     desc.SetActive(false);
                 }
@@ -265,13 +291,15 @@ public class LectManager : MonoBehaviour
                 }
                 i++;
             }
-        } else if (type == "only-colors")
+        }
+        else if (type == "only-colors")
         {
             foreach (GameObject note in taskObjects)
             {
                 note.GetComponent<ChangeColor>().setColor(false);
             }
-        } else if (type == "draw-lined")
+        }
+        else if (type == "draw-lined")
         {
             foreach (GameObject note in taskObjects)
             {
@@ -280,6 +308,6 @@ public class LectManager : MonoBehaviour
         }
 
         check = true;
-        
+
     }
 }

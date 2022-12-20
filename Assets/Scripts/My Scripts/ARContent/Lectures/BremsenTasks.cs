@@ -52,6 +52,7 @@ public class BremsenTasks : MonoBehaviour
         foreach (GameObject obj in objToRotate)
         {
             obj.GetComponent<BremsenControl>().enabled = false;
+            obj.GetComponent<BremsenControl>().isActive = false;
         }
 
         if (nr < 4)

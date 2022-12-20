@@ -41,9 +41,13 @@ public class ChangeTextContent : MonoBehaviour
     {
         if (textToDisplay.tag != "off")
         {
-            ARBtn.transform.GetChild(0).gameObject.SetActive(false);
-            ARBtn.transform.GetChild(1).gameObject.SetActive(true);
-            selectScript.selectLecture(1);
+            //ARBtn.GetComponent<LockPanel>().inAR = false;
+            if (ARBtn.transform.GetChild(0).gameObject.activeSelf == true)
+            {
+                selectScript.selectLecture(1);
+                ARBtn.GetComponent<LockPanel>().OnPointerClick();
+                //selectScript.selectLecture(0);
+            }
             var offObj = GameObject.FindGameObjectWithTag("off");
             offObj.SetActive(false);
             textToDisplay.SetActive(true);
