@@ -17,7 +17,7 @@ public class EinschaltTasks : MonoBehaviour
     public Material redMat;
     public GameObject switchBtn, switchLight;
     Material selectionMaterial;
-    bool start = true;
+    public bool triggerOn = false;
     int circleIndex;
 
     [System.Serializable]
@@ -61,7 +61,7 @@ public class EinschaltTasks : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject.tag == "Player" && start)
+        if (other.gameObject.tag == "Player" && triggerOn)
         {
             for (int i = 0; i < manageLScript.taskObjects.Count; i++)
             {

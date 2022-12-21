@@ -131,6 +131,7 @@ public class LectManager : MonoBehaviour
             case "Einschalt":
                 EinschaltTasks einschaltScript = GameObject.Find("Player").GetComponent<EinschaltTasks>();
                 einschaltScript.enabled = true;
+                einschaltScript.triggerOn = true;
                 break;
             case "Sicherheit":
                 currAR.GetComponent<SicherheitTasks>().handIcons.SetActive(true);

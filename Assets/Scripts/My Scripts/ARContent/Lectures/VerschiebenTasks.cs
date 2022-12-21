@@ -11,9 +11,11 @@ public class VerschiebenTasks : MonoBehaviour
     public JointForRepos jointRotScript;
     //bool start = true;
     public GameObject group1, group2;
+    public GameObject circleStart, circleEnd;
     [HideInInspector]
     public bool checkCurrTask = true;
     public SelectionManager selectScript;
+    public JibMoveArea jibAreaScript;
     LectManager manageLScript;
 
     void Start()
@@ -81,7 +83,10 @@ public class VerschiebenTasks : MonoBehaviour
                 group2.SetActive(false);
                 joystick.SetActive(false);
                 joystick.GetComponent<JibarmMovement>().enabled = false;
-
+                circleStart.SetActive(false);
+                jibAreaScript.enabled = false;
+                jibAreaScript.checkCollision = false;
+                circleStart.transform.GetChild(2).gameObject.tag = "Untagged";
             }
             else if (index == 4)
             {
@@ -91,8 +96,10 @@ public class VerschiebenTasks : MonoBehaviour
                 group1.SetActive(false);
                 joystick.SetActive(true);
                 joystick.GetComponent<JibarmMovement>().enabled = true;
-
-                //dragObject.tag = "raycast";
+                circleStart.SetActive(true);
+                circleStart.transform.GetChild(2).gameObject.tag = "raycast";
+                jibAreaScript.enabled = true;
+                jibAreaScript.checkCollision = true;
                 //collectScript.raycasting = true;
 
                 //handIcons.transform.GetChild(0).gameObject.SetActive(true);
@@ -126,7 +133,10 @@ public class VerschiebenTasks : MonoBehaviour
         playView.GetComponent<ManagePlaylist>().animator[1].enabled = false;
         group1.SetActive(false);
         group2.SetActive(false);
-
+        circleStart.SetActive(false);
+        circleEnd.SetActive(false);
+        circleStart.transform.GetChild(2).gameObject.tag = "Untagged";
+        jibAreaScript.checkCollision = false;
 
 
         //gameObject.GetComponent<DrawLineBetweenTwoObjects>().removeNotes();

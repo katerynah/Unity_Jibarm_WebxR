@@ -4,33 +4,23 @@ using UnityEngine;
 
 public class JibarmMovement : MonoBehaviour
 {
-    [System.Serializable]
-    public class Wheels
-    {
-        public GameObject WheelsFront;
-        public GameObject WheelsBack;
-
-        public Wheels(GameObject wheelsF, GameObject wheelseB)
-        {
-            WheelsFront = wheelsF;
-            WheelsBack = wheelseB;
-        }
-    }
-
-    public List<Wheels> wheels = new List<Wheels>();
+    public GameObject wheelsFront, wheelsBack;
 
     //public CollectObjects collectScript;
     private Joystick joystick;
     private JoystickButton joybutton;
-    public GameObject handIcons, jibRotPoint, jib;
-    Rigidbody rb;
-    float speed = 1f;
+    public JibMoveArea areaScript;
+    public GameObject handIcons, jibRotPoint, jib, directJib;
+    Rigidbody rb_jib, rb_dir;
+    float speed = 0.1f;
+    public bool start = false;
 
     private void Start()
     {
         joystick = FindObjectOfType<Joystick>();
         joybutton = FindObjectOfType<JoystickButton>();
-        rb = jib.GetComponent<Rigidbody>();
+        rb_dir = directJib.GetComponent<Rigidbody>();
+        rb_jib = jib.GetComponent<Rigidbody>();
     }
 
     private void OnEnable()
@@ -45,9 +35,19 @@ public class JibarmMovement : MonoBehaviour
 
     void Update()
     {
-        rb.velocity = new Vector3(joystick.Vertical * speed, rb.velocity.y,  joystick.Horizontal * speed);
-    
+        if (start && (joystick.Vertical != 0 || joystick.Horizontal != 0) && areaScript.inArea == true)
+        {
+            rb_dir.velocity = new Vector3(joystick.Vertical * speed, rb_dir.velocity.y, joystick.Horizontal * -speed);
+            Vector3 dir = rb_dir.position - rb_jib.position;
+            rb_jib.MovePosition(jib.transform.position + (dir * Time.deltaTime * speed));
+            var targetRotation = Quaternion.LookRotation(new Vector3(rb_dir.position.x - rb_jib.position.x, 0f, rb_dir.position.z - rb_jib.position.z));
+            rb_jib.transform.rotation = Quaternion.Slerp(rb_jib.transform.rotation, targetRotation, speed * Time.deltaTime);
+        }
+       
     }
+
+
+
 
     //private void OnTriggerEnter(Collider other)
     //{
@@ -56,4 +56,6 @@ public class JibarmMovement : MonoBehaviour
     //        gameObject.SetActive(false);
     //    }
     //}
+
+   
 }
