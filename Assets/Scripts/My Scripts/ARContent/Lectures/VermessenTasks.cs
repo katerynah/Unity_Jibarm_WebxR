@@ -84,10 +84,13 @@ public class VermessenTasks : MonoBehaviour
         if (controlView.activeSelf == false && index != 1)
         {
             joystick.SetActive(true);
+            joystick.GetComponent<VermessenJoystick>().enabled = true;
         }
         else
         {
             joystick.SetActive(false);
+            joystick.GetComponent<VermessenJoystick>().enabled = false;
+
         }
     }
 
@@ -100,6 +103,7 @@ public class VermessenTasks : MonoBehaviour
             onRot.Set(objectTransform.rotation.x, -20f, objectTransform.rotation.z, 1);
             switchLight.GetComponent<MeshRenderer>().material = redMat;
             screenView.SetActive(false);
+            joystick.GetComponent<VermessenJoystick>().enabled = false;
 
             cameraRotScript.enabled = false;
             cameraRotScript.isActive = false;

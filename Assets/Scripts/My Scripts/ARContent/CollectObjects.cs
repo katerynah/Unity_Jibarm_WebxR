@@ -55,6 +55,15 @@ public class CollectObjects : MonoBehaviour
                                 }
                             }
                             break;
+
+                        case "Verschieben":
+                                if (selection.gameObject == GameObject.Find("EichselMoveObj"))
+                                {
+                                    currObject = selection.gameObject;
+                                    currObject.GetComponent<JibarmMovement>().enabled = true;
+                                    countScript.enabled = true;
+                                }
+                            break;
                     }
 
                 }

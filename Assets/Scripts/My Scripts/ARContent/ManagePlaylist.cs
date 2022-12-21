@@ -10,7 +10,7 @@ public class ManagePlaylist : MonoBehaviour
     public GameObject lastgObj;
     public Material greenMat;
     public Animator[] animator;
-    public GameObject[] jacksCircles;
+    public GameObject[] checkAnim;
     public int select = 0;
     public bool setGreen = false;
 
@@ -50,32 +50,26 @@ public class ManagePlaylist : MonoBehaviour
                 transform.GetChild(0).gameObject.SetActive(true);
                 transform.GetChild(1).gameObject.SetActive(false);
             }
-           
-
         }
-
-
-
-        //if (list == 0)
-        //{
-        //    animator[0].SetBool("pushpin", true);
-        //    animator[0].SetBool("ended", false);
     }
 
     void Update()
     {
-        //Debug.Log($"Pos {lastgObj.transform.position.x }");
-
-        if (lastgObj.transform.position.x == 0)
+        if (checkAnim[0].activeSelf == true && select == 0)
         {
-            foreach (GameObject obj in jacksCircles)
-            {
-                var o1 = obj.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>();
-                o1.material = greenMat;
-                var o2 = obj.transform.GetChild(1).gameObject.GetComponent<MeshRenderer>();
-                o2.material = greenMat;
-            }
-
+            transform.GetChild(0).gameObject.SetActive(true);
+            transform.GetChild(1).gameObject.SetActive(false);
+            animator[0].Play("Step1", -1, 0f);
+            animator[0].enabled = false;
+            checkAnim[0].SetActive(false);
+        }
+        else if (checkAnim[1].activeSelf == true && select == 1)
+        {
+            transform.GetChild(0).gameObject.SetActive(true);
+            transform.GetChild(1).gameObject.SetActive(false);
+            animator[1].Play("Step2", -1, 0f);
+            animator[1].enabled = false;
+            checkAnim[1].SetActive(false);
         }
     }
 
