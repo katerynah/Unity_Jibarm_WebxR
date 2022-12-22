@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: RotOverride
+  m_Controller: {fileID: 9100000, guid: 8b91a6cb68e044c49be964b2fff51826, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 6c3d6001261001a4d99a9e141480f7a2, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f2b03c3ceb3ed8640a25db4e8383cac5, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: f2b03c3ceb3ed8640a25db4e8383cac5, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 366b869adf503584790bf3633e1b576d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 366b869adf503584790bf3633e1b576d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 6c3d6001261001a4d99a9e141480f7a2, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: ce8abd1d107f4ea419bb917215f169fd, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ce8abd1d107f4ea419bb917215f169fd, type: 2}

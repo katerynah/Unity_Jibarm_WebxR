@@ -15,7 +15,7 @@ public class LectManager : MonoBehaviour
     public GameObject studioEnv, player;
     public List<GameObject> checkMarksCheck = new List<GameObject>();
     bool resetWires = false;
-    bool resetIndex, start, resetArrows, resetPos = true;
+    bool resetIndex, start, resetArrows, resetPos, addItems = true;
     [HideInInspector]
     public bool check = true;
     public JibArmValues jibValuesScript;
@@ -74,7 +74,7 @@ public class LectManager : MonoBehaviour
         }
 
         int i = 0;
-        if (start == true)
+        if (addItems == true)
         {
             foreach (Transform child in currCtrl.GetComponent<Transform>())
             {
@@ -104,7 +104,7 @@ public class LectManager : MonoBehaviour
                 }
                 i++;
             }
-            start = false;
+            addItems = false;
         }
 
         if (descObjects.Count > 1 && selectScript.currLectName != "Allgemein")
@@ -161,8 +161,9 @@ public class LectManager : MonoBehaviour
             case "Vermessen":
                 studioEnv.SetActive(true);
                 break;
-                //case "Verschieben":
-                //    break;
+            case "Verschieben":
+                studioEnv.SetActive(true);
+                break;
                 //case "Nivellieren":
                 //    break;
         }
@@ -233,8 +234,9 @@ public class LectManager : MonoBehaviour
                 studioEnv.SetActive(false);
                 resetScreenUI();
                 break;
-                //case "Verschieben":
-                //    break;
+            case "Verschieben":
+                studioEnv.SetActive(false);
+                break;
                 //case "Nivellieren":
                 //    break;
         }

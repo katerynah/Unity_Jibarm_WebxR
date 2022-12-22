@@ -7,7 +7,7 @@ public class JibMoveArea : MonoBehaviour
 
     public bool checkCollision = true;
     public bool inArea = false;
-    public Material aura_Green, aura_Red;
+    public Material aura_Green, aura_Red, aura_White;
     public JibarmMovement joystick1Script;
     public Trigger2ndCircle trigger2ndScript;
     public GameObject[] circles;
@@ -42,11 +42,9 @@ public class JibMoveArea : MonoBehaviour
         if (other.gameObject.tag == "raycast" && checkCollision)
         {
             currCircle = other.gameObject;
-            joystick1Script.start = false;
             circles[1].SetActive(false);
-            circles[0].transform.GetChild(0).gameObject.SetActive(true);
-            selectionRenderer1.material = aura_Red;
-            selectionRenderer2.material = aura_Red;
+            selectionRenderer1.material = aura_White;
+            selectionRenderer2.material = aura_White;
             inArea = false;
         }
     }

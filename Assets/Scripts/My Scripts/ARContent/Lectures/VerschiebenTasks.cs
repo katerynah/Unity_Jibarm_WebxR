@@ -137,7 +137,7 @@ public class VerschiebenTasks : MonoBehaviour
         circleEnd.SetActive(false);
         circleStart.transform.GetChild(2).gameObject.tag = "Untagged";
         jibAreaScript.checkCollision = false;
-
+        joystick.SetActive(false);
 
         //gameObject.GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
         //int i = 0;

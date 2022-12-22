@@ -61,7 +61,7 @@ public class EinschaltTasks : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject.tag == "Player" && triggerOn)
+        if (other.gameObject.tag == "circle" && triggerOn)
         {
             for (int i = 0; i < manageLScript.taskObjects.Count; i++)
             {

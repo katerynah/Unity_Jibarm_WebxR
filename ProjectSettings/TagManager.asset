@@ -13,6 +13,8 @@ TagManager:
   - FxTemporaire
   - collect
   - landmark
+  - circle
+  - nivelpoint
   layers:
   - Default
   - TransparentFX

@@ -138,6 +138,9 @@ public class ControlNav : MonoBehaviour
             case "Verschieben":
                 selectScript.currAR.GetComponent<VerschiebenTasks>().checkCurrTask = true;
                 break;
+            case "Nivellieren":
+                selectScript.currAR.GetComponent<NivellierenTasks>().checkCurrTask = true;
+                break;
 
         }
     }
