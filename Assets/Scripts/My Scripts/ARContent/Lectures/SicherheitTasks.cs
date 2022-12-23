@@ -6,10 +6,11 @@ public class SicherheitTasks : MonoBehaviour
 {
     int index;
     List<GameObject> descs;
-    public GameObject modelsGroup, handIcons;
+    public GameObject modelsGroup; 
     [HideInInspector]
     public bool checkCurrTask = true;
     public GameObject bereichCount, checkBereich;
+    public GameObject centerPoint;
     LectManager manageLScript;
     public CollectObjects collectScript;
     public ChangeColor colorScript;
@@ -65,8 +66,10 @@ public class SicherheitTasks : MonoBehaviour
                     child.gameObject.tag = "Untagged";
                     collectScript.raycasting = false;
                 }
-                handIcons.transform.GetChild(0).gameObject.SetActive(false);
-                handIcons.transform.GetChild(1).gameObject.SetActive(false);
+                centerPoint.SetActive(false);
+
+                //handIcons.transform.GetChild(0).gameObject.SetActive(false);
+                //handIcons.transform.GetChild(1).gameObject.SetActive(false);
             }
             else if (index == 2)
             {
@@ -84,9 +87,10 @@ public class SicherheitTasks : MonoBehaviour
                     collectScript.raycasting = false;
                     bereichCount.SetActive(false);
                 }
+                centerPoint.SetActive(true);
 
-                handIcons.transform.GetChild(0).gameObject.SetActive(true);
-                handIcons.transform.GetChild(1).gameObject.SetActive(false);
+                //handIcons.transform.GetChild(0).gameObject.SetActive(true);
+                //handIcons.transform.GetChild(1).gameObject.SetActive(false);
             }
             checkCurrTask = false;
         }
@@ -100,13 +104,15 @@ public class SicherheitTasks : MonoBehaviour
             child.gameObject.tag = "Untagged";
             collectScript.raycasting = false;
         }
+        centerPoint.SetActive(false);
+
         collectScript.raycasting = false;
         colorScript.setColor(false);
         vJointScript.resetRotation();
         vJointScript.enabled = false;
         bereichCount.SetActive(false);
-        handIcons.transform.GetChild(0).gameObject.SetActive(false);
-        handIcons.transform.GetChild(1).gameObject.SetActive(false);
+        //handIcons.transform.GetChild(0).gameObject.SetActive(false);
+        //handIcons.transform.GetChild(1).gameObject.SetActive(false);
     }
 
 

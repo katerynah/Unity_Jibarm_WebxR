@@ -16,7 +16,7 @@ public class DiagnoseTasks : MonoBehaviour
     [HideInInspector]
     public List<GameObject> allOptions = new List<GameObject>();
     List<GameObject> descs = new List<GameObject>();
-    int index;
+    public int index;
     int countDown = 0;
     bool start = true;
 
@@ -81,7 +81,7 @@ public class DiagnoseTasks : MonoBehaviour
             }
             else if (index == 1)
             {
-
+               
             }
             checkCurrTask = false;
         }

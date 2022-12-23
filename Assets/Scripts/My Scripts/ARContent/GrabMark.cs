@@ -54,6 +54,7 @@ public class GrabMark : MonoBehaviour
                 foreach (Transform mObj in vermessenTScript.mGroup.GetComponent<Transform>())
                 {
                     mObj.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                    mObj.transform.GetChild(0).gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 }
                 setColliders = false;
             }
@@ -65,6 +66,7 @@ public class GrabMark : MonoBehaviour
                 foreach (Transform mObj in vermessenTScript.mGroup.GetComponent<Transform>())
                 {
                     mObj.gameObject.GetComponent<BoxCollider2D>().enabled = true;
+                    mObj.transform.GetChild(0).gameObject.GetComponent<BoxCollider2D>().enabled = true;
                 }
                 setColliders = false;
             }

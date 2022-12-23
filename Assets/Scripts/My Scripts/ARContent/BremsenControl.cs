@@ -91,13 +91,13 @@ public class BremsenControl : MonoBehaviour
     void limitRot(float limit, float axisValue, int index, bool bigger)
     {
         
-        if (axisValue > limit && axisValue < (limit + 1) && bigger == true)
+        if (axisValue > limit && axisValue < (limit + 3) && bigger == true)
         {
             startRotation = false;
             MeshRenderer newColor = bremsenTScript.spheres[index].GetComponent<MeshRenderer>();
             newColor.material = greenMat;
             bremsenTScript.checkboxes[index].SetActive(true);
-        } else if (bigger == false && axisValue > limit && axisValue < (limit + 1))
+        } else if (bigger == false && axisValue > limit && axisValue < (limit + 3))
         {
             startRotation = false;
             MeshRenderer newColor = bremsenTScript.spheres[index].GetComponent<MeshRenderer>();

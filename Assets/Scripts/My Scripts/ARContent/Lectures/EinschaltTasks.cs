@@ -8,6 +8,7 @@ public class EinschaltTasks : MonoBehaviour
     public Material aura_green;
     //public Material aura_red;
 
+    public GameObject screenView;
     public RaycastingAR raycastScript;
     public CheckBoxed checkBoxScript;
     public FollowCurve curveScript;
@@ -15,7 +16,7 @@ public class EinschaltTasks : MonoBehaviour
     public SelectionManager selectScript;
     LectManager manageLScript;
     public Material redMat;
-    public GameObject switchBtn, switchLight;
+    public GameObject switchBtn, switchLight, stahlseilenGroup;
     Material selectionMaterial;
     public bool triggerOn = false;
     int circleIndex;
@@ -104,7 +105,7 @@ public class EinschaltTasks : MonoBehaviour
 
     void Update()
     {
-        if (curveScript.objEuler.z == -70f)
+        if (curveScript.objEuler.z == -100f)
         {
             curveScript.enabled = false;
             curveScript.isActive = false;
@@ -142,17 +143,25 @@ public class EinschaltTasks : MonoBehaviour
 
     public void resetTScript()
     {
-        //wireList[0].WireBack.SetActive(false);
-        //wireList[0].WireFront.SetActive(false);
-        //wireList[1].WireBack.SetActive(false);
-        //wireList[1].WireFront.SetActive(false);
+      
         wireList[0].WireFront.tag = "Untagged";
         wireList[1].WireFront.tag = "Untagged";
         switchBtn.tag = "Untagged";
+        stahlseilenGroup.SetActive(false);
         curveScript.enabled = false;
         curveScript.isActive = false;
         raycastScript.raycasting = false;
+        screenView.SetActive(false);
+    }
 
+    public void startTScript()
+    {
+        stahlseilenGroup.SetActive(true);
+        //wireList[0].WireBack.SetActive(true);
+        //wireList[0].WireFront.SetActive(true);
+        //wireList[1].WireBack.SetActive(true);
+        //wireList[1].WireFront.SetActive(true);
+        
     }
 
 }

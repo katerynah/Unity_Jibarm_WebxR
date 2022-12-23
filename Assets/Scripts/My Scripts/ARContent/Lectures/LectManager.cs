@@ -132,9 +132,10 @@ public class LectManager : MonoBehaviour
                 EinschaltTasks einschaltScript = GameObject.Find("Player").GetComponent<EinschaltTasks>();
                 einschaltScript.enabled = true;
                 einschaltScript.triggerOn = true;
+                einschaltScript.startTScript();
                 break;
             case "Sicherheit":
-                currAR.GetComponent<SicherheitTasks>().handIcons.SetActive(true);
+                //currAR.GetComponent<SicherheitTasks>().handIcons.SetActive(true);
                 break;
             case "Bremsen":
                 break;
@@ -190,7 +191,7 @@ public class LectManager : MonoBehaviour
         {
             case "Allgemein":
                 currAR.GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
-                disableDesc("one");
+                disableDesc("only-colors");
                 break;
             case "Einschalt":
                 EinschaltTasks einschaltScript = GameObject.Find("Player").GetComponent<EinschaltTasks>();
@@ -297,9 +298,14 @@ public class LectManager : MonoBehaviour
         }
         else if (type == "only-colors")
         {
+            int i = 0;
             foreach (GameObject note in taskObjects)
             {
-                note.GetComponent<ChangeColor>().setColor(false);
+                if (i != 0 && selectScript.currLectName == "Allgemein")
+                {
+                    note.GetComponent<ChangeColor>().setColor(false);
+                }
+                i++;
             }
         }
         else if (type == "draw-lined")

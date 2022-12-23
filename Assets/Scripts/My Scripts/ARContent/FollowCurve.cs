@@ -8,8 +8,8 @@ public class FollowCurve : MonoBehaviour
     public bool isActive = true;
     public GameObject objToRotate;
     [SerializeField] float speed = 2f;
-    float minZ = -115f; // -> -45
-    float maxZ = -70f;  // -> 0
+    float minZ = -145f; // -> -45 -115
+    float maxZ = -100f;  // -> 0 -70
     public Vector3 objEuler;
     Transform localTrans;
 

@@ -7,11 +7,12 @@ public class VerticalJoint : MonoBehaviour
     public bool isActive = false;
     public GameObject objToRotate;
     [SerializeField]
-    float speed = 1.5f;
+    float speed = 3f;
     float minZ = -30f; // -> -45
     float maxZ = 30f;  // -> 0
     public Vector3 objEuler;
     Quaternion startRot;
+    public GameObject checkbox;
     public string direction = "x";
     Transform localTrans;
     public GameObject levelPointer;
@@ -51,6 +52,7 @@ public class VerticalJoint : MonoBehaviour
                         {
                             objToRotate.transform.Rotate(0f, 0f, Input.GetAxis("Mouse Y") / speed);
                             moveLevel();
+                            checkbox.SetActive(true);
                         }
                         limitRot();
                         break;

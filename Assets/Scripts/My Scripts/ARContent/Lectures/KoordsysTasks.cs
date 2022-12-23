@@ -12,7 +12,7 @@ public class KoordsysTasks : MonoBehaviour
     float timeRemaining = 5;
     public Material redMat, greenMat;
     public GameObject switchBtn, switchLight;
-    public GameObject screenView;
+    public GameObject screenView, camParam;
     List<GameObject> descs = new List<GameObject>();
     List<GameObject> tasks = new List<GameObject>();
     int index;
