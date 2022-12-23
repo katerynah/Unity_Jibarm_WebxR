@@ -9,6 +9,7 @@ public class TrackingTasks : MonoBehaviour
     List<GameObject> tasks = new List<GameObject>();
     [HideInInspector]
     public bool checkCurrTask = true;
+    public GameObject screenView;
     public SelectionManager selectScript;
     LectManager manageLScript;
 
@@ -31,6 +32,11 @@ public class TrackingTasks : MonoBehaviour
                 }
             }
 
+            if(index == 1)
+            {
+                screenView.SetActive(true);
+
+            }
             eachOfThem(index);
 
             manageLScript.check = false;
@@ -56,6 +62,7 @@ public class TrackingTasks : MonoBehaviour
         {
             note.GetComponent<ChangeColor>().setColor(false);
         }
+        screenView.SetActive(false);
     }
 
 }

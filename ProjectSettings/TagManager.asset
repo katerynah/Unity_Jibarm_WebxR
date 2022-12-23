@@ -15,6 +15,7 @@ TagManager:
   - landmark
   - circle
   - nivelpoint
+  - text-btn
   layers:
   - Default
   - TransparentFX

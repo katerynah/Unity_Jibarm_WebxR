@@ -12,6 +12,8 @@ public class ChangeTextContent : MonoBehaviour
     private SelectionManager selectScript;
     private ScrollRect scrollObj;
     string textName;
+    public List<GameObject> navBtns = new List<GameObject>();
+
 
     void Start()
     {
@@ -20,6 +22,16 @@ public class ChangeTextContent : MonoBehaviour
         var lPanel = GameObject.Find("Lectures-scroll");
         scrollObj = lPanel.GetComponent<ScrollRect>();
         selectScript = GameObject.Find("SelectionManager").GetComponent<SelectionManager>();
+
+
+        var objects = Resources.FindObjectsOfTypeAll(typeof(GameObject));
+        foreach (GameObject obj in objects)
+        {
+            if (obj.tag == "text-btn")
+            {
+                navBtns.Add(obj.gameObject);
+            }
+        }
         ARBtn = GameObject.Find("AR-btn");
     }
 
@@ -35,10 +47,24 @@ public class ChangeTextContent : MonoBehaviour
                 textToDisplay = obj;
             }
         }
+
     }
 
     public void changeText()
     {
+        foreach (GameObject textBtn in navBtns)
+        {
+            var tMesh = textBtn.GetComponent<TextMeshProUGUI>();
+            if (textBtn.name != gameObject.name)
+            {
+                tMesh.color = Color.white;
+            }
+            else
+            {
+                tMesh.color = new Color32(0, 214, 210, 255);
+            }
+        }
+
         if (textToDisplay.tag != "off")
         {
             //ARBtn.GetComponent<LockPanel>().inAR = false;

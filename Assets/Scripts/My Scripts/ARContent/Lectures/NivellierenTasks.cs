@@ -7,6 +7,7 @@ public class NivellierenTasks : MonoBehaviour
     int index;
     List<GameObject> descs = new List<GameObject>();
     List<GameObject> tasks = new List<GameObject>();
+    public GameObject checkNivel;
     public ChangeAxis changeAxisScript;
     public AdaptJacks adaptJScript;
     public GameObject[] nivelPoint;
@@ -65,6 +66,8 @@ public class NivellierenTasks : MonoBehaviour
             }
             else if (index == 2 || index == 3)
             {
+                checkNivel.GetComponent<BoxCollider>().enabled = true;
+
                 tasks[1].GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
                 tasks[1].GetComponent<ChangeColor>().setColor(false);
 
@@ -102,6 +105,7 @@ public class NivellierenTasks : MonoBehaviour
 
     public void resetTScript()
     {
+        checkNivel.GetComponent<BoxCollider>().enabled = false;
         nivelPoint[0].SetActive(true);
         foreach (GameObject niv in nivelPoint)
         {

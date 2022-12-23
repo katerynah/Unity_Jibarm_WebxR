@@ -81,7 +81,7 @@ public class VermessenTasks : MonoBehaviour
             checkCurrTask = false;
         }
 
-        if (controlView.activeSelf == false && index != 1)
+        if (index != 1 && index != 0)
         {
             joystick.SetActive(true);
             joystick.GetComponent<VermessenJoystick>().enabled = true;

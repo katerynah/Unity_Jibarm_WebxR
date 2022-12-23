@@ -768,7 +768,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &35660293
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1014,7 +1014,7 @@ GameObject:
   - component: {fileID: 45230901}
   m_Layer: 5
   m_Name: Diagnose-btn
-  m_TagString: Untagged
+  m_TagString: text-btn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1222,6 +1222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textToDisplay: {fileID: 0}
   ARBtn: {fileID: 0}
+  navBtns: []
 --- !u!1 &54610890
 GameObject:
   m_ObjectHideFlags: 0
@@ -2453,14 +2454,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 109618002}
-  m_LocalRotation: {x: -0.0073237056, y: 0.7052238, z: 0.7089424, w: -0.0025490234}
-  m_LocalPosition: {x: -0.0013, y: 0.0059, z: 0.04}
+  m_LocalRotation: {x: -0.44421825, y: 0.54951704, z: 0.5502223, w: -0.44492316}
+  m_LocalPosition: {x: -0.0056000454, y: 0.0032000009, z: 0.040000025}
   m_LocalScale: {x: 0.005140937, y: 0.04197005, z: 0.0015534929}
   m_Children:
   - {fileID: 870195006}
   m_Father: {fileID: 121597847404725968}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -89.146, y: -69.554, z: 249.16699}
+  m_LocalEulerAnglesHint: {x: -12.089, y: -89.918, z: 269.991}
 --- !u!1 &116188650
 GameObject:
   m_ObjectHideFlags: 0
@@ -4025,7 +4026,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &155283997
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4390,7 +4391,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &161827460
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12554,7 +12555,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 169.75598, y: -85.31391}
+  m_AnchoredPosition: {x: 529, y: -114}
   m_SizeDelta: {x: 281.60168, y: -189.24768}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &335162809
@@ -13268,7 +13269,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &342145021
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16580,7 +16581,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &417696292
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19005,7 +19006,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &465388932
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19014,18 +19015,18 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 465388931}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.0006453227}
+  m_LocalScale: {x: 0.34922546, y: 0.23442872, z: 0.31528804}
   m_Children:
   - {fileID: 825022054}
   - {fileID: 744537541}
-  m_Father: {fileID: 1772231542}
+  m_Father: {fileID: 1954213031}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 20.527466, y: -0.000015258789}
-  m_SizeDelta: {x: 26.121887, y: 0}
+  m_AnchoredPosition: {x: -76.46414, y: -2.6000104}
+  m_SizeDelta: {x: 177.8847, y: 175.172}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &465388933
 MonoBehaviour:
@@ -20134,7 +20135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &482494052
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20189,7 +20190,7 @@ GameObject:
   - component: {fileID: 482578540}
   m_Layer: 5
   m_Name: Tracking-btn
-  m_TagString: Untagged
+  m_TagString: text-btn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20397,6 +20398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textToDisplay: {fileID: 0}
   ARBtn: {fileID: 0}
+  navBtns: []
 --- !u!1 &483741710
 GameObject:
   m_ObjectHideFlags: 0
@@ -28591,7 +28593,7 @@ BoxCollider:
   m_GameObject: {fileID: 568537108}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 44.878456, y: 52.716602, z: 75.510635}
   m_Center: {x: -37.949745, y: -22.786741, z: 28.146347}
@@ -29881,6 +29883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2920b7ce6773f6448ba1c2f6392c5cf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkNivel: {fileID: 568537108}
   changeAxisScript: {fileID: 1381380331}
   adaptJScript: {fileID: 716698177}
   nivelPoint:
@@ -30649,7 +30652,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countText: {fileID: 405402880}
+  groupM: {fileID: 2122717948}
   greenAura: {fileID: 2100000, guid: 9c7a1b61fbaf87b4dbe9e9851304f7d0, type: 2}
+  start: 0
   count: 6
   checkBoxScript: {fileID: 1279193656}
 --- !u!64 &619873858
@@ -31473,7 +31478,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -30, y: -1}
+  m_AnchoredPosition: {x: -28, y: -10.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &629877611
@@ -34431,12 +34436,12 @@ GameObject:
   m_Component:
   - component: {fileID: 681500259}
   m_Layer: 0
-  m_Name: Landmarks
+  m_Name: Landmarks1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &681500259
 RectTransform:
   m_ObjectHideFlags: 0
@@ -51028,7 +51033,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &845507965
 RectTransform:
   m_ObjectHideFlags: 0
@@ -51073,7 +51078,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: "<size=\"30\">Feststellbremsen: Arm-Tilt</size>\n\nDie Arm-Tilt-Bremse
     kontrolliert die Tilt-Bewegung des Arms. Wenn man die Bremse <color=\"yellow\">im
-    Uhrzeigersinn dreht</color>, vergr\xF6\xDFert sich die <color=\"yellow\">Schwerg\xE4ngigkeit</color>."
+    Uhrzeigersinn dreht</color>, vergr\xF6\xDFert sich die <color=\"yellow\">Schwerg\xE4ngigkeit</color>.
+    \nwenn die Bremse zu der richtigen Stelle gedreht ist, wird der Punkt daneben
+    <color=green>gr\xFCn</color>."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -51616,6 +51623,7 @@ RectTransform:
   - {fileID: 714285271}
   - {fileID: 2044523117}
   - {fileID: 681500259}
+  - {fileID: 1729417451}
   m_Father: {fileID: 1253043987}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -52858,6 +52866,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkCurrTask: 1
+  screenView: {fileID: 741759605}
   selectScript: {fileID: 7923163864254549415}
 --- !u!114 &917659098
 MonoBehaviour:
@@ -53825,7 +53834,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 953331694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.125, y: 0.00602, z: -0.282}
+  m_LocalPosition: {x: 0.125, y: 0.0062, z: -0.28200063}
   m_LocalScale: {x: 6.035635, y: 0.9541954, z: 3.1806686}
   m_Children: []
   m_Father: {fileID: 2122717949}
@@ -53892,6 +53901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectScript: {fileID: 315450707}
+  countScript: {fileID: 619873857}
 --- !u!23 &953331700
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64459,7 +64469,7 @@ GameObject:
   - component: {fileID: 1190874322}
   m_Layer: 5
   m_Name: Homing-btn
-  m_TagString: Untagged
+  m_TagString: text-btn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64667,6 +64677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textToDisplay: {fileID: 0}
   ARBtn: {fileID: 0}
+  navBtns: []
 --- !u!1 &1191178704
 GameObject:
   m_ObjectHideFlags: 0
@@ -68038,7 +68049,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1268318463
 RectTransform:
   m_ObjectHideFlags: 0
@@ -68935,7 +68946,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<size=\"30\">Relevante Bereiche \ndes Jib-Arms</size>\n\nMit dem Kllick
+  m_text: "<size=\"30\">Relevante Bereiche \ndes Jib-Arms</size>\n\nMit dem Klick
     auf die Notizen kann man die kurzen Beschreibungen zu den <color=yellow><b>relevanten
     Jib-Arm-Bereichen</b></color> ansehen."
   m_isRightToLeft: 0
@@ -69948,11 +69959,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 849935389208116915, guid: 54a613ba6e982e84db04156af08d6a89, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 849935389208116915, guid: 54a613ba6e982e84db04156af08d6a89, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.79
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 849935389208116915, guid: 54a613ba6e982e84db04156af08d6a89, type: 3}
       propertyPath: m_LocalPosition.z
@@ -71973,7 +71984,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1344817532
 RectTransform:
   m_ObjectHideFlags: 0
@@ -72015,10 +72026,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<size=\"30\">Landmarks</size>\n\nIn der Studio gibt es mehrere Referenz-punkte
-    markiert, die man <color=\"yellow\">Landmarks</color> nennt.  Der <color=\"yellow\">Marker
-    18 entspricht dem Ursprung</color>  des Koordinatensystems entspricht dem Marker.
-    Der <color=\"yellow\">Marker 19</color> liegt auch im gr\xFCnen Bereich."
+  m_text: '<size="30">Landmarks</size>
+
+
+    In der Studio gibt es mehrere Referenz-punkte
+    markiert, die man <color="yellow">Landmarks</color> nennt.  Der <color="yellow">Marker
+    18 entspricht dem Ursprung</color>  des Koordinatensystems entspricht dem Marker.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -77103,7 +77116,7 @@ RectTransform:
   - {fileID: 401247197}
   - {fileID: 4577069691387701985}
   m_Father: {fileID: 1954213031}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -80794,7 +80807,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1566913140
 RectTransform:
   m_ObjectHideFlags: 0
@@ -87741,6 +87754,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1729368123}
   m_CullTransparentMesh: 1
+--- !u!1 &1729417450
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1729417451}
+  m_Layer: 0
+  m_Name: Landmarks2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1729417451
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729417450}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 872820316}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1731254371
 GameObject:
   m_ObjectHideFlags: 0
@@ -90079,7 +90127,6 @@ RectTransform:
   m_LocalScale: {x: 0.34922546, y: 0.23442872, z: 0.31528804}
   m_Children:
   - {fileID: 1761852760}
-  - {fileID: 465388932}
   m_Father: {fileID: 1954213031}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -91561,7 +91608,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<size=\"30\">2. Jib-Arm Bewegung</size>\n\nDie Encoder des Jib-Armes erfassen
+  m_text: "<size=\"30\">2. Jib-Arm Bewegung</size>\n\nDie Encoder des Jib-Arms erfassen
     <color=yellow>nur die Werte</color>, die man erreichen kann, <color=yellow>ohne
     mechanische Kraft</color> auszu\xFCben.\nIm roten Bereich werden keine Werte
     mehr empfangen."
@@ -93797,7 +93844,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1837691353}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.3400002, y: -1.26, z: -1.4645536}
+  m_LocalPosition: {x: -2.5, y: -1.26, z: 0.21}
   m_LocalScale: {x: 0.32031992, y: 0.32031998, z: 0.32031992}
   m_Children:
   - {fileID: 753635003}
@@ -94519,7 +94566,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1842368979
 RectTransform:
   m_ObjectHideFlags: 0
@@ -107194,6 +107241,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1772231542}
+  - {fileID: 465388932}
   - {fileID: 1482791256}
   m_Father: {fileID: 1014763841}
   m_RootOrder: 5
@@ -111061,7 +111109,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.5819, y: 0.97895}
+  m_AnchoredPosition: {x: -0.089, y: 0.631}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2044523118
@@ -121202,6 +121250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectScript: {fileID: 315450707}
+  countScript: {fileID: 619873857}
 --- !u!4 &2387247043148313171
 Transform:
   m_ObjectHideFlags: 0
@@ -122747,7 +122796,7 @@ GameObject:
   - component: {fileID: 3094116660118637586}
   m_Layer: 5
   m_Name: Bremsen-btn
-  m_TagString: Untagged
+  m_TagString: text-btn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122936,6 +122985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textToDisplay: {fileID: 0}
   ARBtn: {fileID: 0}
+  navBtns: []
 --- !u!222 &3094116660231034049
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -122979,7 +123029,7 @@ GameObject:
   - component: {fileID: 3094116660231034112}
   m_Layer: 5
   m_Name: Allgemein-btn
-  m_TagString: Untagged
+  m_TagString: text-btn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123013,8 +123063,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4292007424
+  m_fontColor: {r: 0, g: 0.8392157, b: 0.8235294, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -123160,6 +123210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textToDisplay: {fileID: 0}
   ARBtn: {fileID: 0}
+  navBtns: []
 --- !u!224 &3094116660426258510
 RectTransform:
   m_ObjectHideFlags: 0
@@ -123195,7 +123246,7 @@ GameObject:
   - component: {fileID: 3094116660426258514}
   m_Layer: 5
   m_Name: Landmarks-btn
-  m_TagString: Untagged
+  m_TagString: text-btn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123384,6 +123435,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textToDisplay: {fileID: 0}
   ARBtn: {fileID: 0}
+  navBtns: []
 --- !u!224 &3094116660502466988
 RectTransform:
   m_ObjectHideFlags: 0
@@ -123419,7 +123471,7 @@ GameObject:
   - component: {fileID: 3094116660502466992}
   m_Layer: 5
   m_Name: Einschalt-btn
-  m_TagString: Untagged
+  m_TagString: text-btn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123608,6 +123660,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textToDisplay: {fileID: 0}
   ARBtn: {fileID: 0}
+  navBtns: []
 --- !u!1 &3094116660801066722
 GameObject:
   m_ObjectHideFlags: 0
@@ -123854,7 +123907,7 @@ GameObject:
   - component: {fileID: 3094116660805603091}
   m_Layer: 5
   m_Name: Koordsys-btn
-  m_TagString: Untagged
+  m_TagString: text-btn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124062,6 +124115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textToDisplay: {fileID: 0}
   ARBtn: {fileID: 0}
+  navBtns: []
 --- !u!224 &3094116660808674756
 RectTransform:
   m_ObjectHideFlags: 0
@@ -124097,7 +124151,7 @@ GameObject:
   - component: {fileID: 3094116660808674760}
   m_Layer: 5
   m_Name: Sicherheit-btn
-  m_TagString: Untagged
+  m_TagString: text-btn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124286,6 +124340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textToDisplay: {fileID: 0}
   ARBtn: {fileID: 0}
+  navBtns: []
 --- !u!222 &3094116661105396161
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -124549,7 +124604,7 @@ GameObject:
   - component: {fileID: 3094116661111266238}
   m_Layer: 5
   m_Name: Vermessen-btn
-  m_TagString: Untagged
+  m_TagString: text-btn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124738,6 +124793,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textToDisplay: {fileID: 0}
   ARBtn: {fileID: 0}
+  navBtns: []
 --- !u!1 &3094116661311162316
 GameObject:
   m_ObjectHideFlags: 0
@@ -124793,7 +124849,7 @@ GameObject:
   - component: {fileID: 3094116661341219921}
   m_Layer: 5
   m_Name: Verschieben-btn
-  m_TagString: Untagged
+  m_TagString: text-btn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125001,6 +125057,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textToDisplay: {fileID: 0}
   ARBtn: {fileID: 0}
+  navBtns: []
 --- !u!224 &3094116661921769326
 RectTransform:
   m_ObjectHideFlags: 0
@@ -125072,7 +125129,7 @@ GameObject:
   - component: {fileID: 3094116662070963054}
   m_Layer: 5
   m_Name: Verzerrung-btn
-  m_TagString: Untagged
+  m_TagString: text-btn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125261,6 +125318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textToDisplay: {fileID: 0}
   ARBtn: {fileID: 0}
+  navBtns: []
 --- !u!224 &3094116662095044764
 RectTransform:
   m_ObjectHideFlags: 0
@@ -125296,7 +125354,7 @@ GameObject:
   - component: {fileID: 3094116662095044768}
   m_Layer: 5
   m_Name: Laser-btn
-  m_TagString: Untagged
+  m_TagString: text-btn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125441,6 +125499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textToDisplay: {fileID: 0}
   ARBtn: {fileID: 0}
+  navBtns: []
 --- !u!114 &3094116662095044833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125731,7 +125790,7 @@ GameObject:
   - component: {fileID: 3094116662187949483}
   m_Layer: 5
   m_Name: Nivellieren-btn
-  m_TagString: Untagged
+  m_TagString: text-btn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125939,6 +125998,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textToDisplay: {fileID: 0}
   ARBtn: {fileID: 0}
+  navBtns: []
 --- !u!1 &3114078196512766473
 GameObject:
   m_ObjectHideFlags: 0
@@ -129494,6 +129554,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectScript: {fileID: 315450707}
+  countScript: {fileID: 619873857}
 --- !u!4 &4470871538788576004
 Transform:
   m_ObjectHideFlags: 0
@@ -131162,7 +131223,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2386835903187198444}
   m_LocalRotation: {x: -0, y: 0.12364979, z: -0, w: 0.9923259}
-  m_LocalPosition: {x: 0.517, y: -0.0002, z: 0.035}
+  m_LocalPosition: {x: -0.253, y: -0.0002, z: -0.197}
   m_LocalScale: {x: 0.00073791115, y: 0.00022137215, z: 0.0007838089}
   m_Children:
   - {fileID: 4178453236355539676}
@@ -133238,6 +133299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectScript: {fileID: 315450707}
+  countScript: {fileID: 619873857}
 --- !u!4 &6078168923514607922
 Transform:
   m_ObjectHideFlags: 0
@@ -137314,6 +137376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectScript: {fileID: 315450707}
+  countScript: {fileID: 619873857}
 --- !u!1 &7850922475295868436
 GameObject:
   m_ObjectHideFlags: 0
@@ -140221,6 +140284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectScript: {fileID: 315450707}
+  countScript: {fileID: 619873857}
 --- !u!23 &8939335185113655471
 MeshRenderer:
   m_ObjectHideFlags: 0
