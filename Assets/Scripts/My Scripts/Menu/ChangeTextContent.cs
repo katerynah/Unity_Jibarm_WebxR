@@ -61,7 +61,7 @@ public class ChangeTextContent : MonoBehaviour
             }
             else
             {
-                tMesh.color = new Color32(0, 214, 210, 255);
+                tMesh.color = new Color32(0, 255, 210, 255);
             }
         }
 
