@@ -75,6 +75,7 @@ public class ChangeTextContent : MonoBehaviour
                 //selectScript.selectLecture(0);
             }
             var offObj = GameObject.FindGameObjectWithTag("off");
+            offObj.tag = "Untagged";
             offObj.SetActive(false);
             textToDisplay.SetActive(true);
             textToDisplay.tag = "text-on";
