@@ -42,6 +42,8 @@ public class ToggleButtons : MonoBehaviour
             }
         }
 
+        Debug.Log($"{gameObject.name} clicked");
+
     }
 
 }

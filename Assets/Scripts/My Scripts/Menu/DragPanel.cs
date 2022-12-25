@@ -45,7 +45,7 @@ public class DragPanel : MonoBehaviour // EventTrigger: event trigger of UI even
                 // Adapt RPanel and Text objects
                 adaptTextObjs();
             }
-            
+
         }
 
         // limit dragging on the left
@@ -68,10 +68,10 @@ public class DragPanel : MonoBehaviour // EventTrigger: event trigger of UI even
 
         foreach (var panel in panelsForWidth)
         {
-            panel.sizeDelta = new Vector2(adjustWidth+1, panel.rect.height);
+            panel.sizeDelta = new Vector2(adjustWidth + 1, panel.rect.height);
         }
 
-       
+
 
         foreach (var obj in textObjects)
         {

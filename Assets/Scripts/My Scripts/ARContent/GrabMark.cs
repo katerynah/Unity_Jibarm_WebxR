@@ -45,7 +45,7 @@ public class GrabMark : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (markWindow.activeSelf == true)
         {
@@ -53,9 +53,14 @@ public class GrabMark : MonoBehaviour
             {
                 foreach (Transform mObj in vermessenTScript.mGroup.GetComponent<Transform>())
                 {
-                    mObj.gameObject.GetComponent<BoxCollider2D>().enabled = false;
-                    mObj.transform.GetChild(0).gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                    mObj.gameObject.GetComponent<BoxCollider>().enabled = false;
+                    mObj.transform.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = false;
                 }
+
+                //foreach (GameObject obj in grabBtnsText)
+                //{
+                //    obj.transform.parent.gameObject.GetComponent<BoxCollider2D>().enabled = true;
+                //}
                 setColliders = false;
             }
             
@@ -65,11 +70,16 @@ public class GrabMark : MonoBehaviour
             {
                 foreach (Transform mObj in vermessenTScript.mGroup.GetComponent<Transform>())
                 {
-                    mObj.gameObject.GetComponent<BoxCollider2D>().enabled = true;
-                    mObj.transform.GetChild(0).gameObject.GetComponent<BoxCollider2D>().enabled = true;
+                    mObj.gameObject.GetComponent<BoxCollider>().enabled = true;
+                    mObj.transform.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = true;
                 }
+                //foreach (GameObject obj in grabBtnsText)
+                //{
+                //    obj.transform.parent.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                //}
                 setColliders = false;
             }
         }
+
     }
 }

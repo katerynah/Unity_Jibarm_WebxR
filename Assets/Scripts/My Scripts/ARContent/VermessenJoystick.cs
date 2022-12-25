@@ -21,7 +21,7 @@ public class VermessenJoystick : MonoBehaviour
         joybutton = FindObjectOfType<JoystickButton>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         var rigidbodyH = horRotation.GetComponent<Rigidbody>();
         var rigidbodyV = vertRotation.GetComponent<Rigidbody>();
