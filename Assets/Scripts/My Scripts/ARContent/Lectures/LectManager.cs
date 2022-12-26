@@ -237,9 +237,11 @@ public class LectManager : MonoBehaviour
                 break;
             case "Verschieben":
                 studioEnv.SetActive(false);
+                currAR.GetComponent<VerschiebenTasks>().resetTScript();
                 break;
-                //case "Nivellieren":
-                //    break;
+            case "Nivellieren":
+                currAR.GetComponent<NivellierenTasks>().resetTScript();
+                break;
         }
 
 

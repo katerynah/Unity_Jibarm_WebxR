@@ -9,7 +9,7 @@ public class VerschiebenTasks : MonoBehaviour
     List<GameObject> tasks = new List<GameObject>();
     public GameObject sphere, playView, handIcons, joystick;
     public JointForRepos jointRotScript;
-    //bool start = true;
+    bool start = true;
     public GameObject group1, group2;
     public GameObject circleStart, circleEnd;
     [HideInInspector]
@@ -43,6 +43,7 @@ public class VerschiebenTasks : MonoBehaviour
                 jointRotScript.isActive = false;
                 group1.SetActive(true);
                 tasks[0].GetComponent<DrawLineBetweenTwoObjects>().setLines("all");
+                start = false;
                 //setZeroScript.option = "verschieben";
                 //setZeroScript.enabled = true;
                 sphere.SetActive(true);
@@ -54,7 +55,7 @@ public class VerschiebenTasks : MonoBehaviour
                 sphere.SetActive(false);
                 playView.SetActive(false);
                 tasks[0].GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
-                playView.GetComponent< ManagePlaylist>().animator[0].Play("Step1", -1, 0f);
+                playView.GetComponent<ManagePlaylist>().animator[0].Play("Step1", -1, 0f);
             }
             else if (index == 2)
             {
@@ -64,10 +65,10 @@ public class VerschiebenTasks : MonoBehaviour
                 playView.SetActive(true);
                 playView.GetComponent<ManagePlaylist>().select = 0;
                 playView.GetComponent<ManagePlaylist>().animator[1].enabled = false;
-                playView.GetComponent<ManagePlaylist>().animator[1].Play("Step2", -1, 0f);
+                playView.GetComponent<ManagePlaylist>().animator[1].Play("4JacksAnimation", -1, 0f);
                 playView.transform.GetChild(0).gameObject.SetActive(true);
                 playView.transform.GetChild(1).gameObject.SetActive(false);
-               
+
             }
             else if (index == 3)
             {
@@ -90,7 +91,7 @@ public class VerschiebenTasks : MonoBehaviour
             }
             else if (index == 4)
             {
-                playView.GetComponent<ManagePlaylist>().animator[1].Play("Step2", -1, 0f);
+                playView.GetComponent<ManagePlaylist>().animator[1].Play("4JacksAnimation", -1, 0f);
                 playView.SetActive(false);
                 group2.SetActive(true);
                 group1.SetActive(false);
@@ -123,21 +124,25 @@ public class VerschiebenTasks : MonoBehaviour
 
     public void resetTScript()
     {
-        sphere.SetActive(false);
-        playView.SetActive(false);
-        playView.GetComponent<ManagePlaylist>().select = 0;
-        tasks[0].GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
-        playView.GetComponent<ManagePlaylist>().animator[0].Play("Step1", -1, 0f);
-        playView.GetComponent<ManagePlaylist>().animator[1].Play("Step2", -1, 0f);
-        playView.GetComponent<ManagePlaylist>().animator[0].enabled = false;
-        playView.GetComponent<ManagePlaylist>().animator[1].enabled = false;
-        group1.SetActive(false);
-        group2.SetActive(false);
-        circleStart.SetActive(false);
-        circleEnd.SetActive(false);
-        circleStart.transform.GetChild(2).gameObject.tag = "Untagged";
-        jibAreaScript.checkCollision = false;
-        joystick.SetActive(false);
+        if (start == false)
+        {
+            sphere.SetActive(false);
+            playView.SetActive(false);
+            playView.GetComponent<ManagePlaylist>().select = 0;
+            tasks[0].GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
+            playView.GetComponent<ManagePlaylist>().animator[0].Play("Step1", -1, 0f);
+            playView.GetComponent<ManagePlaylist>().animator[1].Play("4JacksAnimation", -1, 0f);
+            playView.GetComponent<ManagePlaylist>().animator[0].enabled = false;
+            playView.GetComponent<ManagePlaylist>().animator[1].enabled = false;
+            group1.SetActive(false);
+            group2.SetActive(false);
+            circleStart.SetActive(false);
+            circleEnd.SetActive(false);
+            circleStart.transform.GetChild(2).gameObject.tag = "Untagged";
+            jibAreaScript.checkCollision = false;
+            joystick.SetActive(false);
+            start = true;
+        }       
 
         //gameObject.GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
         //int i = 0;

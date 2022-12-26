@@ -67,7 +67,7 @@ public class ManagePlaylist : MonoBehaviour
         {
             transform.GetChild(0).gameObject.SetActive(true);
             transform.GetChild(1).gameObject.SetActive(false);
-            animator[1].Play("Step2", -1, 0f);
+            animator[1].Play("4JacksAnimation", -1, 0f);
             animator[1].enabled = false;
             checkAnim[1].SetActive(false);
         }
