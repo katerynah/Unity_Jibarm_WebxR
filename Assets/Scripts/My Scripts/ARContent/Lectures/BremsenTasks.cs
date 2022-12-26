@@ -7,6 +7,7 @@ public class BremsenTasks : MonoBehaviour
 {
     int index;
     List<GameObject> descs = new List<GameObject>();
+    public SetBremsen[] bremsenArmTilt;
     List<GameObject> tasks = new List<GameObject>();
     public List<GameObject> objToRotate = new List<GameObject>();
     public GameObject[] checkboxes;
@@ -57,8 +58,16 @@ public class BremsenTasks : MonoBehaviour
 
         if (nr < 4)
         {
+            foreach (var obj in spheres)
+            {
+                obj.gameObject.SetActive(true);
+            }
             objToRotate[nr].GetComponent<BremsenControl>().enabled = true;
             objToRotate[nr].GetComponent<BremsenControl>().isActive = true;
+            foreach (var obj in bremsenArmTilt)
+            {
+                obj.gameObject.SetActive(true);
+            }
 
         }
 
@@ -79,6 +88,16 @@ public class BremsenTasks : MonoBehaviour
                 obj.GetComponent<BremsenControl>().isActive = false;
             }
             i++;
+        }
+
+        foreach (var obj in bremsenArmTilt)
+        {
+            obj.gameObject.SetActive(false);
+        }
+
+        foreach (var obj in spheres)
+        {
+            obj.gameObject.SetActive(false);
         }
     }
 }

@@ -11,6 +11,12 @@ mergeInto(LibraryManager.library, {
 
   // ------ BASIC ------
 
+  OpenPage: function (url) {
+    url = Pointer_stringify(url);
+    console.log("Opening link: " + url);
+    window.open(url, "_blank");
+  },
+
   // Function example
   CallFunction: function () {
     // Show a message as an alert

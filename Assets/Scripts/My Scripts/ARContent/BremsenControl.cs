@@ -91,19 +91,47 @@ public class BremsenControl : MonoBehaviour
     void limitRot(float limit, float axisValue, int index, bool bigger)
     {
         
-        if (axisValue > limit && axisValue < (limit + 3) && bigger == true)
-        {
-            startRotation = false;
-            MeshRenderer newColor = bremsenTScript.spheres[index].GetComponent<MeshRenderer>();
-            newColor.material = greenMat;
-            bremsenTScript.checkboxes[index].SetActive(true);
-        } else if (bigger == false && axisValue > limit && axisValue < (limit + 3))
-        {
-            startRotation = false;
-            MeshRenderer newColor = bremsenTScript.spheres[index].GetComponent<MeshRenderer>();
-            newColor.material = greenMat;
-            bremsenTScript.checkboxes[index].SetActive(true);
-        }
+
+            switch (UseAs)
+            {
+                case Brakes.BoomTilt:
+                    if (bremsenTScript.bremsenArmTilt[0].armTilt == true)
+                    {
+                        startRotation = false;
+                        MeshRenderer newColor = bremsenTScript.spheres[index].GetComponent<MeshRenderer>();
+                        newColor.material = greenMat;
+                        bremsenTScript.checkboxes[index].SetActive(true);
+                    }
+                    break;
+                case Brakes.BoomPan:
+                    if (bremsenTScript.bremsenArmTilt[1].armPan == true)
+                    {
+                        startRotation = false;
+                        MeshRenderer newColor = bremsenTScript.spheres[index].GetComponent<MeshRenderer>();
+                        newColor.material = greenMat;
+                        bremsenTScript.checkboxes[index].SetActive(true);
+                    }
+                    break;
+                case Brakes.HeadTilt:
+                    if (bremsenTScript.bremsenArmTilt[2].camTilt == true)
+                    {
+                        startRotation = false;
+                        MeshRenderer newColor = bremsenTScript.spheres[index].GetComponent<MeshRenderer>();
+                        newColor.material = greenMat;
+                        bremsenTScript.checkboxes[index].SetActive(true);
+                    }
+                    break;
+                case Brakes.HeadPan:
+                    if (bremsenTScript.bremsenArmTilt[3].camPan == true)
+                    {
+                        startRotation = false;
+                        MeshRenderer newColor = bremsenTScript.spheres[index].GetComponent<MeshRenderer>();
+                        newColor.material = greenMat;
+                        bremsenTScript.checkboxes[index].SetActive(true);
+                    }
+                    break;
+                }
+
     }
 
     public void resetRotation()

@@ -9,8 +9,11 @@ public static class WebGLPluginJS
     [DllImport("__Internal")]
     public static extern void CallFunction();
 
+    [DllImport("__Internal")]
+    private static extern void OpenPage(string url);
+
     // Importing "PassTextParam"
-     [DllImport("__Internal")]
+    [DllImport("__Internal")]
     public static extern void PassTextParam(string text);
 
     // Importing "PassNumberParam"
