@@ -79,7 +79,7 @@ public class NivellierenTasks : MonoBehaviour
 
                 adaptJScript.checkCollision = true;
                 adaptJScript.enabled = true;
-                if (nivelPoint[0].activeSelf == false)
+                if (nivelPoint[1].activeSelf == false)
                 {
                     foreach (GameObject niv in nivelPoint)
                     {

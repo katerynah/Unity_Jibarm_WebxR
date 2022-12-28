@@ -46,13 +46,13 @@ public class VerschiebenTasks : MonoBehaviour
                 start = false;
                 //setZeroScript.option = "verschieben";
                 //setZeroScript.enabled = true;
-                sphere.SetActive(true);
+                //sphere.SetActive(true);
             }
             else if (index == 1)
             {
                 jointRotScript.enabled = true;
                 jointRotScript.isActive = true;
-                sphere.SetActive(false);
+                //sphere.SetActive(false);
                 playView.SetActive(false);
                 tasks[0].GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
                 playView.GetComponent<ManagePlaylist>().animator[0].Play("Step1", -1, 0f);
@@ -74,7 +74,7 @@ public class VerschiebenTasks : MonoBehaviour
             {
                 // anim 2
                 playView.SetActive(true);
-                sphere.SetActive(false);
+                //sphere.SetActive(false);
                 playView.GetComponent<ManagePlaylist>().select = 1;
                 playView.GetComponent<ManagePlaylist>().animator[0].enabled = false;
                 playView.GetComponent<ManagePlaylist>().animator[0].Play("Step1", -1, 0f);
@@ -126,7 +126,7 @@ public class VerschiebenTasks : MonoBehaviour
     {
         if (start == false)
         {
-            sphere.SetActive(false);
+            //sphere.SetActive(false);
             playView.SetActive(false);
             playView.GetComponent<ManagePlaylist>().select = 0;
             tasks[0].GetComponent<DrawLineBetweenTwoObjects>().removeNotes();

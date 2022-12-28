@@ -65,6 +65,11 @@ public class KoordsysTasks : MonoBehaviour
                 }
                 switchBtn.tag = "raycast";
                 raycastScript.raycasting = true;
+            } else if (index == 2)
+            {
+                gameObject.transform.GetChild(1).GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
+                gameObject.transform.GetChild(0).GetComponent<ChangeColor>().setColor(false);
+                gameObject.transform.GetChild(1).GetComponent<ChangeColor>().setColor(false);
             }
 
             checkCurrTask = false;

@@ -10,8 +10,7 @@ public class VermessenJoystick : MonoBehaviour
     //Vector3 rotH;
     //Vector3 rotV;
 
-    [SerializeField]
-    float speed = 1f;
+    float speed = 2f;
 
 
     // Start is called before the first frame update

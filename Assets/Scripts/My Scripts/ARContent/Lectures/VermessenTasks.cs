@@ -63,17 +63,17 @@ public class VermessenTasks : MonoBehaviour
                 }
                 cameraRotScript.enabled = false;
             }
+            //else if (index == 1)
+            //{
+            //    cameraRotScript.enabled = true;
+            //    cameraRotScript.isActive = true;
+            //}
             else if (index == 1)
             {
-                cameraRotScript.enabled = true;
-                cameraRotScript.isActive = true;
+                //vermessenJoys.enabled = false;
+                //cameraRotScript.enabled = false;
             }
             else if (index == 2)
-            {
-                //vermessenJoys.enabled = false;
-                cameraRotScript.enabled = false;
-            }
-            else if (index == 3)
             {
                 //vermessenJoys.enabled = true;
                 
@@ -81,7 +81,7 @@ public class VermessenTasks : MonoBehaviour
             checkCurrTask = false;
         }
 
-        if (index != 1 && index != 0)
+        if (index != 0)
         {
             joystick.SetActive(true);
             joystick.GetComponent<VermessenJoystick>().enabled = true;
