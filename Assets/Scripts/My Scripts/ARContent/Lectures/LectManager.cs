@@ -125,8 +125,11 @@ public class LectManager : MonoBehaviour
         switch (selectScript.currLectName)
         {
             case "Allgemein":
-                currAR.GetComponent<DrawLineBetweenTwoObjects>().setLines("all");
-                currAR.GetComponent<DrawLineBetweenTwoObjects>().setLines("one");
+                if (GameObject.FindGameObjectWithTag("jibarm") == true)
+                {
+                    currAR.GetComponent<DrawLineBetweenTwoObjects>().setLines("all");
+                    currAR.GetComponent<DrawLineBetweenTwoObjects>().setLines("one");
+                }
                 break;
             case "Einschalt":
                 EinschaltTasks einschaltScript = GameObject.Find("Player").GetComponent<EinschaltTasks>();
