@@ -8,7 +8,7 @@ public class JibArmValues : MonoBehaviour
     public List<GameObject> jibParts = new List<GameObject>();
     public List<Vector3> jibPos = new List<Vector3>();
     public List<Quaternion> jibRot = new List<Quaternion>();
-    bool start = true;
+    public bool start = true;
 
 
     public void setTheValues()

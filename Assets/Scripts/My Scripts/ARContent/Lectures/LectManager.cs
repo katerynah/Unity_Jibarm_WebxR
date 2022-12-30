@@ -13,7 +13,7 @@ public class LectManager : MonoBehaviour
     [HideInInspector]
     public List<GameObject> taskObjects = new List<GameObject>();
     public ControlNav arrowScript;
-    public GameObject studioEnv, player;
+    public GameObject studioEnv, player, screenView;
     public List<GameObject> checkMarksCheck = new List<GameObject>();
     bool resetWires, forIntro = false;
     bool resetIndex, start, resetArrows, resetPos, addItems = true;
@@ -171,6 +171,7 @@ public class LectManager : MonoBehaviour
             case "Laser":
                 break;
             case "Vermessen":
+                screenView.SetActive(true);
                 studioEnv.SetActive(true);
                 break;
             case "Verschieben":
@@ -273,7 +274,7 @@ public class LectManager : MonoBehaviour
         }
 
 
-        if (resetPos == false && start == false)
+        if (resetPos == false && jibValuesScript.start == false)
         {
             jibValuesScript.resetTheValues();
             resetPos = true;
