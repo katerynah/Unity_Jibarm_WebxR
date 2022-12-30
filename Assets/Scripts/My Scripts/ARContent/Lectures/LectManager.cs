@@ -8,13 +8,14 @@ public class LectManager : MonoBehaviour
     public RaycastingAR raycastScript;
     [HideInInspector]
     public List<GameObject> descObjects = new List<GameObject>();
+    public GameObject introN, introD;
     List<GameObject> disableScreen = new List<GameObject>();
     [HideInInspector]
     public List<GameObject> taskObjects = new List<GameObject>();
     public ControlNav arrowScript;
     public GameObject studioEnv, player;
     public List<GameObject> checkMarksCheck = new List<GameObject>();
-    bool resetWires = false;
+    bool resetWires, forIntro = false;
     bool resetIndex, start, resetArrows, resetPos, addItems = true;
     [HideInInspector]
     public bool check = true;
@@ -122,10 +123,17 @@ public class LectManager : MonoBehaviour
             player.GetComponent<EinschaltTasks>().enabled = false;
         }
 
+        if (selectScript.currLectName != "Allgemein")
+        {
+            introN.SetActive(false);
+            introD.SetActive(false);
+        }
+
         switch (selectScript.currLectName)
         {
             case "Allgemein":
-                if (GameObject.FindGameObjectWithTag("jibarm") == true)
+
+                if (GameObject.FindGameObjectWithTag("jibarm") == true && GameObject.FindGameObjectWithTag("jibarm").transform.position.y <0)
                 {
                     currAR.GetComponent<DrawLineBetweenTwoObjects>().setLines("all");
                     currAR.GetComponent<DrawLineBetweenTwoObjects>().setLines("one");
@@ -182,19 +190,36 @@ public class LectManager : MonoBehaviour
         currAR.SetActive(false);
         currCtrl.SetActive(false);
         resetIndex = true;
-        if (descObjects.Count > 1 && selectScript.currLectName != "Allgemein")
+        if (selectScript.currLectName != "Allgemein")
         {
-            arrowScript.currIndex = 0;
-            selectScript.arrows.transform.GetChild(0).gameObject.SetActive(false);
-            selectScript.arrows.transform.GetChild(1).gameObject.SetActive(true);
-            arrowScript.gameObject.SetActive(false);
+            if (descObjects.Count > 1)
+            {
+                arrowScript.currIndex = 0;
+                selectScript.arrows.transform.GetChild(0).gameObject.SetActive(false);
+                selectScript.arrows.transform.GetChild(1).gameObject.SetActive(true);
+                arrowScript.gameObject.SetActive(false);
+            }
+
         }
+
 
         switch (selectScript.currLectName)
         {
             case "Allgemein":
                 currAR.GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
-                disableDesc("only-colors");
+
+                introN.SetActive(true);
+                introD.SetActive(true);
+
+                foreach (GameObject note in taskObjects)
+                {
+                    note.GetComponent<ChangeColor>().setColor(false);
+                }
+
+                foreach (GameObject child in descObjects)
+                {
+                    child.SetActive(false);
+                }
                 break;
             case "Einschalt":
                 EinschaltTasks einschaltScript = GameObject.Find("Player").GetComponent<EinschaltTasks>();
@@ -306,9 +331,19 @@ public class LectManager : MonoBehaviour
             int i = 0;
             foreach (GameObject note in taskObjects)
             {
+
                 if (i != 0 && selectScript.currLectName == "Allgemein")
                 {
                     note.GetComponent<ChangeColor>().setColor(false);
+                }
+                i++;
+            }
+            i = 0;
+            foreach (GameObject desc in descObjects)
+            {
+                if (i != 0 && selectScript.currLectName == "Allgemein")
+                {
+                    desc.SetActive(false);
                 }
                 i++;
             }

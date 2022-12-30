@@ -5,18 +5,27 @@ using UnityEngine;
 public class DescList : MonoBehaviour
 {
     public GameObject deskObject;
-    public LectManager lectManagerAllgemein;
+    public LectManager lectScript;
 
     void OnMouseDown()
     {
         chooseDesc();
     }
 
+
     public void chooseDesc()
     {
+        lectScript.introD.SetActive(false);
+        lectScript.introN.SetActive(false);
         // disable all description objects
-        lectManagerAllgemein.disableDesc("one");
-
+        foreach (GameObject note in lectScript.taskObjects)
+        {
+            note.GetComponent<ChangeColor>().setColor(false);
+        }
+        foreach (GameObject child in lectScript.descObjects)
+        {
+            child.SetActive(false);
+        }
         gameObject.GetComponent<ChangeColor>().setColor(true);
         deskObject.SetActive(true);
     }

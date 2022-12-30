@@ -5281,7 +5281,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Der Egripment JanJib ist ein kleiner Kamerakran mit einer Arml\xE4nge
     von 120 cm, welcher weiche Kamerabewegungen um einen festen Punkt und Beibehaltung
-    einer Ausrichtung erm\xF6glicht. Der JibArm ist mit Encodern und einem Tracking-Interface
+    einer Ausrichtung erm\xF6glicht. Der Jibarm ist mit Encodern und einem Tracking-Interface
     versehen und liefert so alle n\xF6tigen (Kamera-) Parameter und Daten zu seiner
     Position im Raum. Hierf\xFCr wird das X-pecto-Protokoll verwendet"
   m_isRightToLeft: 0

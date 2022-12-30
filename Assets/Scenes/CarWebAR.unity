@@ -3163,7 +3163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 686894914028590042, guid: d2f89d57ba08f5d47bb885c434f52ec7, type: 3}
       propertyPath: m_Name
-      value: JibArm_1001
+      value: Jibarm_1001
       objectReference: {fileID: 0}
     - target: {fileID: 819463205275850854, guid: d2f89d57ba08f5d47bb885c434f52ec7, type: 3}
       propertyPath: m_Enabled

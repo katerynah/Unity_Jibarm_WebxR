@@ -69,9 +69,9 @@ public class LaserTasks : MonoBehaviour
         if (start == false)
         {
             gameObject.transform.GetChild(0).GetComponent<ChangeColor>().setColor(false);
-            gameObject.transform.GetChild(1).GetComponent<ChangeColor>().setColor(false);
+            //gameObject.transform.GetChild(1).GetComponent<ChangeColor>().setColor(false);
             gameObject.transform.GetChild(0).GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
-            gameObject.transform.GetChild(1).GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
+            //gameObject.transform.GetChild(1).GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
             if (start == false)
             {
                 Transform objectTransform = switchBtn.GetComponent<Transform>();

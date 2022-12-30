@@ -1304,7 +1304,7 @@ GameObject:
   - component: {fileID: 7256819414955805581}
   - component: {fileID: 6213201290206209688}
   m_Layer: 0
-  m_Name: JibArm_1001
+  m_Name: Jibarm_1001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

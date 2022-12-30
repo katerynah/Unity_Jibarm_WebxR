@@ -22,7 +22,7 @@ public class JibArmValues : MonoBehaviour
             }
             start = false;
         }
-        
+
     }
 
     public void resetTheValues()
@@ -36,6 +36,6 @@ public class JibArmValues : MonoBehaviour
             }
             start = true;
         }
-        
+
     }
 }
