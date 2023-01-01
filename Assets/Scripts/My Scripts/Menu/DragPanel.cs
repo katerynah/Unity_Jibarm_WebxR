@@ -4,16 +4,17 @@ using UnityEngine.EventSystems;
 
 public class DragPanel : MonoBehaviour // EventTrigger: event trigger of UI events 
 {
-    [HideInInspector]
-    public bool startDragging;
+   
     // rPanel, bPanel, tBorder
     public RectTransform[] panelsForWidth;
+    public DragHelper dragHScript;
     [HideInInspector]
     public float x1, x2, adjustWidth, StartX, EndX, adaptXWidth;
-    public RectTransform elPanel;
+    public RectTransform elPanel, rPanel;
     [HideInInspector]
     public Transform currentPose;
     public GameObject[] textObjects;
+    public GameObject rBorder;
 
     void Start()
     {
@@ -22,7 +23,7 @@ public class DragPanel : MonoBehaviour // EventTrigger: event trigger of UI even
         x1 = gameObject.GetComponent<RectTransform>().anchoredPosition.x;
 
         adaptXWidth = (Screen.width * 12f / elPanel.rect.width);  // 7.5f (here 5.5f bc it fits better) Border panel
-        EndX = (Screen.width - StartX) + adaptXWidth; // adjust width 18
+        EndX = (Screen.width - StartX) + adaptXWidth + 5; // adjust width 18
 
         // adapt text width
         var objects = GameObject.FindGameObjectsWithTag("text");
@@ -33,31 +34,13 @@ public class DragPanel : MonoBehaviour // EventTrigger: event trigger of UI even
     void Update()
     {
         currentPose = gameObject.transform;
-
-        // check if dragging is on then change the position of ui element according ti mouse input position
-        if (startDragging)
+        if (rPanel.rect.width > 0)
         {
-
-            transform.position = new Vector2(Input.mousePosition.x, gameObject.transform.position.y);
-
-            if (gameObject.GetComponent<RectTransform>().anchoredPosition.x < -100f) // < -103.5
-            {
-                // Adapt RPanel and Text objects
-                adaptTextObjs();
-            }
-
+            rBorder.SetActive(true);
         }
-
-        // limit dragging on the left
-        if (gameObject.transform.position.x <= EndX)
+        else
         {
-            transform.position = new Vector2(EndX, gameObject.transform.position.y);
-        }
-
-        //// limit dragging on the right
-        else if (gameObject.transform.position.x >= StartX)
-        {
-            transform.position = new Vector2(StartX, gameObject.transform.position.y);
+            rBorder.SetActive(false);
         }
     }
 
@@ -92,19 +75,6 @@ public class DragPanel : MonoBehaviour // EventTrigger: event trigger of UI even
         // Text Objects
         objOff.GetComponent<RectTransform>().sizeDelta = new Vector2(panelsForWidth[0].rect.width, panelsForWidth[0].rect.height);
 
-    }
-
-    public void OnPointerDown()
-    {
-        // Use this event to fet mouse down on the UI
-        startDragging = true;
-    }
-
-
-    public void OnPointerUp()
-    {
-        // Use this to get user has leave the mouse
-        startDragging = false;
     }
 
 
