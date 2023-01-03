@@ -7,7 +7,8 @@ public class RestartScript : MonoBehaviour
     // dragPanel, Jib, 
     public List<GameObject> adaptObj = new List<GameObject>();
     
-    Vector2 dragPose;
+    Vector2 dragPose, imgPose;
+    public GameObject dragImage;
     [SerializeField]
     public DragPanel dragScript;
     bool doFirst = true;
@@ -16,6 +17,7 @@ public class RestartScript : MonoBehaviour
     void Start()
     {
         dragPose = dragScript.gameObject.GetComponent<RectTransform>().anchoredPosition;
+        imgPose = dragImage.GetComponent<RectTransform>().anchoredPosition;
     }
 
     public void adaptScripts(GameObject clickedBtn)
@@ -33,6 +35,7 @@ public class RestartScript : MonoBehaviour
                     else if(!doFirst)
                     {
                         adaptObj[0].GetComponent<RectTransform>().anchoredPosition = dragPose;
+                        dragImage.GetComponent<RectTransform>().anchoredPosition = imgPose;
                     }
                 }
                 else

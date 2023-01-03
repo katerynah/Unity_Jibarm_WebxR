@@ -1,0 +1,10 @@
+{
+    "aboutJibarm":
+    [
+        {
+            "headline":"What is a camera arm?",
+            "copytext": "The Egripment JanJib is a small camera crane with an arm length of 120 cm that allows for smooth camera movement around a fixed point and maintaining an orientation."
+        }       
+    ]
+   
+}

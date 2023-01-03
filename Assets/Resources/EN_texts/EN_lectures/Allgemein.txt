@@ -1,0 +1,9 @@
+{
+    "aboutJibarm":
+    [
+        {
+            "copytext":"\n <size=10><b>What is a camera arm?</b></size> \n\n The Egripment JanJib is a small camera crane with an arm length of <b>120 cm</b>, which allows for smooth camera movements around a fixed point and maintains alignment. The jib arm is equipped with <b>encoders</b> and a <b>tracking interface</b> and provides all necessary (camera) parameters and data about its position in space. The <b>X-pecto protocol</b> is used for this."
+        }       
+    ]
+   
+}
