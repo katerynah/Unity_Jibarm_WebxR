@@ -1,0 +1,9 @@
+{
+    "aboutJibarm":
+    [
+        {
+            "copytext": "<size="30">Relevante Bereiche des Jibarmes</size> \n\n Mit dem Klick auf die Buttons kann man die kurzen Beschreibungen zu den <color=yellow><b>relevanten Jibarm-Bereichen</b></color> ansehen."
+        }       
+    ]
+   
+}

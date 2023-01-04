@@ -1,0 +1,21 @@
+{
+    "aboutJibarm":
+    [
+        {
+            "The jib arm is mounted on the <color=yellow><b>dolly</b></color>, which provides a secure base for it. It is important that the dolly base is level, as this can affect the jib arm's homing and tracking."
+        },
+        {
+            "The jib arm stands on the dolly, which provides a stable base for it. It is important that the dolly base is level because it can affect the homing and tracking. The camera is used to record the virtual image. The focus, zoom, and aperture can be adjusted to achieve the desired result."
+        },
+        {
+            "Using <color=yellow><b>locking brakes</b></color> helps to control the stiffness of the jib arm. There are a total of 4 brakes and 2 camera head dampers."
+        },
+        {
+            "Der <color=yellow><b>Monitor</b></color> des Jibarmes verfügt über den Haupt-schalter, Encoder-Eingänge, GenLock, Sync-Eingang und Tracking Interface, das die Daten des Jibarmes übergibt."
+        },
+        {
+           "Der <color=yellow><b>Laser</b></color> ist für die Messung der Landmarks im Studio zuständig. Es muss vermieden werden, dauerhaft hineinzuschauen."
+        }
+    ]
+   
+}

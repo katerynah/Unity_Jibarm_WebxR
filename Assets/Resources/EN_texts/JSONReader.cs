@@ -9,6 +9,8 @@ public class JSONReader : MonoBehaviour
     public List<GameObject> moreObjects = new List<GameObject>();
     public List<TextAsset> moreTextAssets = new List<TextAsset>();
     public List<string> de_Text = new List<string>();
+    public List<string> en_Text = new List<string>();
+
 
     public List<GameObject> newList = new List<GameObject>();
     
@@ -40,7 +42,7 @@ public class JSONReader : MonoBehaviour
 
     public enum Groups
     {
-        About, Buttons, Info, Lectures, Nav, Desc, Notations, Images
+        About, Buttons, Info, Lectures, Nav, Desc, Checkboxes, Notations, Images
     }
     public Groups UseAs;
 
@@ -110,13 +112,35 @@ public class JSONReader : MonoBehaviour
                     }
                 }
                 break;
+            case Groups.Desc:
+                if (lang == "en")
+                {
+                    setDescContent();
+                    int j = 0;
+                    foreach (GameObject textObjs in moreObjects)
+                    {
+                        textContent = textObjs.GetComponent<TextMeshProUGUI>();
+                        textContent.SetText(en_Text[j]);
+                        j++;
+                    }
+                }
+                else if (lang == "de")
+                {
+                    int k = 0;
+                    foreach (GameObject textObjs in moreObjects)
+                    {
+                        TextMeshProUGUI replaced = textObjs.GetComponent<TextMeshProUGUI>();
+                        replaced.SetText(de_Text[k]);
+                        k++;
+                    }
+                }
+                break;
         }
         
     }
 
     void setLectureContent()
     {
-
         int i = 0;
         foreach (GameObject obj in moreObjects)
         {
@@ -137,6 +161,24 @@ public class JSONReader : MonoBehaviour
             }
             i++;
         }
+        moreObjects = newList;
+    }
+
+    void setDescContent()
+    {
+        foreach (GameObject obj in moreObjects)
+        {
+            obj.GetComponent<enHelper>().enForDesc();
+            int i = 0;
+            foreach (GameObject desc in obj.GetComponent<enHelper>().descObjects)
+            {
+                newList.Add(desc);
+                en_Text.Add(obj.GetComponent<enHelper>().en_Text[i]);
+                de_Text.Add(obj.GetComponent<enHelper>().de_Text[i]);
+                i++;
+            }
+        }
+        Debug.Log($"Other {en_Text.Count}");
         moreObjects = newList;
     }
 
