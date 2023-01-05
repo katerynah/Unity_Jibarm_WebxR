@@ -1,0 +1,18 @@
+{
+    "aboutJibarm":
+    [
+        {
+            "copytext":"<size=30>Measurement with the laser</size>\n\nMove the jib arm so that the laser is exactly <colour=yellow>in the centre of the marker</colour>. The more mistakes you make, the more the overall result is affected.\nIt is preferred</color> that the  <color=yellow>M number corresponds</color> with the marker in the studio."
+        },
+        {
+             "copytext":"<size=30>Measuring 5 markers 1/2</size>\n\n1. When you close this panel, the <color=#0BC5F8><b>joystick</b></color> will appear, with which you can move the jib arm.\n2. The laser must be <color=yellow>exactly in the center of the marker</color>. When it hits the center, the joystick color changes to <color=#78E34A>green</color>.\n3. Now you can set the values on the touchscreen with <color=orange>'GRAB'</color> (<color=yellow>M-Button on the touchscreen should turn green</color>). Then you can repeat the steps for the other markers."
+        },
+        {
+             "copytext":"<size=30>Measuring 5 markers 2/2</size>.\n\nHere you can check which markers have been measured and saved."
+        },
+        {
+             "copytext":"<size=30>Check and save the values</size>.\n\nThe quality of the measurement can be checked with the <color=orange>'LOCATE'</color> button. When all marks have been measured, they can be saved with <color=orange>'SAVE GRABS'</color>.\nCaution! <color=red>'ABORT'</color> deletes all measured values."
+        }
+    ]
+}
+

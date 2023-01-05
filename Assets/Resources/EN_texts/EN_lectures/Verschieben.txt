@@ -1,0 +1,9 @@
+{
+    "aboutJibarm":
+    [
+        {
+            "copytext":"\n<size=10><b>Moving</b></size>\n\nThe <b>steering rod</b> is used when the dolly is in a stationary position\n\nThe steering rod can be easily dismantled by inserting it into the sleeve. There is a so-called <b>'push pin'</b> or locking pin that must be pressed (the blue button) to release the spring and allow the pin to come out automatically. The push pin cannot be removed without pressing the dot. There is also a locking device to keep the steering rod's in position. Then the dolly can be steered downwards.\n\nIt is important to note that the bar is relatively long. It should be dismantled after repositioning the jib arm to prevent it from being lost or someone tripping over it. \n\n<b>It is better to work with several people:</b> One person holds the arm and makes sure no one is in the way while the other person moves the dolly.\n\nTo reposition the dolly, push the cables away from the pole entrance, repeat the above steps and turn the poles up next to the wheels (jacks) so that they do not touch the ground.\n\nWhen the dolly is stationary, screw the jacks back in and fix them in place. It is important to make only light contact with the plate. At the end, the steering rod should be unscrewed and the push pin removed. Then place the bar under the jib arm."
+        }       
+    ]
+   
+}

@@ -20,19 +20,19 @@ public class enHelper : MonoBehaviour
     // Update is called once per frame
     public void enForDesc()
     {
-        if (once == true)
+        Debug.Log($"{gameObject.name} check count {descObjects.Count}");
+        if (descObjects.Count == 0)
         {
-            foreach (Transform child in gameObject.transform)
+            foreach (Transform child in gameObject.GetComponent<Transform>())
             {
                 descObjects.Add(child.gameObject);
             }
-
-            foreach (GameObject obj in descObjects)
-            {
-                textContent = obj.GetComponent<TextMeshProUGUI>();
-                de_Text.Add(textContent.text);
-            }
-            once = false;
+        }
+            
+        foreach (GameObject obj in descObjects)
+        {
+            textContent = obj.GetComponent<TextMeshProUGUI>();
+            de_Text.Add(textContent.text);
         }
 
         foreach (TextAsset tAsset in textAssets)
@@ -47,7 +47,6 @@ public class enHelper : MonoBehaviour
             for (int i = 0; i < myJson.aboutJibarm.Count; i++)
             {
                 string desc = myJson.aboutJibarm[i].copytext;
-                Debug.Log($"En added {desc}");
                 en_Text.Add(desc);
             }
         }

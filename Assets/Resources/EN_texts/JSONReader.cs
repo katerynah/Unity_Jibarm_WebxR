@@ -18,7 +18,7 @@ public class JSONReader : MonoBehaviour
     // Create a field for the save file.
     TextMeshProUGUI textContent;
     DataContainer myJson;
-    bool once = true;
+    bool once, start = true;
     //public string lang = "en";
 
     //public List<GameObject> changeText = new List<GameObject>();
@@ -42,7 +42,7 @@ public class JSONReader : MonoBehaviour
 
     public enum Groups
     {
-        About, Buttons, Info, Lectures, Nav, Desc, Checkboxes, Notations, Images
+        Two, Lectures, Many, Images, One
     }
     public Groups UseAs;
 
@@ -54,16 +54,16 @@ public class JSONReader : MonoBehaviour
 
         switch (UseAs)
         {
-            case Groups.About:
+            case Groups.Two:
+                textContent = ENList[0].TextToEN.GetComponent<TextMeshProUGUI>();
                 TextMeshProUGUI textContentH = ENList[1].TextToEN.GetComponent<TextMeshProUGUI>();
+
                 if (lang == "en")
                 {
-                    textContent = ENList[0].TextToEN.GetComponent<TextMeshProUGUI>(); 
-                    if (once == true)
+                    if (de_Text.Count <= 2)
                     {
                         de_Text.Add(textContent.text);
-                        de_TextH = textContentH.text;
-                        once = false;
+                        de_Text.Add(textContentH.text);
                     }
                     myJson = JsonUtility.FromJson<DataContainer>(ENList[0].FileName.text);
                     textContent.SetText(myJson.aboutJibarm[0].copytext);
@@ -72,34 +72,49 @@ public class JSONReader : MonoBehaviour
                 else if (lang == "de")
                 {
                     textContent.SetText(de_Text[0]);
-                    textContentH.SetText(de_TextH);
+                    textContentH.SetText(de_Text[1]);
+                }
+                break;
+            case Groups.One:
+                if (lang == "en")
+                {
+                    for (int i = 0; i < ENList.Count; i++)
+                    {
+                        textContent = ENList[i].TextToEN.GetComponent<TextMeshProUGUI>();
+                        if (de_Text.Count <= ENList.Count)
+                        {
+                            de_Text.Add(textContent.text);
+                        }
+                        myJson = JsonUtility.FromJson<DataContainer>(ENList[i].FileName.text);
+                        textContent.SetText(myJson.aboutJibarm[0].copytext);
+                    }
+                }
+                else if (lang == "de")
+                {
+                    for (int i = 0; i < ENList.Count; i++)
+                    {
+                        textContent = ENList[i].TextToEN.GetComponent<TextMeshProUGUI>();
+                        textContent.SetText(de_Text[i]);
+                    }
+                        
                 }
                 break;
             case Groups.Lectures:
-                if (lang == "en")
+                if (lang == "en") 
                 {
-                    if (moreObjects.Count < 5)
-                    {
-                        setLectureContent();
-                    }
                     int j = 0;
                     foreach (GameObject textObjs in moreObjects)
                     {
                         textContent = textObjs.GetComponent<TextMeshProUGUI>();
-                        if (j < 12 && once == true)
+                        if (j <= 12)
                         {
                             de_Text.Add(textContent.text);
                         }
-                        else
-                        {
-                            once = false;
-                        }
 
-                        myJson = JsonUtility.FromJson<DataContainer>(moreTextAssets[j].text);
+                    myJson = JsonUtility.FromJson<DataContainer>(moreTextAssets[j].text);
                         textContent.SetText(myJson.aboutJibarm[0].copytext);
                         j++;
                     }
-
                 }
                 else if (lang == "de")
                 {
@@ -112,10 +127,14 @@ public class JSONReader : MonoBehaviour
                     }
                 }
                 break;
-            case Groups.Desc:
+            case Groups.Many:
                 if (lang == "en")
                 {
-                    setDescContent();
+                    if (start == true)
+                    {
+                        setDescContent();
+                        start = false;
+                    }
                     int j = 0;
                     foreach (GameObject textObjs in moreObjects)
                     {
@@ -139,31 +158,6 @@ public class JSONReader : MonoBehaviour
         
     }
 
-    void setLectureContent()
-    {
-        int i = 0;
-        foreach (GameObject obj in moreObjects)
-        {
-            if (i == 0)
-            {
-                var objChild = obj.transform.GetChild(0).gameObject;
-                newList.Add(objChild);
-                Debug.Log($"First {obj.transform.GetChild(0).gameObject.name}");
-            }
-            else
-            {
-                foreach (Transform child in obj.GetComponent<Transform>())
-                {
-                    var objChild = child.transform.GetChild(0).gameObject;
-                    newList.Add(objChild);
-                    Debug.Log($"Other {child.transform.GetChild(0).gameObject.name}");
-                }
-            }
-            i++;
-        }
-        moreObjects = newList;
-    }
-
     void setDescContent()
     {
         foreach (GameObject obj in moreObjects)
@@ -178,7 +172,6 @@ public class JSONReader : MonoBehaviour
                 i++;
             }
         }
-        Debug.Log($"Other {en_Text.Count}");
         moreObjects = newList;
     }
 
@@ -194,7 +187,7 @@ public class JSONReader : MonoBehaviour
     public class DataContainer
     {
         //name same as in the json object
-        public JSONData[] aboutJibarm;
+        public List<JSONData> aboutJibarm;
     }
 
     void addNewText()

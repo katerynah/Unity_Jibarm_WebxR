@@ -1,0 +1,84 @@
+{
+    "aboutJibarm":
+    [
+        {
+            "copytext":"Left steel cable"
+        },
+        {
+             "copytext":"Right steel cable"
+        },
+        {
+             "copytext":"Rotate the camera head"
+        },
+        {
+             "copytext":"Turn off the tracking processor on the box"
+        },
+        {
+            "copytext":"Move the crane up and down"
+        },
+        {
+            "copytext":"Clear the jib arm area"
+        },
+         {
+            "copytext":"Tighten the boom-tilt brake"
+        },
+        {
+            "copytext":"Tighten the boom-pan brake"
+        },
+        {
+             "copytext":"Tighten the head-tilt brake"
+        },
+         {
+             "copytext":"Tighten the head-pan brake"
+        },
+         {
+             "copytext":"Boom-Tilt"
+        },
+        {
+            "copytext":"Boom-Pan"
+        },
+        {
+            "copytext":"Head-Tilt"
+        },
+         {
+            "copytext":"Head-Pan"
+        },
+         {
+             "copytext":"Turn on the PC"
+        },
+        {
+            "copytext":"Click on SYSTEM"
+        },
+        {
+            "copytext":"Press on STOP ALL"
+        },
+         {
+            "copytext":"Open the RayLocator window"
+        },
+        {
+            "copytext":"Open encoder values"
+        },
+        {
+             "copytext":"Open camera parameters"
+        },
+        {
+            "copytext":"Save values"
+        },
+         {
+             "copytext":"Check values"
+        },
+        {
+            "copytext":"Move the camera arm up"
+        },
+        {
+            "copytext":"1. Check"
+        },
+         {
+            "copytext":"2. Check"
+        },
+        {
+            "copytext":"3. Check"
+        }
+    ]
+}
+

@@ -1,0 +1,51 @@
+{
+    "aboutJibarm":
+    [
+        {
+            "copytext":"General"
+        },
+        {
+             "copytext":"Switch-on sequence"
+        },
+        {
+             "copytext":"Safety"
+        },
+        {
+            "copytext":"Locking brakes"
+        },
+        {
+             "copytext":"Tracking"
+        },
+        {
+             "copytext":"Homing"
+        },
+         {
+            "copytext":"Touchscreen"
+        },
+        {
+             "copytext":"Coordinate system"
+        },
+        {
+             "copytext":"Laser"
+        },
+        {
+            "copytext":"Measuring"
+        },
+        {
+             "copytext":"Moving"
+        },
+        {
+             "copytext":"Levelling"
+        },
+        {
+            "copytext":"Starting-up"
+        },
+        {
+             "copytext":"Tracking"
+        },
+        {
+             "copytext":"Repositioning"
+        }
+    ]
+}
+

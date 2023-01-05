@@ -1,0 +1,9 @@
+{
+    "aboutJibarm":
+    [
+        {
+            "copytext":"<size=12>Instructions for the Jibarm application</size>\n\nThe view is divided into 3 areas: learning content, WebAR scene, and help panel for the WebAR scene.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<size=12>Navigation</size>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<size=10><u>Learning panel</u></size>\n\n1.<indent=10>The main area of the learning content is located on the right side and can be moved to the left with <b>Touch & Drag</b>.</indent>\n\n2.<indent=10>Here you can select the learning chapter.</indent>\n\n3.<indent=10>Clicking on the <b>'lock'</b> button will lock or unlock this panel in its current state.</indent><size=10><u>WebAR scene</u></size>\n\n\n4.<indent=10>The cube button activates or deactivates the WebAR scene.</indent>\n\n<size=10><u>Help panel</u></size>\n\n\n5.<indent=10>When the WebAR scene is active, the help panel with descriptions and tasks is also activated. The arrow keys to the left and right can be used to switch between the pages of the panel.</indent>\n\n6.<indent=10>Clicking on the area with the number of pages will open or close the help panel.</indent>\n\n<size=10><u>Homepage</u></size>\n\n\n7.<indent=10>The home button takes you back to the homepage. There you can start the app and reposition the jibarm. The info button leads to the app description, instructions, and requirements for WebAR.</indent>"
+        }       
+    ]
+   
+}

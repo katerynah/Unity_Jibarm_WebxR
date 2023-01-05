@@ -2,7 +2,7 @@
     "aboutJibarm":
     [
         {
-            "copytext":"The jib arm is mounted on the <color=yellow><b>dolly</b></color>, which provides a secure base for it. It is important that the dolly base is level, as this can affect the jib arm's homing and tracking."
+            "copytext":"The jib arm stands on the <color=yellow><b>Dolly</b></color>, which provides a secure stand. It is important that the Dolly base is leveled because it can affect the homing and tracking."
         },
         {
              "copytext":"The <color=yellow><b>camera</color> is used to record the virtual image. The focus, zoom, and aperture can be adjusted to achieve the desired result."

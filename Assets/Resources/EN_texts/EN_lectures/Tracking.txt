@@ -1,0 +1,9 @@
+{
+    "aboutJibarm":
+    [
+        {
+            "copytext":"\n<size=10><b>Tracking Interface</b></size>\n\nThe tracking interface is a unit with a <b>main switch</b> on the side that starts automatically after a certain time when it is switched on. On one side there are <b>6 encoder input sockets</b>, on the other side there are 2 additional sockets, making a total of 8 inputs. The inputs are divided as follows:\n\n•<indent=7>Boom Pan</indent>\n•<indent=7>Boom Tilt</indent>\n•<indent=7>Head-Neigekopf Pan</indent>\n•<indent=7>Head-Neigekopf Tilt</indent>\n\nIn the event of a mechanical or electrical fault on one input, another input can be used and the encoder input value can be changed in the configuration according to the instructions in the user manual. For example, data transmission can be done via input 6 if input 1 is not working.\n\nThe connectors of the tracking interface are <b>etherCon connectors</b>, which means that in case of defects you can use a normal network cable to repair them. The connectors can also be repaired with <b>RJ45</b> tools.\n\nOn the other side are the main switch and the 2 additional input sockets. There is also the <b>Gen-Lock</b> input or <b>Sync</b> input and output (a passive output) and a serial port.\n\nThe sync input of the box accepts <b>Black Burst</b> (B-level and Tri-level for HD). In this setup, one can simply use an analogue output of the camera as an async input to avoid long cable runs and large distribution amplifiers."
+        }       
+    ]
+   
+}

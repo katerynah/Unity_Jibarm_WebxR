@@ -1,0 +1,90 @@
+{
+    "aboutJibarm":
+    [
+        {
+            "copytext":"Camera"
+        },
+        {
+             "copytext":"Brakes"
+        },
+        {
+             "copytext":"Screen"
+        },
+        {
+             "copytext":"Boom-Tilt"
+        },
+        {
+            "copytext":"Boom-Pan"
+        },
+        {
+            "copytext":"Head-Tilt"
+        },
+         {
+            "copytext":"Head-Pan"
+        },
+        {
+            "copytext":"Damping-Tilt"
+        },
+        {
+             "copytext":"Damping-Pan"
+        },
+        {
+             "copytext":"1. Input - Boom-Tilt"
+        },
+        {
+             "copytext":"2. Input - Boom-Pan"
+        },
+        {
+            "copytext":"3. Input - Head-Tilt"
+        },
+        {
+            "copytext":"4. Input - Head-Pan"
+        },
+         {
+            "copytext":"Additional Inputs"
+        },
+         {
+            "copytext":"Additional Inputs"
+        },
+        {
+            "copytext":"Boom-Tilt Encoder"
+        },
+        {
+             "copytext":"Boom-Pan Encoder"
+        },
+        {
+             "copytext":"Head-Encoder"
+        },
+        {
+             "copytext":"Boom-Tilt"
+        },
+        {
+            "copytext":"Boom-Pan"
+        },
+        {
+            "copytext":"Head-Tilt"
+        },
+         {
+            "copytext":"Head-Pan"
+        },
+         {
+            "copytext":"Boom"
+        },
+        {
+            "copytext":"Head"
+        },
+        {
+             "copytext":"Origin"
+        },
+        {
+            "copytext":"Camera arm point"
+        },
+        {
+            "copytext":"Steering rod"
+        },
+         {
+            "copytext":"Spirit level"
+        }
+    ]
+}
+

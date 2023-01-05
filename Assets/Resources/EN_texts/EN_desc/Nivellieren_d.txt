@@ -1,0 +1,18 @@
+{
+    "aboutJibarm":
+    [
+        {
+            "copytext":"<size=30>Levelling</size>\n After moving the jib arm, the jacks must be levelled again <color=yellow>so that the jib arm is even on the floor</color>. In the green area of the studio, wooden boards could be placed underneath to avoid rubber marks."
+        },
+        {
+             "copytext":"<size=30>Spirit level</size>\n\nOne should <color=yellow>work at least in pairs</color> and turn 2 jacks <color=yellow>simultaneously on one side</color>.\nThe spirit level shows us how much the jacks should be rotated on the axis. The dark point should be in the middle."
+        },
+        {
+             "copytext":"<size=30><b>Task: Levelling 1/2</b></size>\n\n1. <color=yellow>Use spirit level to determine which side should be turned</color>.\n2. go to the white circle</color> to <color=yellow>select the side</color>.\n3. if the page is correct, the circle colour changes to <color=green>green</color> and starts the animation for Jacks. If the circle is <color=red>red</color>, the page was wrong.\n4. then <color=yellow>check the dragonfly again</color> and change the axis.\nContinue to part 2 ..."
+        },
+        {
+             "copytext":"<size=30><b>Task: Level 2/2</b></size>.\n\n5. click on <color=orange>'Change axis'</color> to rotate the axis by 90°.\n6.Now the steps from the first point must be repeated <color=yellow>2 times</color> until the two axes are even."
+        }
+    ]
+}
+

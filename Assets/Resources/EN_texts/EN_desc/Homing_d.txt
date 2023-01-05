@@ -1,0 +1,15 @@
+{
+    "aboutJibarm":
+    [
+        {
+            "copytext":"<size=30>Encoder</size>\n\nEach axis that moves on this jib arm is equipped with encoders. In order to determine the absolute position of the encoders, the <color=yellow>zero position</color> of each axis must be indicated."
+        },
+        {
+             "copytext":"<size=30>Homing</size>\n\nUsing <color=yellow>arrow-shaped markers</color>, each axis can be moved to the zero point. When you move all the axes over this point, the system is automatically zeroed."
+        },
+        {
+             "copytext":"<size=30><b>Task:</b> Homing</size>\n\nTo perform homing, select either the <color=orange>'Arm'</color> or <color=orange>'Head'</color> area using the button. Then, rotate this area using <color=#04EAC1>Touch&Drag</color>. All <color=yellow>4 zero markers</color> must be passed over."
+        }
+    ]
+}
+

@@ -1,0 +1,9 @@
+{
+    "aboutJibarm":
+    [
+        {
+            "copytext":"\n<size=10><b>Laser</b></size>\n\nA jib arm in the studio uses a laser 'class 2'. Class 2 laser includes lasers that have an output of less than 1 mill watt in the visible range. <b>Class 2 lasers</b> can cause eye damage through prolonged visual contact. Therefore, appropriate labelling, e.g. a warning signal, must be provided and employees must be informed about the dangers. <b>Class 3 lasers</b> are not as dangerous, but you should still avoid looking into it for a longer time. The Jig arm uses class 3.\nThe laser's battery lasts a long time, but care should be taken not to leave it on accidentally.\n\nTo use the laser function, you switch it on and aim it at different points. This process is supported by a small programme stored in the config file called <b>'Ray Locator'</b>. It first asks if you want to reuse the already measured points. Usually, the measured positions are no longer valid because the system has probably moved. However, it might be useful to use them for training purposes.\n\nAfter you have measured, all fields are displayed in green. To check whether the measurement was successful, <b>'LOCATE'</b> is pressed. There are the options 'GOOD', 'MEDIUM' and 'BAD'. It is important that the measurements are always <b>'GOOD'</b> (unless it has to be quick, then 'MEDIUM' values could also be used). After <b>'OKAY'</b> is pressed, the values are not only entered but also transferred to the camera tracking system and the system is restarted for a new position. The graphic then shows the current position."
+        }       
+    ]
+   
+}

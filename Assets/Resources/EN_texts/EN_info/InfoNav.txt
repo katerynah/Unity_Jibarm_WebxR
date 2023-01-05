@@ -1,0 +1,15 @@
+{
+    "aboutJibarm":
+    [
+        {
+            "copytext":"About the app"
+        },
+        {
+             "copytext":"Requirements"
+        },
+        {
+             "copytext":"Manual"
+        }
+    ]
+}
+

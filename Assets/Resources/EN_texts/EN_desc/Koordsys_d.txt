@@ -1,0 +1,18 @@
+{
+    "aboutJibarm":
+    [
+        {
+            "copytext":"<size=30>Coordinate system</size>\n\nThe coordinate system for the <color=yellow>studio</color> and the <color=yellow>camera</color> follows the right hand rule. The <color=yellow>origin</color> of this system is located in the green area of the studio. In <color=orange>VizArtist</color>, the <color=orange>Y and Z axes are swapped</color>, so that the Y axis points positively upwards."
+        },
+        {
+             "copytext":"<size=30>Camera coordinates</size>.\n\nThe coordinates are displayed on the touch screen in <color=orange>'Camera Parameters'</color>.\nHere <color=red>X=4.49</color> and <color=green>Y=-1.34</color>.\nIt is important to note that the <color=yellow>coordinates are output at the camera head</color>."
+        },
+        {
+             "copytext":"<size=30>Landmarks</size>\n\nIn the studio there are several reference points called <color=yellow>landmarks</color>. The <color=yellow>marker 18 corresponds to the origin</color> of the coordinate system."
+        },
+        {
+             "copytext":"<size=30>Distribution</size>\n\nThe marker number starts <color=yellow>from right to left</color> and is <color=yellow>not only distributed in the horizontal</color> pan direction, but also <color=yellow>vertically</color>.If the point is not visible in the studio, you can use another point."
+        }
+    ]
+}
+

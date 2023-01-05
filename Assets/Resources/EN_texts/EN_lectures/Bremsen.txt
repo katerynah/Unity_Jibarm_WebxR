@@ -1,0 +1,9 @@
+{
+    "aboutJibarm":
+    [
+        {
+            "copytext":"\n<size=10><b>Locking brakes</b></size>\n\n<b><u>Camera arm: pan/tilt range</u></b>\n\nThere is one brake for the tilt rotation and one for the pan rotation of the arm. They are used to be able to drive the crane more smoothly and to improve the <b>surveiller system</b> (positioning with the laser), as the laser should be aligned very precisely.\n\n<b><u>Camera head: pan/tilt range</u></b>The same applies to the fluid head. There are brakes for the tilt and pan rotation to move the head. It is important to apply the brakes before moving away from the Jib arm to keep it stable and balanced.\n\nVinten's system has a <b>'Perfect Balance'</b> system. Depending on the load attached to the head, it checks whether the camera head can be moved easily or should be pulled back. You can tighten the brakes so that the camera always goes back to zero automatically.\n\n<b>At the end of the day or during a break, there are 2 possibilities:</b>\n\n1.<indent=12>Switch off the system with the shutdown button on the touch screen.</indent>\n2.<indent=12>Simply switch off the screen with the main switch.</indent>"
+        }       
+    ]
+   
+}

@@ -1,0 +1,15 @@
+{
+    "aboutJibarm":
+    [
+        {
+            "copytext":"<size=30>1. crush hazard</size>\n\nThere are two points on the jib arm marked with stickers that you should be aware of and not put your fingers into."
+        },
+        {
+             "copytext":"<size=30>2. Jibarm Movement</size>\n\nThe encoders of the jib arm only detect <color=yellow>values</color> that can be reached <color=yellow>without applying mechanical force</color>.In the red area, no more values are received."
+        },
+        {
+             "copytext":"<size=30>3. Working area</size>\n\nThe working area must be clear of obstructions (the <color=yellow>radius of the camera arm</color> represents the danger zone)."
+        }
+    ]
+}
+

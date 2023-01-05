@@ -1,0 +1,24 @@
+{
+    "aboutJibarm":
+    [
+        {
+            "copytext":"<size=30>Touchscreen Interface</size>\n\nIn this section, the relevant touchscreen functions are described."
+        },
+        {
+             "copytext":"<size=30>SYSTEM-button</size>\n\nClicking <color=yellow>SYSTEM</color> brings up a selection window. The <color=orange>Reboot</color> option restarts the system and <color=orange>Shutdown</color> turns off the tracking interface."
+        },
+        {
+             "copytext":"<size=30>DIAG-button</size>\n\nWith <color=yellow>DIAG</color>, you can manage the tracking.\n<color=orange>STOP ALL</color> stops the tracking.\n<color=orange>test encoders</color> shows the tracked data.\n <color=orange>reset encoders</color> clears the homing and index points.\n<color=orange>(re)start tracking</color> starts the tracking again."
+        },
+        {
+             "copytext":"<size=30>CONFIG-button</size>\n\nWith the click on <color=yellow>CONFIG</color>, you can manage the landmarks. The <color=orange>RayLocator</color> contains the points for the measurement of the Jibarm in the studio."
+        },
+        {
+            "copytext":"<size=30>Encoder Values</size>\n\nHere, the encoder values are labeled and displayed.\n<color=yellow>1 boom pan</color> - 1st input with arm pan\n<color=yellow>2 boom tilt</color> - 2nd input with arm tilt\n<color=yellow>3 head pan</color> - 3rd input with head pan\n<color=yellow>4 head tilt</color> - 4th input with head tilt"
+        },
+        {
+             "copytext":"<size=30>Camera Parameters</size>\n\nThis window displays the camera parameters.<color=yellow>X,Y,Z</color> coordinates of the camera\n<color=yellow>pan, tilt, roll</color> for camera orientation\n<color=yellow>Field of View</color> for the field of view\n<color=yellow>center shift x,y</color> for distortion parameters"
+        }
+    ]
+}
+

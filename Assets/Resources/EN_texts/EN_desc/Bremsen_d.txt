@@ -1,0 +1,27 @@
+{
+    "aboutJibarm":
+    [
+        {
+            "copytext":"<size=30>Locking brakes: Boom-Tilt</size>\n\nThe Arm-Tilt brake controls the tilting movement of the arm. When turning the brake <color=yellow>clockwise</color>, the <color=yellow>resistance</color> increases. When the brake is turned to the correct position, the point next to it becomes <color=green>green</color>."
+        },
+        {
+             "copytext":"<size=30>Locking brakes: Boom-Pan</size>\n\nThe Arm-Pan brake adjusts the panning movement of the arm."
+        },
+        {
+             "copytext":"<size=30>Locking brakes: Head-Tilt</size>\n\nThere are two small locks located underneath the camera. The upper lock controls the tilt movement of the fluid head."
+        },
+        {
+             "copytext":"<size=30>Locking brakes: Head-Pan</size>\n\nThe Fluidhead-Pan brake adjusts the pan movement of the Fluidhead. It is important to remember to retract the brakes when moving away from the jib arm."
+        },
+        {
+            "copytext":"<size=30>Damping: Head-Tilt</size>\n\nOn the left size of the camera head is the head-tilt damping, which is responsible for the tilt movement of the fluid head."
+        },
+        {
+             "copytext":"<size=30>Damping: Head-Pan</size>\n\nThe Head-Tilt brake is located on the other side of the camera head. Since it is located underneath the encoder, you must first <color=yellow>pull out, then turn, and push in</color> the brake to control the pan movement of the fluid head."
+        },
+        {
+            "copytext":"<size=30>Perfect Balance</size>\n\nThe Perfect Balance determines how much the camera head should retract. If it is tightened, the camera will automatically return to the zero point."
+        }
+    ]
+}
+

@@ -1,0 +1,9 @@
+{
+    "aboutJibarm":
+    [
+        {
+            "copytext":"<size=12><b>About the Jib arm eLearning Application</b></size>\n\nThis application is based on the learning content of the course 'Virtual Studio' at the University of Applied Sciences Düsseldorf and aims at interactive eLearning for operating the Jib arm. It was developed with Web AR technologies and can be opened with the web link <color=#00008C><u><link='https://katerynah.github.io/NewWebARPlacement/'>'Unity Jibarm WebXR'</u></link></color>."
+        }       
+    ]
+   
+}
