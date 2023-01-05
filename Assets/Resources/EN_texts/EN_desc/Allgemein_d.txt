@@ -2,7 +2,7 @@
     "aboutJibarm":
     [
         {
-            "copytext":"The jib arm stands on the <color=yellow><b>Dolly</b></color>, which provides a secure stand. It is important that the Dolly base is leveled because it can affect the homing and tracking."
+            "copytext":"The jib arm stands on the <color=yellow><b>Dolly</b></color>, which provides a secure stand. It is important that the Dolly base is leveled because it can affect the homing and tracking of a jib arm."
         },
         {
              "copytext":"The <color=yellow><b>camera</color> is used to record the virtual image. The focus, zoom, and aperture can be adjusted to achieve the desired result."
@@ -14,7 +14,7 @@
              "copytext":"The <color=yellow><b>monitor</b></color> of the jib arm has the main switch, encoder inputs, genlock, sync input, and tracking interface, which passes on the data of the jib arm."
         },
         {
-            "copytext":"The <color=yellow><b>laser</b></color> is responsible for measuring the landmarks in the studio. It is important to avoid looking at it constantly."
+            "copytext":"The <color=yellow><b>laser</b></color> is responsible for measuring the landmarks in the studio. It is important to avoid looking at it."
         }
     ]
 }

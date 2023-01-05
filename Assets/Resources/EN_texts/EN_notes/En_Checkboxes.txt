@@ -71,6 +71,9 @@
             "copytext":"Move the camera arm up"
         },
         {
+            "copytext":"Move the jib arm"
+        },
+        {
             "copytext":"1. Check"
         },
          {

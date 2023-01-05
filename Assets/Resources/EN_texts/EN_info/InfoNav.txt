@@ -4,11 +4,11 @@
         {
             "copytext":"About the app"
         },
-        {
-             "copytext":"Requirements"
+         {
+             "copytext":"Manual"
         },
         {
-             "copytext":"Manual"
+             "copytext":"Requirements"
         }
     ]
 }
