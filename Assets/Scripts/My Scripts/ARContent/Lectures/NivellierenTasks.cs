@@ -114,6 +114,8 @@ public class NivellierenTasks : MonoBehaviour
                 niv.SetActive(false);
             }
         }
+        index = 0;
+
         adaptJScript.anim[0].Play("1Axis", -1, 0f);
         adaptJScript.anim[1].Play("2Axis", -1, 0f);
         changeAxisScript.jointAnim[0].Play("RotArmR", -1, 0f);

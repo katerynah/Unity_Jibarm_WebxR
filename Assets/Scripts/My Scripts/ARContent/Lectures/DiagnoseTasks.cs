@@ -122,6 +122,7 @@ public class DiagnoseTasks : MonoBehaviour
             screenView.SetActive(false);
             switchBtn.tag = "Untagged";
             raycastScript.raycasting = false;
+            index = 0;
 
             Transform objectTransform = switchBtn.GetComponent<Transform>();
             objectTransform.Rotate(0f, -20f, 0f);

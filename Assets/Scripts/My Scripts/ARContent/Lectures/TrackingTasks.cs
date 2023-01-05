@@ -58,6 +58,8 @@ public class TrackingTasks : MonoBehaviour
 
     public void resetTScript()
     {
+        index = 0;
+
         foreach (GameObject note in tasks)
         {
             note.GetComponent<ChangeColor>().setColor(false);

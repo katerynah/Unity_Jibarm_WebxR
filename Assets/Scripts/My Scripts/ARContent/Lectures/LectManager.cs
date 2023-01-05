@@ -280,6 +280,25 @@ public class LectManager : MonoBehaviour
             resetPos = true;
         }
 
+        if (selectScript.currLectName != "Allgemein")
+        {
+            int h = 0;
+            foreach (GameObject obj in descObjects)
+            {
+                if (h == 0)
+                {
+                    obj.SetActive(true);
+                    taskObjects[h].SetActive(true);
+                }
+                else
+                {
+                    obj.SetActive(false);
+                    taskObjects[h].SetActive(false);
+                }
+                h++;
+            }
+        }
+        arrowScript.currIndex = 0;
         resetArrows = true;
         resetPos = true;
     }

@@ -89,7 +89,7 @@ public class BremsenTasks : MonoBehaviour
             }
             i++;
         }
-
+        index = 0;
         foreach (var obj in bremsenArmTilt)
         {
             obj.gameObject.SetActive(false);

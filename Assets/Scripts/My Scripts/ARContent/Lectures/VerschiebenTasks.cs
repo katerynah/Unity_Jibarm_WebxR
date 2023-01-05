@@ -141,6 +141,8 @@ public class VerschiebenTasks : MonoBehaviour
             circleStart.transform.GetChild(2).gameObject.tag = "Untagged";
             jibAreaScript.checkCollision = false;
             joystick.SetActive(false);
+            index = 0;
+
             start = true;
         }       
 

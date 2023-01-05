@@ -152,6 +152,7 @@ public class EinschaltTasks : MonoBehaviour
         curveScript.isActive = false;
         raycastScript.raycasting = false;
         screenView.SetActive(false);
+
     }
 
     public void startTScript()

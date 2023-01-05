@@ -105,6 +105,7 @@ public class SicherheitTasks : MonoBehaviour
             collectScript.raycasting = false;
         }
         centerPoint.SetActive(false);
+        index = 0;
 
         collectScript.raycasting = false;
         colorScript.setColor(false);

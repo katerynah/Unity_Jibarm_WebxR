@@ -84,6 +84,7 @@ public class HomingTasks : MonoBehaviour
             }
             i++;
         }
+        index = 0;
 
 
     }

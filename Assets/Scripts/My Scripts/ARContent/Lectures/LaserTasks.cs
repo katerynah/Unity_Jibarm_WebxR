@@ -81,6 +81,8 @@ public class LaserTasks : MonoBehaviour
                 screenView.SetActive(false);
                 start = false;
             }
+            index = 0;
+
             start = true;
         }
         

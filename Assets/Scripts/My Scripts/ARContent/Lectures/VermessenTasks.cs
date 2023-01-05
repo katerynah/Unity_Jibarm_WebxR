@@ -108,6 +108,8 @@ public class VermessenTasks : MonoBehaviour
             cameraRotScript.enabled = false;
             cameraRotScript.isActive = false;
             joystick.SetActive(false);
+            index = 0;
+
         }
         joystick.SetActive(false);
     }

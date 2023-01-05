@@ -68,9 +68,17 @@ public class ChangeTextContent : MonoBehaviour
         if (textToDisplay.tag != "off")
         {
             //ARBtn.GetComponent<LockPanel>().inAR = false;
+            //if (ARBtn.transform.GetChild(0).gameObject.activeSelf == true)
+            //{
+            //    selectScript.selectLecture(1);
+            //    ARBtn.GetComponent<LockPanel>().OnPointerClick();
+            //    //selectScript.selectLecture(0);
+            //}
+            ARBtn.GetComponent<LockPanel>().inAR = false;
             if (ARBtn.transform.GetChild(0).gameObject.activeSelf == true)
             {
                 selectScript.selectLecture(1);
+                ARBtn.GetComponent<LockPanel>().OnPointerClick();
                 ARBtn.GetComponent<LockPanel>().OnPointerClick();
                 //selectScript.selectLecture(0);
             }
