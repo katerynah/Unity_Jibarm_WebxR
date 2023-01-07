@@ -17,37 +17,28 @@ public class JibMoveArea : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //gameObject.transform.GetChild(0).gameObject.GetComponent<ParticleSystem>().Stop();
+        circles[0].transform.GetChild(0).gameObject.SetActive(false);
+        selectionRenderer1 = circles[0].transform.GetChild(1).gameObject.GetComponent<MeshRenderer>();
+        selectionRenderer2 = circles[0].transform.GetChild(2).gameObject.GetComponent<MeshRenderer>();
+        selectionRenderer1.material = aura_Green;
+        selectionRenderer2.material = aura_Green;
+        circles[1].SetActive(true);
+        joystick1Script.start = true;
+        inArea = true;
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-
-        if (other.gameObject.tag == "raycast" && checkCollision)
-        {
-            //gameObject.transform.GetChild(0).gameObject.GetComponent<ParticleSystem>().Stop();
-            circles[0].transform.GetChild(0).gameObject.SetActive(false);
-            selectionRenderer1 = circles[0].transform.GetChild(1).gameObject.GetComponent<MeshRenderer>();
-            selectionRenderer2 = circles[0].transform.GetChild(2).gameObject.GetComponent<MeshRenderer>();
-            selectionRenderer1.material = aura_Green;
-            selectionRenderer2.material = aura_Green;
-            circles[1].SetActive(true);
-            joystick1Script.start = true;
-            inArea = true;
-        }
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "raycast" && checkCollision)
-        {
-            currCircle = other.gameObject;
-            circles[1].SetActive(false);
-            selectionRenderer1.material = aura_White;
-            selectionRenderer2.material = aura_White;
-            inArea = false;
-        }
-    }
+    //void OnTriggerExit(Collider other)
+    //{
+    //    if (other.gameObject.tag == "raycast" && checkCollision)
+    //    {
+    //        currCircle = other.gameObject;
+    //        circles[1].SetActive(false);
+    //        selectionRenderer1.material = aura_White;
+    //        selectionRenderer2.material = aura_White;
+    //        inArea = false;
+    //    }
+    //}
 
     private void Update()
     {

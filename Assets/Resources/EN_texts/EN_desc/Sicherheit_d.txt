@@ -2,13 +2,13 @@
     "aboutJibarm":
     [
         {
-            "copytext":"<size=30>1. crush hazard</size>\n\nThere are two points on the jib arm marked with stickers that you should be aware of and not put your fingers into."
+            "copytext":"<size=30>1. Crush hazard</size>\n\nOn the jibarm, <color=yellow>2 areas are marked with stickers</color> that you should pay attention to and not stick your fingers in. Here these areas are shown with <color=red>red</color> color."
         },
         {
-             "copytext":"<size=30>2. Jibarm Movement</size>\n\nThe encoders of the jib arm only detect <color=yellow>values</color> that can be reached <color=yellow>without applying mechanical force</color>.In the red area, no more values are received."
+             "copytext":"<size=30>2. Jib arm movement</size>\n\nThe encoders of the jib arm only detect <color=yellow>values</color> that can be reached <color=yellow>without applying mechanical force</color>. In the red area, no more values are received."
         },
         {
-             "copytext":"<size=30>3. Working area</size>\n\nThe working area must be clear of obstructions (the <color=yellow>radius of the camera arm</color> represents the danger zone)."
+             "copytext":"<size=30>3. Working area</size>\n\nThe working area must be clear of obstructions (the <color=yellow>radius of the camera arm</color> represents the danger zone). When this panel is closed, <color=yellow>the yellow point</color> is displayed. When you get <color=yellow>close to the object</color>, you can <color=yellow>select it with this point and remove it</color>."
         }
     ]
 }

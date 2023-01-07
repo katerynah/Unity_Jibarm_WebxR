@@ -31,12 +31,26 @@ public class TrackingTasks : MonoBehaviour
                     index = i;
                 }
             }
-
-            if(index == 1)
+            if (index == 0)
+            {
+                tasks[1].GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
+                tasks[0].GetComponent<DrawLineBetweenTwoObjects>().setLines("all");
+            }
+            else if (index == 1)
             {
                 screenView.SetActive(true);
+                tasks[0].GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
+                tasks[1].GetComponent<DrawLineBetweenTwoObjects>().setLines("all");
 
+            } else if (index == 2)
+            {
+                tasks[3].GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
             }
+            else if (index == 3)
+            {
+                tasks[3].GetComponent<DrawLineBetweenTwoObjects>().setLines("all");
+            }
+            
             eachOfThem(index);
 
             manageLScript.check = false;
@@ -52,6 +66,7 @@ public class TrackingTasks : MonoBehaviour
            obj.GetComponent<ChangeColor>().setColor(false);
         }
 
+
         tasks[nr].GetComponent<ChangeColor>().setColor(true);
         Debug.Log($"Now color {tasks[nr].name}");
     }
@@ -60,9 +75,15 @@ public class TrackingTasks : MonoBehaviour
     {
         index = 0;
 
+        int i = 0;
         foreach (GameObject note in tasks)
         {
             note.GetComponent<ChangeColor>().setColor(false);
+            if (i != 2)
+            {
+                note.GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
+                i++;
+            }
         }
         screenView.SetActive(false);
     }

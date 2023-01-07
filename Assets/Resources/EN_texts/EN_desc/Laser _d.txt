@@ -2,7 +2,7 @@
     "aboutJibarm":
     [
         {
-            "copytext":"<size=30>Laser</size>\n\nThe laser belongs to the <color=yellow>3rd class</color>. The laser radiation <color=yellow>can endanger the eye</color> and looking into it should be avoided.\n\nTo the left of the battery box, the laser can be switched on."
+            "copytext":"<size=30>Laser</size>\n\nThe laser belongs to the <color=yellow>3rd class</color>. The laser radiation <color=yellow>can endanger the eye</color> and looking into it should be avoided.\nTo the left of the battery box, the laser can be switched on."
         },
         {
              "copytext":"<size=30>Measuring with the laser</size>.\n\nOn the touch screen <color=orange>CONFIG -> Ray Locator</color> the submenu with measuring points is displayed. If you have moved the jib arm in the studio, the markers have to be measured again."

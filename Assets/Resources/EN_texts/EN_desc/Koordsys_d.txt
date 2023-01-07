@@ -11,7 +11,7 @@
              "copytext":"<size=30>Landmarks</size>\n\nIn the studio there are several reference points called <color=yellow>landmarks</color>. The <color=yellow>marker 18 corresponds to the origin</color> of the coordinate system."
         },
         {
-             "copytext":"<size=30>Distribution</size>\n\nThe marker number starts <color=yellow>from right to left</color> and is <color=yellow>not only distributed in the horizontal</color> pan direction, but also <color=yellow>vertically</color>.If the point is not visible in the studio, you can use another point."
+             "copytext":"<size=30>Distribution</size>\n\nThe marker number starts <color=yellow>from right to left</color> and is <color=yellow>not only distributed in the horizontal</color> pan direction, but also <color=yellow>vertically</color>. If the point is not visible in the studio, you can use another point."
         }
     ]
 }

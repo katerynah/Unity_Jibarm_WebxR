@@ -10,15 +10,18 @@ public class EinschaltTasks : MonoBehaviour
 
     public GameObject screenView;
     public RaycastingAR raycastScript;
+    public ControlNav arrowScript;
     public CheckBoxed checkBoxScript;
     public FollowCurve curveScript;
     public bool checkCurrTask = true;
     public SelectionManager selectScript;
     LectManager manageLScript;
-    public Material redMat;
+    public Material redMat, greenMat;
     public GameObject switchBtn, switchLight, stahlseilenGroup;
     Material selectionMaterial;
     public bool triggerOn = false;
+    int index = 0;
+    bool start = true;
     int circleIndex;
 
     [System.Serializable]
@@ -91,6 +94,7 @@ public class EinschaltTasks : MonoBehaviour
                 switchBtn.tag = "raycast";
                 curveScript.isActive = false;
                 curveScript.enabled = false;
+                
             }
 
             var selectionRenderer1 = circleList[circleIndex].Circle1.GetComponent<MeshRenderer>();
@@ -105,12 +109,44 @@ public class EinschaltTasks : MonoBehaviour
 
     void Update()
     {
-        if (curveScript.objEuler.z == -100f)
+        if (curveScript.objEuler.z < -98f && curveScript.objEuler.z > -102f)
         {
             curveScript.enabled = false;
             curveScript.isActive = false;
             checkBoxScript.checkTheBox("camera-pos");
         }
+
+        if (checkCurrTask == true)
+        {
+            for (int i = 0; i < manageLScript.descObjects.Count; i++)
+            {
+                if (manageLScript.descObjects[i].activeSelf == true)
+                {
+                    index = i;
+                }
+            }
+            if (index == 1)
+            {
+               
+            }
+            else if (index == 2)
+            {
+                if (start == true)
+                {
+                    Transform objectTransform = switchBtn.GetComponent<Transform>();
+                    //objectTransform.Rotate(0f, 20f, 0f);
+                    objectTransform.Rotate(0f, 20f, 0f);
+                    switchLight.GetComponent<MeshRenderer>().material = greenMat;
+                    screenView.SetActive(true);
+                    start = false;
+                }
+            }
+
+
+            manageLScript.check = false;
+            checkCurrTask = false;
+        }
+        
     }
 
     public void doTouch(GameObject selected)
@@ -132,18 +168,24 @@ public class EinschaltTasks : MonoBehaviour
         }
         else if (selected == switchBtn)
         {
-            Transform objectTransform = switchBtn.GetComponent<Transform>();
-            objectTransform.Rotate(0f, -20f, 0f);
-            switchLight.GetComponent<MeshRenderer>().material = redMat;
-            switchBtn.tag = "Untagged";
-            checkBoxScript.checkTheBox("switch-on");
+                Transform objectTransform = switchBtn.GetComponent<Transform>();
+                objectTransform.Rotate(0f, -20f, 0f);
+                switchLight.GetComponent<MeshRenderer>().material = redMat;
+                switchBtn.tag = "Untagged";
+                checkBoxScript.checkTheBox("switch-on");
+                if (start == false)
+                {
+                    start = true;
+                }
+                
+               
         }
 
     }
 
     public void resetTScript()
     {
-      
+       
         wireList[0].WireFront.tag = "Untagged";
         wireList[1].WireFront.tag = "Untagged";
         switchBtn.tag = "Untagged";
@@ -152,6 +194,15 @@ public class EinschaltTasks : MonoBehaviour
         curveScript.isActive = false;
         raycastScript.raycasting = false;
         screenView.SetActive(false);
+        if (start == false)
+        {
+            Transform objectTransform = switchBtn.GetComponent<Transform>();
+            //objectTransform.Rotate(0f, 20f, 0f);
+            objectTransform.Rotate(0f, -20f, 0f);
+            switchLight.GetComponent<MeshRenderer>().material = redMat;
+            start = true;
+        }
+       
 
     }
 

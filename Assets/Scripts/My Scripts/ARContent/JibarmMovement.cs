@@ -37,11 +37,11 @@ public class JibarmMovement : MonoBehaviour
     {
         if (start && (joystick.Vertical != 0 || joystick.Horizontal != 0) && areaScript.inArea == true)
         {
-            rb_dir.velocity = new Vector3(joystick.Vertical * speed, rb_dir.velocity.y, joystick.Horizontal * -speed);
+            rb_dir.velocity = new Vector3(joystick.Vertical * -speed, rb_dir.velocity.y, joystick.Horizontal * -speed);
             Vector3 dir = rb_dir.position - rb_jib.position;
             rb_jib.MovePosition(jib.transform.position + (dir * Time.deltaTime * speed));
-            var targetRotation = Quaternion.LookRotation(new Vector3(rb_dir.position.x - rb_jib.position.x, 0f, rb_dir.position.z - rb_jib.position.z));
-            rb_jib.transform.rotation = Quaternion.Slerp(rb_jib.transform.rotation, targetRotation, speed * Time.deltaTime);
+            //var targetRotation = Quaternion.LookRotation(new Vector3(rb_dir.position.x - rb_jib.position.x, 0f, rb_dir.position.z - rb_jib.position.z));
+            //rb_jib.transform.rotation = Quaternion.Slerp(rb_jib.transform.rotation, targetRotation, speed * Time.deltaTime);
         }
        
     }

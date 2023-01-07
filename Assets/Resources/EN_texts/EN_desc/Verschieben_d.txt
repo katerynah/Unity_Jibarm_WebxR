@@ -2,19 +2,19 @@
     "aboutJibarm":
     [
         {
-            "copytext":"<size=30>Steering rod and jibs</size>.\n\nIf the jib arm needs to be moved to another position, this can be done with the help of the steering rod. It is used to control the wheels of the jib arm."
+            "copytext":"<size=30><color=yellow>Steering rod</color></size>\n\nIf the jib arm needs to be moved to another position, this can be done with the help of the steering rod. It is used to control the wheels of the jib arm."
         },
         {
-             "copytext":"<size=30>Step 1: Rotate the arm axis</size>.\n\nYou could move the <color=yellow>tilt axis of the arm</color> to free the working area. If the crane is not heavy enough, you have to tighten the brake."
+             "copytext":"<size=30>Step 1: Rotate the boom axis</size>.\n\nYou could move the <color=yellow>tilt axis of the boom</color> to free the working area. If the crane is not heavy enough, you have to tighten the brake."
         },
         {
-             "copytext":"<size=30>Step 2: Steering rod and push pin</size>.\n\nThe handlebar will be inserted into the circular area. Then take the push-pin.While pressing the button on the push-pin, it can be inserted into the tiller. When the button is released, the bar is fixed."
+             "copytext":"<size=30>Step 2: Steering rod and push pin</size>\n\nThe steering rod will be inserted into the circular area. Then take the push-pin. <color=yellow>While pressing the button on the push-pin, it can be inserted into the tiller</color>. When the button is released, the bar is fixed. The Play button starts the animation of the steering rod. This panel can be closed for a better overview."
         },
         {
-             "copytext":"<size=30>Step 3: Rotate the jibs upwards</size>.\n\nTo be able to move the jib arm, the jack rods should be turned upwards in an anti-clockwise direction so that they do not touch the ground."
+             "copytext":"<size=30>Step 3: Rotate the jacks</size>\n\nTo be able to move the jib arm, the jack rods should be <color=yellow>turned upwards in an anti-clockwise</color> direction so that they do not touch the ground.\nThis animation shows how the 4 jacks are to be turned. The Play-button starts the <color=yellow>Jacks' animation</color>."
         },
         {
-             "copytext":"<size=30>Jibarm repositioning</size>.\n\nNow the jibarm can be repositioned. You have to stand on the circle under the jibarm. Use the joystick to move the dolly until you are standing on the second circle."
+             "copytext":"<size=30>Jib arm repositioning</size>\n\nNow the jib arm can be repositioned. The dolly can be moved using the <color=yellow><b>joystick</b></color> until the jib arm stands <color=yellow>on the second circle</color>."
         }
     ]
 }

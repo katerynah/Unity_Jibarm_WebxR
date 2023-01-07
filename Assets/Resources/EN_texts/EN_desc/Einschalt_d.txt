@@ -5,10 +5,10 @@
             "copytext":"<size=30>Steel Cables</size>\n\n<size=24>1. <indent=40><color=yellow>Two steel cables need to be removed</color> before working with the jib arm. They can be removed with the <color=#04EAC1>touch</color> here. The orange circle shows the area where you should stand. If you stand with the camera on this circle, the color will change to green.</indent></size>"
         },
         {
-             "copytext":"<size=30>Camera Head</size>\n\n<size=30>2. <indent=40>The <color=yellow>camera head</color> should be aligned with the extension of the jib arm.</indent></size>"
+             "copytext":"<size=30>Camera Head</size>\n\n<size=30>2. <indent=40>The <color=yellow>camera head</color> should be aligned with the extension of the jib arm. Here the camera should be turned to the left with the touch.</indent></size>"
         },
         {
-             "copytext":"<size=30>Tracking processor</size>\n\n<size=30>3. <indent=40>The <color=yellow>tracking processor</color> should be turned off before the break.</indent></size>"
+             "copytext":"<size=30>Tracking processor</size>\n\n<size=30>3. <indent=40>The <color=yellow>tracking processor</color> should be turned off before the break. The switch is located on the right side of the monitor.</indent></size>"
         }
     ]
 }

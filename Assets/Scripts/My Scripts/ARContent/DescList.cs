@@ -17,6 +17,7 @@ public class DescList : MonoBehaviour
     {
         lectScript.introD.SetActive(false);
         lectScript.introN.SetActive(false);
+        Debug.Log($"Intro {lectScript.introD.activeSelf}");
         // disable all description objects
         foreach (GameObject note in lectScript.taskObjects)
         {

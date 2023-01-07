@@ -139,7 +139,8 @@ public class AdaptJacks : MonoBehaviour
             anim[1].enabled = true;
             nilPoint[2].SetActive(false);
             nilPoint[0].SetActive(true);
-        } 
+            nilPoint[1].SetActive(false);
+        }
         //rot1.transform.Rotate(new Vector3(0, 45, 0), speed * Time.deltaTime);
         //rot2.transform.Rotate(new Vector3(0, 45, 0), speed * Time.deltaTime);
 
@@ -148,19 +149,4 @@ public class AdaptJacks : MonoBehaviour
 
     }
 
-    private void Update() {           
-        //if (countDown == 2)
-        //{
-        //    checkmarks[2].SetActive(true);
-        //}
-
-        //if (timeRemaining > 0)
-        //{
-        //    timeRemaining -= Time.deltaTime;
-        //}
-        //else
-        //{
-        //    anim.enabled = false;
-        //}
-    }
 }

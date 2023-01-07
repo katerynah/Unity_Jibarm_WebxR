@@ -54,7 +54,7 @@ public class ChangeAxis : MonoBehaviour
         {
             adaptJScript.countDown = 1;
             nilPoint[0].SetActive(false);
-            nilPoint[2].SetActive(true);
+            nilPoint[2].SetActive(true); 
         }
         else if (nilPoint[0].activeSelf == true && adaptJScript.countDown == 1)
         {

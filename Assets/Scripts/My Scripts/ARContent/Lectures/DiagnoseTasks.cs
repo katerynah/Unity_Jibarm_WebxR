@@ -68,20 +68,20 @@ public class DiagnoseTasks : MonoBehaviour
 
             if (index == 0)
             {
-                if (start == true && checkScSwitch.activeSelf == false)
-                {
-                    Transform objectTransform = switchBtn.GetComponent<Transform>();
-                    objectTransform.Rotate(0f, -20f, 0f);
-                    switchLight.GetComponent<MeshRenderer>().material = redMat;
-                    Debug.Log($"Switch changed");
-                    start = false;
-                }
+                //if (start == true)
+                //{
+                //    Transform objectTransform = switchBtn.GetComponent<Transform>();
+                //    objectTransform.Rotate(0f, -20f, 0f);
+                //    switchLight.GetComponent<MeshRenderer>().material = redMat;
+                //    Debug.Log($"Switch changed");
+                //    start = false;
+                //}
                 switchBtn.tag = "raycast";
                 raycastScript.raycasting = true;
             }
             else if (index == 1)
             {
-               
+                screenView.SetActive(true);
             }
             checkCurrTask = false;
         }

@@ -2,9 +2,14 @@
     "aboutJibarm":
     [
         {
-            "headline":"Repositioning",
-            "copytext": "Instruction"
-        }       
+             "copytext":"Start"
+        },
+         {
+            "copytext":"Repositioning"
+        },
+        {
+             "copytext":"Instruction"
+        }
     ]
    
 }

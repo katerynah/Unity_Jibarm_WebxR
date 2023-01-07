@@ -16,7 +16,7 @@ public class NavControl : MonoBehaviour
         switch (clickedObj.gameObject.name)
         {
             case "InbetriebDrop":
-                moveY = 40f; // distance y
+                moveY = 30f; // distance y
                 break;
             case "TrackingDrop":
                 moveY = 30f;

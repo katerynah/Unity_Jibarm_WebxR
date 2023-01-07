@@ -52,15 +52,16 @@ public class VermessenTasks : MonoBehaviour
             if (index == 0)
             {
                 // check on Einschalt- and Diagnose checkmarks - if enabled
-                if (start == true)
-                {
+                //if (start == true)
+                //{
                     Transform objectTransform = switchBtn.GetComponent<Transform>();
-                    Quaternion onRot = new Quaternion();
-                    onRot.Set(objectTransform.rotation.x, 10f, objectTransform.rotation.z, 1);
+                    //Quaternion onRot = new Quaternion();
+                    //onRot.Set(objectTransform.rotation.x, 10f, objectTransform.rotation.z, 1);
+                    objectTransform.Rotate(0f, 20f, 0f);
                     switchLight.GetComponent<MeshRenderer>().material = greenMat;
                     screenView.SetActive(true);
                     start = false;
-                }
+                //}
                 cameraRotScript.enabled = false;
             }
             //else if (index == 1)
@@ -99,8 +100,9 @@ public class VermessenTasks : MonoBehaviour
         if (start == false)
         {
             Transform objectTransform = switchBtn.GetComponent<Transform>();
-            Quaternion onRot = new Quaternion();
-            onRot.Set(objectTransform.rotation.x, -20f, objectTransform.rotation.z, 1);
+            //Quaternion onRot = new Quaternion();
+            //onRot.Set(objectTransform.rotation.x, -10f, objectTransform.rotation.z, 1);
+            objectTransform.Rotate(0f, -20f, 0f);
             switchLight.GetComponent<MeshRenderer>().material = redMat;
             screenView.SetActive(false);
             joystick.GetComponent<VermessenJoystick>().enabled = false;

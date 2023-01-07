@@ -5,7 +5,7 @@
             "copytext":"Camera"
         },
         {
-             "copytext":"Brakes"
+             "copytext":"<size=26>Brakes</size>"
         },
         {
              "copytext":"Screen"
@@ -84,6 +84,9 @@
         },
          {
             "copytext":"Spirit level"
+        },
+        {
+            "copytext":"Rotate the crane"
         }
     ]
 }

@@ -16,7 +16,7 @@ public class LectManager : MonoBehaviour
     public GameObject studioEnv, player, screenView;
     public List<GameObject> checkMarksCheck = new List<GameObject>();
     bool resetWires, forIntro = false;
-    bool resetIndex, start, resetArrows, resetPos, addItems = true;
+    bool resetIndex, start, resetArrows, resetPos, intro, addItems = true;
     [HideInInspector]
     public bool check = true;
     public JibArmValues jibValuesScript;
@@ -132,11 +132,16 @@ public class LectManager : MonoBehaviour
         switch (selectScript.currLectName)
         {
             case "Allgemein":
-
-                if (GameObject.FindGameObjectWithTag("jibarm") == true && GameObject.FindGameObjectWithTag("jibarm").transform.position.y <0)
+                if (intro == true)
+                {
+                    introD.SetActive(true);
+                    introN.SetActive(true);
+                    intro = false;
+                }
+                if (GameObject.FindGameObjectWithTag("jibarm") == true && GameObject.FindGameObjectWithTag("jibarm").transform.position.y < 0)
                 {
                     currAR.GetComponent<DrawLineBetweenTwoObjects>().setLines("all");
-                    currAR.GetComponent<DrawLineBetweenTwoObjects>().setLines("one");
+                    //currAR.GetComponent<DrawLineBetweenTwoObjects>().setLines("one");
                 }
                 break;
             case "Einschalt":
@@ -171,7 +176,6 @@ public class LectManager : MonoBehaviour
             case "Laser":
                 break;
             case "Vermessen":
-                screenView.SetActive(true);
                 studioEnv.SetActive(true);
                 break;
             case "Verschieben":
@@ -209,9 +213,9 @@ public class LectManager : MonoBehaviour
             case "Allgemein":
                 currAR.GetComponent<DrawLineBetweenTwoObjects>().removeNotes();
 
-                introN.SetActive(true);
-                introD.SetActive(true);
-
+                //introN.SetActive(true);
+                //introD.SetActive(true);
+                intro = true;
                 foreach (GameObject note in taskObjects)
                 {
                     note.GetComponent<ChangeColor>().setColor(false);
@@ -266,6 +270,14 @@ public class LectManager : MonoBehaviour
                 break;
             case "Verschieben":
                 studioEnv.SetActive(false);
+                var objects = Resources.FindObjectsOfTypeAll(typeof(GameObject));
+                foreach (GameObject obj in objects)
+                {
+                    if (obj.name == "Play-bgd")
+                    {
+                        obj.SetActive(false);
+                    }
+                }
                 currAR.GetComponent<VerschiebenTasks>().resetTScript();
                 break;
             case "Nivellieren":
